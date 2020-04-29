@@ -4,7 +4,7 @@ import h2o
 class H2O:
 
     def __init__(self):
-        self.tool = "h2o"
+        self.tool = "H2O AutoML"
     
     def run_example(self):
 
@@ -46,5 +46,7 @@ class H2O:
         print(preds)
         
         h2o.shutdown()
+
+        return [aml, aml.leader, preds]
 
         

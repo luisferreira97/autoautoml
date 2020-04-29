@@ -18,3 +18,5 @@ class TPOT():
         tpot.fit(X_train, y_train)
         print(tpot.score(X_test, y_test))
         tpot.export('tpot_iris_pipeline.py')
+
+        return tpot.score(X_test, y_test)
