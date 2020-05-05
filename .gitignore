@@ -134,4 +134,9 @@ data/gisette.csv
 # unwanted files
 structured_data_classifier/
 structured_data_regressor/
-./.vscode/
+.vscode/*
+AutogluonModels/
+catboost_info/
+dask-worker-space/
+=0.3.3
+autoautoml/.vscode
