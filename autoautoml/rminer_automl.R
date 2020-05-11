@@ -1,10 +1,10 @@
-if (!("package:rminer" %in% search())) { install.packages("rminer") }
+#if (!("package:rminer" %in% search())) { install.packages("rminer") }
 
 library(rminer)
-train=read.csv("C:/Users/lferreira/Documents/GitHub/autoautoml/data/churn-train.csv", sep=",", header = T)
-test=read.csv("C:/Users/lferreira/Documents/GitHub/autoautoml/data/churn-test.csv", sep=",", header = T)
+train=read.csv("/home/lferreira/autoautoml/data/churn-train.csv", sep=",", header = T)
+test=read.csv("/home/lferreira/autoautoml/data/churn-test.csv", sep=",", header = T)
 
-inputs=ncol(dataset)-1
+inputs=ncol(train)-1
 metric="MAE"
 sm=mparheuristic(model="automl3",n=NA,task="reg", inputs= inputs)
 method=c("kfold",3,123)
