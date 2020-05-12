@@ -43,9 +43,21 @@ ex = algo.run_example()
 ```
 
 #### Rminer
+
+##### Options to run
+
+###### In R:
 ```
 source ./autoautoml/rminer_automl.R
 ```
+
+###### In Command Line:
+```
+Rscript ./autoautoml/rminer_automl.R
+```
+
+###### In Python:
+**Coming soon**
 
 ### TransmogrifAI
 **Coming soon (Scala language)**
