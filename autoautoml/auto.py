@@ -29,6 +29,10 @@ class Autoautoml():
     def __init__(self):
         self.algo = "Auto-Auto"
 
+    def train(self, train_path, test_path, algos):
+        a = 1+1
+        return a
+
     def run_example(self, train_path, test_path, target):
 
         metrics = {}
@@ -38,7 +42,7 @@ class Autoautoml():
         # Auto-keras
         regressor = ak.StructuredDataRegressor(max_trials=10, loss="mean_absolute_error")
         regressor.fit(x='./data/churn-train.csv', y=target)
-        metrics["auto-keras"] = regressor.evaluate(x='./data/churn-test.csv', y=target)
+        metrics["auto-keras"] = regressor.evaluate(x='./data/churn-test.csv', y=target)[0]
 
         # Auto-gluon
         train_data = task.Dataset(file_path='./data/churn-train.csv')
@@ -48,7 +52,7 @@ class Autoautoml():
         y_test = test_data[label_column]  # values to predict
         test_data_nolab = test_data.drop(labels=[label_column],axis=1) # delete label column to prove we're not cheating
         y_pred = predictor.predict(test_data_nolab)
-        metrics["auto-gluon"] = predictor.evaluate_predictions(y_true=y_test, y_pred=y_pred, auxiliary_metrics=True)
+        metrics["auto-gluon"] = predictor.evaluate_predictions(y_true=y_test, y_pred=y_pred, auxiliary_metrics=True)["mean_absolute_error"]
 
         # Auto-sklearn
         categorical_feature_mask = train.dtypes==object
@@ -82,14 +86,23 @@ class Autoautoml():
         x.remove(y)
         aml = H2OAutoML(max_runtime_secs=20, seed=1, sort_metric = "mae")
         aml.train(x=x, y=y, training_frame=train)
-        metrics["h2o-automl"] = aml.leader.model_performance(test)
+        metrics["h2o-automl"] = aml.leader.model_performance(test).mae()
         
         h2o.shutdown()
 
         # TPOT
         tpot = TPOTRegressor(generations=5, population_size=50, verbosity=2, random_state=42, scoring='neg_mean_absolute_error', cv=5)
         tpot.fit(X_train, y_train)
-        metrics["tpot"] = tpot.score(X_test, y_test)
+        metrics["tpot"] = -tpot.score(X_test, y_test)
 
+        best_metric = float("inf")
+        best_model = "MODEL"
+        for metric in metrics:
+            if metrics[metric] < best_metric:
+                best_metric = metrics[metric]
+                best_model = metric
+
+        print("THE BEST AUTOML TOOL IS " + str(best_model) + ", WITH A MAE OF " + str(best_metric) + " ACHIEVED BY THE BEST MODEL.")
+        
         return metrics
         
