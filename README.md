@@ -61,3 +61,10 @@ Rscript ./autoautoml/rminer_automl.R
 
 ### TransmogrifAI
 **Coming soon (Scala language)**
+
+#### Auto-Auto-ML
+```
+from autoautoml import auto
+algo = auto.Autoautoml()
+ex = algo.run_example()
+```
