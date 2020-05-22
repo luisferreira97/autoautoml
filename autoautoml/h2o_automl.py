@@ -53,4 +53,22 @@ class H2O:
 
         return resp
 
+    def run(self, train_path, test_path, target, task):
+        train = h2o.import_file(train_path)
+        test = h2o.import_file(test_path)
+
+        x = train.columns
+        y = target
+        x.remove(y)
+
+        if task == 'class':
+            train[y] = train[y].asfactor()
+            test[y] = test[y].asfactor()
+
+        aml = H2OAutoML(seed=42, sort_metric = "auto", nfolds=5, exclude_algos=["DeepLearning"])
+        aml.train(x=x, y=y, training_frame=train)       
+        preds = aml.leader.predict(test)
+        print(aml.leader.model_performance(test))
         
+        return aml.leader.model_performance(test)
+

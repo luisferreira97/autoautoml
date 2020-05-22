@@ -37,3 +37,23 @@ class TPOT():
         tpot.export('tpot_iris_pipeline.py')
 
         return tpot.score(X_test, y_test)
+
+    def run(self, train_path, test_path, target, task):
+        train = pd.read_csv(train_path)
+        X_train = train.drop(columns=[target]).to_numpy()
+        y_train = train[target].to_numpy()
+
+        test = pd.read_csv(test_path)
+        X_test = test.drop(columns=[target]).to_numpy()
+        y_test = test[target].to_numpy()
+
+        if task == "class":
+            tpot = TPOTClassifier(max_time_mins=60, verbosity=3, random_state=42, scoring='roc_auc', cv=5, n_jobs=-1, early_stop=3)
+        elif task == "reg":
+            tpot = TPOTRegressor(max_time_mins=60, verbosity=3, random_state=42, scoring='neg_mean_absolute_error', cv=5, n_jobs=-1, early_stop=3)
+        
+        tpot.fit(X_train, y_train)
+        print(tpot.score(X_test, y_test))
+        tpot.export('/home/lferreira/autoautoml/data/churn/tpot/plasma.py')
+
+        return tpot.score(X_test, y_test)
