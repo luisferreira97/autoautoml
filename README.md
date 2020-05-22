@@ -1,4 +1,4 @@
-# AutoAutoML Package
+# AutoAutoML Package (in development)
 
 ## Package for running and testing several AutoML tools
 
