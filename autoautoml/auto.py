@@ -37,18 +37,18 @@ class Autoautoml():
 
         metrics = {}
 
-        train = pd.read_csv("./data/churn-train.csv") 
+        train = pd.read_csv(train_path) 
 
         # Auto-keras
         regressor = ak.StructuredDataRegressor(max_trials=10, loss="mean_absolute_error")
-        regressor.fit(x='./data/churn-train.csv', y=target)
-        metrics["auto-keras"] = regressor.evaluate(x='./data/churn-test.csv', y=target)[0]
+        regressor.fit(x=train, y=target)
+        metrics["auto-keras"] = regressor.evaluate(x=train, y=target)[0]
 
         # Auto-gluon
-        train_data = task.Dataset(file_path='./data/churn-train.csv')
+        train_data = task.Dataset(file_path=train_path)
         label_column = target
         predictor = task.fit(train_data=train_data, label=label_column, eval_metric="mean_absolute_error")
-        test_data = task.Dataset(file_path='./data/churn-test.csv')
+        test_data = task.Dataset(file_path=test_path)
         y_test = test_data[label_column]  # values to predict
         test_data_nolab = test_data.drop(labels=[label_column],axis=1) # delete label column to prove we're not cheating
         y_pred = predictor.predict(test_data_nolab)
@@ -61,7 +61,7 @@ class Autoautoml():
         train[categorical_cols] = train[categorical_cols].apply(lambda col: le.fit_transform(col))
         X_train = train.drop(columns=[target]).to_numpy()
         y_train = train[target].to_numpy()
-        test = pd.read_csv("./data/churn-test.csv")
+        test = pd.read_csv(test_path)
         test[categorical_cols] = test[categorical_cols].apply(lambda col: le.fit_transform(col))
         X_test = test.drop(columns=[target]).to_numpy()
         y_test = test[target].to_numpy()
@@ -79,8 +79,8 @@ class Autoautoml():
         # H2O AutoML
         h2o.init()
 
-        train = h2o.import_file("./data/churn-train.csv")
-        test = h2o.import_file("./data/churn-test.csv")
+        train = h2o.import_file(train_path)
+        test = h2o.import_file(test_path)
         x = train.columns
         y = target
         x.remove(y)
