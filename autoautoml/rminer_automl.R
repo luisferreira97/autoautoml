@@ -1,8 +1,8 @@
 library(rminer)
 
-train_path = "/home/lferreira/autoautoml/data/vehicle/vehicle-train.csv"
-test_path = "/home/lferreira/autoautoml/data/vehicle/vehicle-train.csv"
-target = "Class"
+train_path = "/home/lferreira/autoautoml/data/mfeat/mfeat-train.csv"
+test_path = "/home/lferreira/autoautoml/data/mfeat/mfeat-test.csv"
+target = "class"
 task = "class"
 
 train=read.csv(train_path, sep=",", header = T)
@@ -17,7 +17,7 @@ sm=mparheuristic(model="automl3",n=NA,task=task, inputs= inputs)
 method=c("kfold",5,123)
 search=list(search=sm,smethod="auto",method=method,metric=metric,convex=0)
 
-M=fit(Class~.,data=train,model="auto",search=search,fdebug=TRUE)
+M=fit(class~.,data=train,model="auto",search=search,fdebug=TRUE)
 
 P=predict(M,test)
 
@@ -26,7 +26,7 @@ cat("> time:",M@time,"\n")
 cat("> leaderboard models:",M@mpar$LB$model,"\n")
 cat(">  validation values:",round(M@mpar$LB$eval,4),"\n")
 cat("best model is:",M@model,"\n")
-cat(metric,"=",round(mmetric(test$Class,P,metric=metric),2),"\n")
+cat(metric,"=",round(mmetric(test$class,P,metric=metric),2),"\n")
 
 save(M, file = "model.RData")
 

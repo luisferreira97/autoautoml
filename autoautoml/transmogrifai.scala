@@ -6,10 +6,12 @@ import org.apache.spark.sql.types._
 import com.salesforce.op._
 import com.salesforce.op.features.types._
 import com.salesforce.op.stages.impl.regression.RegressionModelSelector
+import com.salesforce.op.stages.impl.classification.BinaryClassificationModelSelector
 import com.salesforce.op.stages.impl.classification._
 import org.apache.hadoop.fs.{FileSystem, FileUtil, Path}
 import com.salesforce.op.evaluators.Evaluators
 import com.salesforce.op.readers.DataReaders
+import com.salesforce.op.stages.impl.classification.MultiClassificationModelSelector
 import java.util.Calendar
 
 object AzureBlobAnalysisv2 {
@@ -27,14 +29,14 @@ object AzureBlobAnalysisv2 {
       .option("inferSchema", "true")
       .load("/home/lferreira/autoautoml/data/cholesterol/cholesterol-train.csv")
 
-    var passengersData = spark.sqlContext.read.format("csv").option("header", "true").option("inferSchema", "true").load("/home/lferreira/autoautoml/data/liver-disorders/liver-disorders-train.csv")
+    var passengersData = spark.sqlContext.read.format("csv").option("header", "true").option("inferSchema", "true").load("/home/lferreira/autoautoml/data/mfeat/mfeat-train.csv")
 
 
     val passengersData = DataReaders.Simple.csvCase[Liver](Option("/home/lferreira/autoautoml/data/liver-disorders/liver-disorders-train.csv")).readDataset().toDF()
 
     
     val targetColumn = spark.sparkContext.wholeTextFiles("drinks").take(1)(0)._2
-    val targetColumn = "drinks"
+    val targetColumn = "class"
     //Convert Int and Long to Double to avoid Feature Builder exception with Integer / Long Types
     val toBechanged = passengersData.schema.fields.filter(x => x.dataType == IntegerType || x.dataType == LongType)
     toBechanged.foreach({ row =>
@@ -55,9 +57,21 @@ object AzureBlobAnalysisv2 {
       val (saleprice, features) = FeatureBuilder.fromDataFrame[RealNN](passengersData, response = targetColumn)
       val featureVector = features.toSeq.autoTransform()
       val checkedFeatures = saleprice.sanityCheck(featureVector, checkSample = 1.0, removeBadFeatures = true)
-      val pred = BinaryClassificationModelSelector().setInput(saleprice, checkedFeatures).getOutput()
+      val pred = BinaryClassificationModelSelector.withCrossValidation(numFolds = 5, validationMetric = Evaluators.BinaryClassification.auROC).setInput(saleprice, checkedFeatures).getOutput()
       val wf = new OpWorkflow()
+
+      val start = Calendar.getInstance.getTime
       val model = wf.setInputDataset(passengersData).setResultFeatures(pred).train()
+      val end = Calendar.getInstance.getTime
+      
+      print(model.summaryPretty())
+
+      val evaluator = Evaluators.BinaryClassification().setLabelCol(saleprice).setPredictionCol(pred)
+
+      model.setInputDataset(testData).scoreAndEvaluate(evaluator)
+
+      model.save("/home/lferreira/autoautoml/data/churn/transmogrifai")
+
       val results = "Model summary:\n" + model.summaryPretty()
       model.save("wasbs://REPLACETHIS@REPLACETHIS.blob.core.windows.net/models/" + uniqueId + "/binmodel")
       val dfWrite = spark.sparkContext.parallelize(Seq(results))
@@ -65,11 +79,20 @@ object AzureBlobAnalysisv2 {
     }
     //If the target variable has more that 2 distinct values , less than 30 and it is string type can be a multi-classification
     else if (countTarget > binaryL && countTarget < multiL && targetType == StringType) {
-      val (saleprice, features) = FeatureBuilder.fromDataFrame[Text](passengersData, response = targetColumn)
+      val (saleprice, features) = FeatureBuilder.fromDataFrame[RealNN](passengersData, response = targetColumn)
       val featureVector = features.toSeq.autoTransform()
-      val pred = MultiClassificationModelSelector().setInput(saleprice.indexed(), featureVector).getOutput()
+      val checkedFeatures = saleprice.sanityCheck(featureVector, checkSample = 1.0, removeBadFeatures = true)
+      val pred = MultiClassificationModelSelector.withCrossValidation(numFolds = 5, validationMetric = Evaluators.MultiClassification.f1).setInput(saleprice, checkedFeatures).getOutput()
       val wf = new OpWorkflow()
+      
+      val start = Calendar.getInstance.getTime
       val model = wf.setInputDataset(passengersData).setResultFeatures(pred).train()
+      val end = Calendar.getInstance.getTime
+
+      print(model.summaryPretty())
+
+      val evaluator = Evaluators.MultiClassification().setLabelCol(saleprice).setPredictionCol(pred)
+      
       val results = "Model summary:\n" + model.summaryPretty()
       model.save("wasbs://REPLACETHIS@REPLACETHIS.blob.core.windows.net/models/" + uniqueId + "/multicmodel")
       val dfWrite = spark.sparkContext.parallelize(Seq(results))
@@ -80,9 +103,7 @@ object AzureBlobAnalysisv2 {
       val (saleprice, features) = FeatureBuilder.fromDataFrame[RealNN](passengersData, response = targetColumn)
       val featureVector = features.toSeq.autoTransform()
       val checkedFeatures = saleprice.sanityCheck(featureVector, checkSample = 1.0, removeBadFeatures = true)
-      val pred = RegressionModelSelector
-      .withCrossValidation(numFolds = 5, validationMetric = Evaluators.Regression.mae)
-      .setInput(saleprice, checkedFeatures).getOutput()
+      val pred = RegressionModelSelector.withCrossValidation(numFolds = 5, validationMetric = Evaluators.Regression.mae).setInput(saleprice, checkedFeatures).getOutput()
       val wf = new OpWorkflow()
 
       val start = Calendar.getInstance.getTime
@@ -101,6 +122,15 @@ object AzureBlobAnalysisv2 {
       val dfWrite = spark.sparkContext.parallelize(Seq(results))
 
     }
+
+    var testData = spark.sqlContext.read.format("csv").option("header", "true").option("inferSchema", "true").load("/home/lferreira/autoautoml/data/mfeat/mfeat-test.csv")
+    val toBechanged = testData.schema.fields.filter(x => x.dataType == IntegerType || x.dataType == LongType)
+    toBechanged.foreach({ row =>
+      testData = testData.withColumn(row.name.concat("tmp"), testData.col(row.name).cast(DoubleType))
+        .drop(row.name)
+        .withColumnRenamed(row.name.concat("tmp"), row.name)
+    })
+    model.setInputDataset(testData).scoreAndEvaluate(evaluator)
     
     spark.close()
   }
