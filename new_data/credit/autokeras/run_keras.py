@@ -25,7 +25,7 @@ import autokeras as ak
 import kerastuner
 import sklearn.metrics
 
-for x in range(0, 10):
+for x in range(6, 10):
     fold_folder = "/home/lferreira/autoautoml/new_data/credit/autokeras/fold" + str(x+1)
     folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
     test_df = folds[x]
