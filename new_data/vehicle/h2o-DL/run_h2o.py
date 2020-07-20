@@ -22,63 +22,65 @@ folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
 from h2o.automl import H2OAutoML
 import h2o
 
-for x in range(0, 10):
-    h2o.init()
+#for x in range(0, 10):
 
-    fold_folder = "/home/lferreira/autoautoml/new_data/vehicle/h2o-DL/fold" + str(x+1)
-    folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
-    test_df = folds[x]
-    test = h2o.H2OFrame(test_df)
+x = 9
+h2o.init()
 
-    del folds[x]
-    train_df = pd.concat(folds)
-    train = h2o.H2OFrame(train_df)
+fold_folder = "/home/lferreira/autoautoml/new_data/vehicle/h2o-DL/fold" + str(x+1)
+folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
+test_df = folds[x]
+test = h2o.H2OFrame(test_df)
 
-    x = train.columns
-    y = target
-    x.remove(y)
+del folds[x]
+train_df = pd.concat(folds)
+train = h2o.H2OFrame(train_df)
 
-    train[y] = train[y].asfactor()
-    test[y] = test[y].asfactor()
+x = train.columns
+y = target
+x.remove(y)
 
-    aml = H2OAutoML(seed=42, sort_metric = "auto", nfolds=5, include_algos=["DeepLearning"], keep_cross_validation_predictions=True,  max_runtime_secs = 3600)
+train[y] = train[y].asfactor()
+test[y] = test[y].asfactor()
 
-    from datetime import datetime
-    start = datetime.now().strftime("%H:%M:%S")
-    aml.train(x=x, y=y, training_frame=train)
-    end = datetime.now().strftime("%H:%M:%S")
+aml = H2OAutoML(seed=42, sort_metric = "auto", nfolds=5, include_algos=["DeepLearning"], keep_cross_validation_predictions=True,  max_runtime_secs = 3600)
 
-    lb = aml.leaderboard.as_data_frame()
-    lb.to_csv(fold_folder + "/leaderboard.csv", index=False)
+from datetime import datetime
+start = datetime.now().strftime("%H:%M:%S")
+aml.train(x=x, y=y, training_frame=train)
+end = datetime.now().strftime("%H:%M:%S")
 
-    best_model = ""
-    best_metric = 0
+lb = aml.leaderboard.as_data_frame()
+lb.to_csv(fold_folder + "/leaderboard.csv", index=False)
 
-    from sklearn.metrics import f1_score
-    for model in lb["model_id"]:
-        if "StackedEnsemble" not in model:
-            score = f1_score(train.as_data_frame()[y], h2o.get_model(model).cross_validation_holdout_predictions().as_data_frame()["predict"], average='macro')
-            if score > best_metric:
-                best_model = model
-                best_metric = score
+best_model = ""
+best_metric = 0
 
-    score_test = f1_score(test.as_data_frame()[y], h2o.get_model(best_model).predict(test).as_data_frame()["predict"], average='macro')
+from sklearn.metrics import f1_score
+for model in lb["model_id"]:
+    if "StackedEnsemble" not in model:
+        score = f1_score(train.as_data_frame()[y], h2o.get_model(model).cross_validation_holdout_predictions().as_data_frame()["predict"], average='macro')
+        if score > best_metric:
+            best_model = model
+            best_metric = score
 
-    perf = aml.training_info
-    perf["start"] = start
-    perf["end"] = end
-    perf["training_metric"] = best_metric
-    perf["training_model"] = best_model
-    perf["testing_metric"] = score_test
+score_test = f1_score(test.as_data_frame()[y], h2o.get_model(best_model).predict(test).as_data_frame()["predict"], average='macro')
 
-    perf = json.dumps(perf)
-    f = open(fold_folder + "/perf.json","w")
-    f.write(perf)
-    f.close()
+perf = aml.training_info
+perf["start"] = start
+perf["end"] = end
+perf["training_metric"] = best_metric
+perf["training_model"] = best_model
+perf["testing_metric"] = score_test
 
-    my_local_model = h2o.download_model(h2o.get_model(best_model), path=fold_folder)
+perf = json.dumps(perf)
+f = open(fold_folder + "/perf.json","w")
+f.write(perf)
+f.close()
 
-    h2o.shutdown()
+my_local_model = h2o.download_model(h2o.get_model(best_model), path=fold_folder)
 
-    import time
-    time.sleep(5)
+#h2o.shutdown()
+
+#import time
+#time.sleep(5)
