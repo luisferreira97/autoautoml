@@ -39,7 +39,7 @@ X_train = train_df.drop(columns=[target]).to_numpy()
 y_train = train_df[target].to_numpy()
 
 
-autonet = AutoNetRegression("tiny_cs",  # config preset
+autonet = AutoNetRegression(#"tiny_cs",  # config preset
                                     log_level='info',
                                     budget_type='time',
                                     max_runtime=300,
