@@ -24,7 +24,7 @@ object AzureBlobAnalysisv2 {
     implicit val spark = SparkSession.builder.config(conf).getOrCreate()
     val confh=new org.apache.hadoop.conf.Configuration()
 
-    val targetColumn = "class" 
+    val targetColumn = "chol" 
 
     for(fold <- 1 to 10){
       println("Fold: " + fold);
@@ -33,7 +33,7 @@ object AzureBlobAnalysisv2 {
       
       var train_df = spark.sqlContext.read.format("csv").option("header", "true").option("inferSchema", "true").load(fold_folder + "/train.csv")
 
-      val toBechanged = train_df.schema.fields.filter(x => x.dataType == IntegerType || x.dataType == LongType)
+      var toBechanged = train_df.schema.fields.filter(x => x.dataType == IntegerType || x.dataType == LongType)
       toBechanged.foreach({ row =>
       train_df = train_df.withColumn(row.name.concat("tmp"), train_df.col(row.name).cast(DoubleType))
         .drop(row.name)
@@ -57,9 +57,9 @@ object AzureBlobAnalysisv2 {
 
       val evaluator = Evaluators.Regression().setLabelCol(saleprice).setPredictionCol(pred)
 
-      var testData = spark.sqlContext.read.format("csv").option("header", "true").option("inferSchema", "true").load("/home/lferreira/autoautoml/new_data/liver-disorders/transmogrifai/liver-disorders-fold" + fold + ".csv")
-      val toBechanged = testData.schema.fields.filter(x => x.dataType == IntegerType || x.dataType == LongType)
-      toBechanged.foreach({ row =>
+      var testData = spark.sqlContext.read.format("csv").option("header", "true").option("inferSchema", "true").load(fold_folder + "/test.csv")
+      var toBechanged2 = testData.schema.fields.filter(x => x.dataType == IntegerType || x.dataType == LongType)
+      toBechanged2.foreach({ row =>
         testData = testData.withColumn(row.name.concat("tmp"), testData.col(row.name).cast(DoubleType))
           .drop(row.name)
           .withColumnRenamed(row.name.concat("tmp"), row.name)
