@@ -27,7 +27,7 @@ object AzureBlobAnalysisv2 {
     val targetColumn = "chol" 
 
     for(fold <- 1 to 10){
-      println("Fold: " + fold);
+      println("Fold: " + fold); 
 
       var fold_folder = "/home/lferreira/autoautoml/new_data/cholesterol/transmogrifai/fold" + fold.toString()
       
@@ -40,16 +40,16 @@ object AzureBlobAnalysisv2 {
         .withColumnRenamed(row.name.concat("tmp"), row.name)
       })
 
-      val (saleprice, features) = FeatureBuilder.fromDataFrame[RealNN](train_df, response = targetColumn)
-      val featureVector = features.toSeq.autoTransform()
-      val checkedFeatures = saleprice.sanityCheck(featureVector, checkSample = 1.0, removeBadFeatures = true)
-      val pred = RegressionModelSelector.withCrossValidation(numFolds = 5, validationMetric = Evaluators.Regression.mae).setInput(saleprice, checkedFeatures).getOutput()
+      var (saleprice, features) = FeatureBuilder.fromDataFrame[RealNN](train_df, response = targetColumn)
+      var featureVector = features.toSeq.autoTransform()
+      var checkedFeatures = saleprice.sanityCheck(featureVector, checkSample = 1.0, removeBadFeatures = true)
+      var pred = RegressionModelSelector.withCrossValidation(numFolds = 5, validationMetric = Evaluators.Regression.mae).setInput(saleprice, checkedFeatures).getOutput()
       
-      val wf = new OpWorkflow()
+      var wf = new OpWorkflow()
 
-      val start = Calendar.getInstance.getTime
-      val model = wf.setInputDataset(train_df).setResultFeatures(pred).train()
-      val end = Calendar.getInstance.getTime
+      var start = Calendar.getInstance.getTime
+      var model = wf.setInputDataset(train_df).setResultFeatures(pred).train()
+      var end = Calendar.getInstance.getTime
 
       print(model.summaryPretty())
 
@@ -67,7 +67,7 @@ object AzureBlobAnalysisv2 {
       
       var preds = model.setInputDataset(testData).scoreAndEvaluate(evaluator).toString()
 
-      val w = new BufferedWriter(new FileWriter(fold_folder + "/perf.txt"))
+      var w = new BufferedWriter(new FileWriter(fold_folder + "/perf.txt"))
       w.write("START\n")
       w.write(start.toString())
       w.write("\n\n\n\nEND\n")

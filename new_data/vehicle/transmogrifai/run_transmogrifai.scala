@@ -24,16 +24,16 @@ object AzureBlobAnalysisv2 {
     implicit val spark = SparkSession.builder.config(conf).getOrCreate()
     val confh=new org.apache.hadoop.conf.Configuration()
 
-    val targetColumn = "class" 
+    val targetColumn = "Class" 
 
     for(fold <- 1 to 10){
-      println("Fold: " + fold);
+      println("Fold: " + fold); 
 
-      var fold_folder = "/home/lferreira/autoautoml/new_data/cholesterol/transmogrifai/fold" + fold.toString()
+      var fold_folder = "/home/lferreira/autoautoml/new_data/vehicle/transmogrifai/fold" + fold.toString()
       
       var train_df = spark.sqlContext.read.format("csv").option("header", "true").option("inferSchema", "true").load(fold_folder + "/train.csv")
 
-      val toBechanged = train_df.schema.fields.filter(x => x.dataType == IntegerType || x.dataType == LongType)
+      var toBechanged = train_df.schema.fields.filter(x => x.dataType == IntegerType || x.dataType == LongType)
       toBechanged.foreach({ row =>
       train_df = train_df.withColumn(row.name.concat("tmp"), train_df.col(row.name).cast(DoubleType))
         .drop(row.name)
@@ -43,23 +43,23 @@ object AzureBlobAnalysisv2 {
       val (saleprice, features) = FeatureBuilder.fromDataFrame[RealNN](train_df, response = targetColumn)
       val featureVector = features.toSeq.autoTransform()
       val checkedFeatures = saleprice.sanityCheck(featureVector, checkSample = 1.0, removeBadFeatures = true)
-      val pred = RegressionModelSelector.withCrossValidation(numFolds = 5, validationMetric = Evaluators.Regression.mae).setInput(saleprice, checkedFeatures).getOutput()
+      val pred = MultiClassificationModelSelector.withCrossValidation(numFolds = 5, validationMetric = Evaluators.MultiClassification.f1).setInput(saleprice, checkedFeatures).getOutput()
       
       val wf = new OpWorkflow()
-
-      val start = Calendar.getInstance.getTime
-      val model = wf.setInputDataset(train_df).setResultFeatures(pred).train()
-      val end = Calendar.getInstance.getTime
+      
+      var start = Calendar.getInstance.getTime
+      var model = wf.setInputDataset(train_df).setResultFeatures(pred).train()
+      var end = Calendar.getInstance.getTime
 
       print(model.summaryPretty())
 
       var summary = model.summaryPretty()
 
-      val evaluator = Evaluators.Regression().setLabelCol(saleprice).setPredictionCol(pred)
+      val evaluator = Evaluators.BinaryClassification().setLabelCol(saleprice).setPredictionCol(pred)
 
-      var testData = spark.sqlContext.read.format("csv").option("header", "true").option("inferSchema", "true").load("/home/lferreira/autoautoml/new_data/liver-disorders/transmogrifai/liver-disorders-fold" + fold + ".csv")
-      val toBechanged = testData.schema.fields.filter(x => x.dataType == IntegerType || x.dataType == LongType)
-      toBechanged.foreach({ row =>
+      var testData = spark.sqlContext.read.format("csv").option("header", "true").option("inferSchema", "true").load(fold_folder + "/test.csv")
+      var toBechanged2 = testData.schema.fields.filter(x => x.dataType == IntegerType || x.dataType == LongType)
+      toBechanged2.foreach({ row =>
         testData = testData.withColumn(row.name.concat("tmp"), testData.col(row.name).cast(DoubleType))
           .drop(row.name)
           .withColumnRenamed(row.name.concat("tmp"), row.name)
@@ -67,7 +67,7 @@ object AzureBlobAnalysisv2 {
       
       var preds = model.setInputDataset(testData).scoreAndEvaluate(evaluator).toString()
 
-      val w = new BufferedWriter(new FileWriter(fold_folder + "/perf.txt"))
+      var w = new BufferedWriter(new FileWriter(fold_folder + "/perf.txt"))
       w.write("START\n")
       w.write(start.toString())
       w.write("\n\n\n\nEND\n")

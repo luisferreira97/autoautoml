@@ -1,0 +1,92 @@
+START
+Wed Jul 22 22:06:45 WEST 2020
+
+
+
+END
+Wed Jul 22 22:11:56 WEST 2020
+
+
+
+PREDS
+([key: string, age-ca-chol-cp-exang-fbs-num-oldpeak-restecg-sex-slope-thal-thalach-trestbps_4-stagesApplied_Prediction_0000000001b8: map<string,double>],{
+  "RootMeanSquaredError" : 35.551657247519486,
+  "MeanSquaredError" : 1263.9203330451046,
+  "R2" : -0.03184282974662578,
+  "MeanAbsoluteError" : 28.860307563424858
+})
+
+
+
+SUMMARY
+Evaluated OpRandomForestRegressor, OpGBTRegressor, OpLinearRegression models using Cross Validation and mean absolute error metric.
+Evaluated 18 OpRandomForestRegressor models with mean absolute error metric between [39.605213407754945, 39.800126790244754].
+Evaluated 18 OpGBTRegressor models with mean absolute error metric between [39.815993004908485, 46.68032559257772].
+Evaluated 8 OpLinearRegression models with mean absolute error metric between [39.78392945686237, 39.87890365709167].
++----------------------------------------------------------------+
+|            Selected Model - OpRandomForestRegressor            |
++----------------------------------------------------------------+
+| Model Param           | Value                                  |
++-----------------------+----------------------------------------+
+| cacheNodeIds          | false                                  |
+| checkpointInterval    | 10                                     |
+| featureSubsetStrategy | auto                                   |
+| impurity              | variance                               |
+| maxBins               | 32                                     |
+| maxDepth              | 3                                      |
+| maxMemoryInMB         | 256                                    |
+| minInfoGain           | 0.1                                    |
+| minInstancesPerNode   | 10                                     |
+| modelType             | OpRandomForestRegressor                |
+| name                  | OpRandomForestRegressor_0000000001b3_0 |
+| numTrees              | 50                                     |
+| seed                  | -747920772                             |
+| subsamplingRate       | 1.0                                    |
+| uid                   | OpRandomForestRegressor_0000000001b3   |
++-----------------------+----------------------------------------+
++-------------------------------------------------------------------+
+|                     Model Evaluation Metrics                      |
++-------------------------------------------------------------------+
+| Metric Name            | Training Set Value | Hold Out Set Value  |
++------------------------+--------------------+---------------------+
+| mean absolute error    | 36.00145444748642  | 48.48261090791978   |
+| mean square error      | 2215.2702859883884 | 3439.4616114817227  |
+| r2                     | 0.1863874745333297 | 0.10157004319937757 |
+| root mean square error | 47.066657901197836 | 58.64692329084044   |
++------------------------+--------------------+---------------------+
++----------------------------------------------------+
+|                 Top Model Insights                 |
++----------------------------------------------------+
+| Top Positive Correlations |      Correlation Value |
++---------------------------+------------------------+
+| age                       |    0.19344797085510573 |
+| restecg                   |    0.12665838337206847 |
+| ca                        |    0.11905521339388674 |
+| trestbps                  |    0.11434880666163887 |
+| num                       |     0.0463477214278446 |
+| exang                     |   0.045625541659017325 |
+| oldpeak                   |    0.04363475335129168 |
+| cp                        |    0.03812155915518235 |
+| thalach                   |   0.014394296455606442 |
+| fbs                       | -0.0021129801135068545 |
+| thal                      |  -0.008189232045928805 |
+| slope                     |  -0.023477784319241583 |
+| sex                       |    -0.1443163044442589 |
++---------------------------+------------------------+
++------------------------------------------+
+| Top Contributions |   Contribution Value |
++-------------------+----------------------+
+| age               |  0.24542829676603137 |
+| thalach           |  0.17472582215533958 |
+| trestbps          |  0.15152491859148395 |
+| sex               |  0.10305456757435896 |
+| oldpeak           |  0.09177477330316897 |
+| restecg           |  0.07221379537834778 |
+| ca                |  0.05480744559520294 |
+| num               |  0.03164587892787114 |
+| cp                | 0.021988022614682693 |
+| thal              |  0.01821588783579975 |
+| exang             | 0.013152159526904936 |
+| slope             | 0.012401442431702683 |
+| fbs               | 0.009066989299105339 |
++-------------------+----------------------+

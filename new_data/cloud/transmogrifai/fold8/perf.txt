@@ -1,0 +1,82 @@
+START
+Wed Jul 22 21:56:55 WEST 2020
+
+
+
+END
+Wed Jul 22 22:00:54 WEST 2020
+
+
+
+PREDS
+([key: string, NC-NWC-SC-TE-period-season_AUTUMN-season_SPRING-season_SUMMER-season_WINTER-seeded_S-seeded_U_4-stagesApplied_Prediction_0000000001a0: map<string,double>],{
+  "RootMeanSquaredError" : 0.4279481344638718,
+  "MeanSquaredError" : 0.1831396057911081,
+  "R2" : 0.7139824994033863,
+  "MeanAbsoluteError" : 0.3595408517214411
+})
+
+
+
+SUMMARY
+Evaluated OpLinearRegression, OpRandomForestRegressor, OpGBTRegressor models using Cross Validation and mean absolute error metric.
+Evaluated 8 OpLinearRegression models with mean absolute error metric between [0.20962448999069422, 0.24283523399968643].
+Evaluated 18 OpRandomForestRegressor models with mean absolute error metric between [0.41900119949729253, 0.8073163814551949].
+Evaluated 18 OpGBTRegressor models with mean absolute error metric between [0.47713531578865487, 0.8042503059952999].
++------------------------------------------------------+
+|         Selected Model - OpLinearRegression          |
++------------------------------------------------------+
+| Model Param      | Value                             |
++------------------+-----------------------------------+
+| aggregationDepth | 2                                 |
+| elasticNetParam  | 0.5                               |
+| epsilon          | 1.35                              |
+| fitIntercept     | true                              |
+| loss             | squaredError                      |
+| maxIter          | 50                                |
+| modelType        | OpLinearRegression                |
+| name             | OpLinearRegression_00000000019a_1 |
+| regParam         | 0.01                              |
+| solver           | auto                              |
+| standardization  | true                              |
+| tol              | 1.0E-6                            |
+| uid              | OpLinearRegression_00000000019a   |
++------------------+-----------------------------------+
++--------------------------------------------------------------------+
+|                      Model Evaluation Metrics                      |
++--------------------------------------------------------------------+
+| Metric Name            | Training Set Value   | Hold Out Set Value |
++------------------------+----------------------+--------------------+
+| mean absolute error    | 0.19192849792772446  | 0.412304367548731  |
+| mean square error      | 0.058677759018701175 | 0.6556704731117814 |
+| r2                     | 0.9495425393500477   | 0.5565755555559915 |
+| root mean square error | 0.24223492526615806  | 0.809734816536736  |
++------------------------+----------------------+--------------------+
++---------------------------------------------------+
+|                Top Model Insights                 |
++---------------------------------------------------+
+| Top Positive Correlations |     Correlation Value |
++---------------------------+-----------------------+
+| NC                        |     0.904032319689121 |
+| SC                        |     0.875551338928976 |
+| NWC                       |    0.8296295840173228 |
+| period                    |    0.1442644739300894 |
+| season_WINTER             |   0.07976876235270106 |
+| season_SPRING             |    0.0659187965984323 |
+| season_AUTUMN             | -0.041668138005922416 |
+| seeded_S                  |  -0.10693405163260523 |
+| season_SUMMER             |  -0.11969715710350594 |
++---------------------------+-----------------------+
++-------------------------------------------+
+| Top Contributions |    Contribution Value |
++-------------------+-----------------------+
+| NC                |    0.6275829412089143 |
+| SC                |   0.43948453463328746 |
+| season_WINTER     |   0.10444247234986867 |
+| season_SUMMER     |   0.02375981830155619 |
+| period            | 0.0017085324161780636 |
+| season_AUTUMN     |                   0.0 |
+| seeded_S          |                   0.0 |
+| season_SPRING     |                   0.0 |
+| NWC               |                   0.0 |
++-------------------+-----------------------+

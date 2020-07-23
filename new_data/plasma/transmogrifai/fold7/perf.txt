@@ -1,0 +1,102 @@
+START
+Wed Jul 22 22:06:06 WEST 2020
+
+
+
+END
+Wed Jul 22 22:11:30 WEST 2020
+
+
+
+PREDS
+([key: string, AGE-ALCOHOL-BETADIET-BETAPLASMA-CALORIES-CHOLESTEROL-FAT-FIBER-QUETELET-RETDIET-RETPLASMA-SEX_Female-SEX_Male-SMOKSTAT_Current_Smoker-SMOKSTAT_Former-SMOKSTAT_Never-VITUSE_No-VITUSE_Yes_fairly_often-VITUSE_Yes_not_often_4-stagesApplied_Prediction_0000000001a0: map<string,double>],{
+  "RootMeanSquaredError" : 250.57155831216318,
+  "MeanSquaredError" : 62786.10583498579,
+  "R2" : -0.04083390895725558,
+  "MeanAbsoluteError" : 192.91898190920955
+})
+
+
+
+SUMMARY
+Evaluated OpGBTRegressor, OpRandomForestRegressor, OpLinearRegression models using Cross Validation and mean absolute error metric.
+Evaluated 18 OpGBTRegressor models with mean absolute error metric between [151.64206930871796, 178.5316955217176].
+Evaluated 18 OpRandomForestRegressor models with mean absolute error metric between [150.6063581939899, 155.54953407965996].
+Evaluated 8 OpLinearRegression models with mean absolute error metric between [152.14866307355703, 152.2261003746798].
++----------------------------------------------------------------+
+|            Selected Model - OpRandomForestRegressor            |
++----------------------------------------------------------------+
+| Model Param           | Value                                  |
++-----------------------+----------------------------------------+
+| cacheNodeIds          | false                                  |
+| checkpointInterval    | 10                                     |
+| featureSubsetStrategy | auto                                   |
+| impurity              | variance                               |
+| maxBins               | 32                                     |
+| maxDepth              | 3                                      |
+| maxMemoryInMB         | 256                                    |
+| minInfoGain           | 0.001                                  |
+| minInstancesPerNode   | 10                                     |
+| modelType             | OpRandomForestRegressor                |
+| name                  | OpRandomForestRegressor_00000000019b_2 |
+| numTrees              | 50                                     |
+| seed                  | -747920772                             |
+| subsamplingRate       | 1.0                                    |
+| uid                   | OpRandomForestRegressor_00000000019b   |
++-----------------------+----------------------------------------+
++-------------------------------------------------------------------+
+|                     Model Evaluation Metrics                      |
++-------------------------------------------------------------------+
+| Metric Name            | Training Set Value | Hold Out Set Value  |
++------------------------+--------------------+---------------------+
+| mean absolute error    | 135.68132141165646 | 114.95778901441174  |
+| mean square error      | 32492.01790780348  | 21000.711922779763  |
+| r2                     | 0.2569902624263879 | -0.1396454996885752 |
+| root mean square error | 180.25542407318423 | 144.9162238080325   |
++------------------------+--------------------+---------------------+
++---------------------------------------------------+
+|                Top Model Insights                 |
++---------------------------------------------------+
+| Top Positive Correlations |     Correlation Value |
++---------------------------+-----------------------+
+| ALCOHOL                   |    0.2526655624344456 |
+| AGE                       |   0.23654940255364343 |
+| SMOKSTAT_Former           |   0.12537020056175316 |
+| BETAPLASMA                |   0.06480029494541013 |
+| VITUSE_Yes_fairly_often   |  0.032470134224918144 |
+| QUETELET                  | 0.0012915052435010254 |
+| VITUSE_No                 |  7.141825188273676E-4 |
+| VITUSE_Yes_not_often      |  -0.03772589189351704 |
+| BETADIET                  |  -0.04767542047827988 |
+| CHOLESTEROL               |   -0.0496854369596889 |
+| CALORIES                  |  -0.05028112884191537 |
+| SMOKSTAT_Current_Smoker   | -0.054758639091529074 |
+| RETDIET                   | -0.058731052072751706 |
+| FIBER                     |  -0.06340199184960826 |
+| FAT                       |   -0.0766763795561799 |
++---------------------------+-----------------------+
++--------------------------------------------------+
+| Top Negative Correlations |    Correlation Value |
++---------------------------+----------------------+
+| SEX_Female                | -0.23326309191729283 |
+| SMOKSTAT_Never            | -0.08086847939721153 |
++---------------------------+----------------------+
++------------------------------------------------+
+| Top Contributions       |   Contribution Value |
++-------------------------+----------------------+
+| ALCOHOL                 |   0.1917099887025051 |
+| AGE                     |  0.18718756290915378 |
+| BETAPLASMA              |  0.15978301380421023 |
+| SEX_Female              |  0.09897136540264638 |
+| FIBER                   |  0.06359967727492377 |
+| QUETELET                | 0.057910646172578746 |
+| FAT                     |  0.04805474344092588 |
+| CHOLESTEROL             |  0.03933877055580095 |
+| RETDIET                 |  0.03390956516863902 |
+| BETADIET                | 0.029806631341173336 |
+| CALORIES                |  0.02729836567553669 |
+| VITUSE_No               | 0.020376978708321898 |
+| SMOKSTAT_Former         | 0.017688144336388708 |
+| SMOKSTAT_Never          | 0.014774276763521523 |
+| SMOKSTAT_Current_Smoker |  0.00635475713292618 |
++-------------------------+----------------------+

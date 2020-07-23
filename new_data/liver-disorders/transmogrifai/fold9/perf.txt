@@ -1,0 +1,78 @@
+START
+Wed Jul 22 22:11:35 WEST 2020
+
+
+
+END
+Wed Jul 22 22:16:03 WEST 2020
+
+
+
+PREDS
+([key: string, alkphos-drinks-gammagt-mcv-selector-sgot-sgpt_4-stagesApplied_Prediction_0000000001b4: map<string,double>],{
+  "RootMeanSquaredError" : 2.7847142113227696,
+  "MeanSquaredError" : 7.754633238742995,
+  "R2" : 0.05538924931644862,
+  "MeanAbsoluteError" : 2.3379508532311633
+})
+
+
+
+SUMMARY
+Evaluated OpGBTRegressor, OpLinearRegression, OpRandomForestRegressor models using Cross Validation and mean absolute error metric.
+Evaluated 18 OpGBTRegressor models with mean absolute error metric between [2.3862153139340285, 2.649381785476683].
+Evaluated 8 OpLinearRegression models with mean absolute error metric between [2.4192823507714243, 2.4242523145322825].
+Evaluated 18 OpRandomForestRegressor models with mean absolute error metric between [2.2957167086328862, 2.502734195940909].
++----------------------------------------------------------------+
+|            Selected Model - OpRandomForestRegressor            |
++----------------------------------------------------------------+
+| Model Param           | Value                                  |
++-----------------------+----------------------------------------+
+| cacheNodeIds          | false                                  |
+| checkpointInterval    | 10                                     |
+| featureSubsetStrategy | auto                                   |
+| impurity              | variance                               |
+| maxBins               | 32                                     |
+| maxDepth              | 12                                     |
+| maxMemoryInMB         | 256                                    |
+| minInfoGain           | 0.1                                    |
+| minInstancesPerNode   | 10                                     |
+| modelType             | OpRandomForestRegressor                |
+| name                  | OpRandomForestRegressor_0000000001af_9 |
+| numTrees              | 50                                     |
+| seed                  | -747920772                             |
+| subsamplingRate       | 1.0                                    |
+| uid                   | OpRandomForestRegressor_0000000001af   |
++-----------------------+----------------------------------------+
++-------------------------------------------------------------------+
+|                     Model Evaluation Metrics                      |
++-------------------------------------------------------------------+
+| Metric Name            | Training Set Value | Hold Out Set Value  |
++------------------------+--------------------+---------------------+
+| mean absolute error    | 1.9670820111771228 | 2.3062495833439205  |
+| mean square error      | 6.474419395156223  | 6.900467381494446   |
+| r2                     | 0.4405237724501131 | 0.23694991209418137 |
+| root mean square error | 2.54448804185758   | 2.626874070353287   |
++------------------------+--------------------+---------------------+
++--------------------------------------------------+
+|                Top Model Insights                |
++--------------------------------------------------+
+| Top Positive Correlations |    Correlation Value |
++---------------------------+----------------------+
+| gammagt                   |  0.35668940507137464 |
+| mcv                       |   0.3250948489954054 |
+| sgot                      |   0.2597308421762631 |
+| sgpt                      |  0.21490391245802032 |
+| alkphos                   |  0.10568177430339848 |
+| selector                  | -0.05104387122764579 |
++---------------------------+----------------------+
++------------------------------------------+
+| Top Contributions |   Contribution Value |
++-------------------+----------------------+
+| sgot              |   0.2657608390384326 |
+| mcv               |   0.2204390323864435 |
+| gammagt           |  0.20631302175115399 |
+| sgpt              |   0.1588714308813968 |
+| alkphos           |  0.11150035371465929 |
+| selector          | 0.037115322227913874 |
++-------------------+----------------------+

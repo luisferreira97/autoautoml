@@ -1,0 +1,78 @@
+START
+Wed Jul 22 21:49:55 WEST 2020
+
+
+
+END
+Wed Jul 22 21:55:36 WEST 2020
+
+
+
+PREDS
+([key: string, alkphos-drinks-gammagt-mcv-selector-sgot-sgpt_4-stagesApplied_Prediction_0000000000e4: map<string,double>],{
+  "RootMeanSquaredError" : 2.4255680593347164,
+  "MeanSquaredError" : 5.883380410464782,
+  "R2" : 0.16559872615694837,
+  "MeanAbsoluteError" : 2.0686821303129226
+})
+
+
+
+SUMMARY
+Evaluated OpGBTRegressor, OpLinearRegression, OpRandomForestRegressor models using Cross Validation and mean absolute error metric.
+Evaluated 18 OpGBTRegressor models with mean absolute error metric between [2.404213215032395, 2.4611576902486934].
+Evaluated 8 OpLinearRegression models with mean absolute error metric between [2.4307065149221403, 2.4450054967089527].
+Evaluated 18 OpRandomForestRegressor models with mean absolute error metric between [2.3049144861347735, 2.5451230658104365].
++----------------------------------------------------------------+
+|            Selected Model - OpRandomForestRegressor            |
++----------------------------------------------------------------+
+| Model Param           | Value                                  |
++-----------------------+----------------------------------------+
+| cacheNodeIds          | false                                  |
+| checkpointInterval    | 10                                     |
+| featureSubsetStrategy | auto                                   |
+| impurity              | variance                               |
+| maxBins               | 32                                     |
+| maxDepth              | 6                                      |
+| maxMemoryInMB         | 256                                    |
+| minInfoGain           | 0.1                                    |
+| minInstancesPerNode   | 10                                     |
+| modelType             | OpRandomForestRegressor                |
+| name                  | OpRandomForestRegressor_0000000000df_5 |
+| numTrees              | 50                                     |
+| seed                  | -747920772                             |
+| subsamplingRate       | 1.0                                    |
+| uid                   | OpRandomForestRegressor_0000000000df   |
++-----------------------+----------------------------------------+
++-------------------------------------------------------------------+
+|                     Model Evaluation Metrics                      |
++-------------------------------------------------------------------+
+| Metric Name            | Training Set Value | Hold Out Set Value  |
++------------------------+--------------------+---------------------+
+| mean absolute error    | 1.9772158907407633 | 2.6922076611062122  |
+| mean square error      | 6.53876658943452   | 12.02474352947672   |
+| r2                     | 0.4123512980596793 | 0.19897623118760355 |
+| root mean square error | 2.5571012082892848 | 3.467671196851962   |
++------------------------+--------------------+---------------------+
++-------------------------------------------------+
+|               Top Model Insights                |
++-------------------------------------------------+
+| Top Positive Correlations |   Correlation Value |
++---------------------------+---------------------+
+| gammagt                   | 0.32138590861655664 |
+| mcv                       |  0.3174041106432987 |
+| sgot                      | 0.30271042571620604 |
+| sgpt                      | 0.15776420959780466 |
+| alkphos                   | 0.10419838866336095 |
+| selector                  |  0.0132744554178803 |
++---------------------------+---------------------+
++-----------------------------------------+
+| Top Contributions |  Contribution Value |
++-------------------+---------------------+
+| mcv               |  0.2459727694850353 |
+| sgot              | 0.24414013117413025 |
+| gammagt           | 0.22487203794433844 |
+| sgpt              | 0.15166784515718526 |
+| alkphos           | 0.07646106010674646 |
+| selector          | 0.05688615613256419 |
++-------------------+---------------------+

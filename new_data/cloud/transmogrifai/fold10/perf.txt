@@ -1,0 +1,82 @@
+START
+Wed Jul 22 22:05:04 WEST 2020
+
+
+
+END
+Wed Jul 22 22:08:38 WEST 2020
+
+
+
+PREDS
+([key: string, NC-NWC-SC-TE-period-season_AUTUMN-season_SPRING-season_SUMMER-season_WINTER-seeded_S-seeded_U_4-stagesApplied_Prediction_000000000210: map<string,double>],{
+  "RootMeanSquaredError" : 0.9462089352921732,
+  "MeanSquaredError" : 0.895311349226748,
+  "R2" : 0.5494747045170473,
+  "MeanAbsoluteError" : 0.45660328478686296
+})
+
+
+
+SUMMARY
+Evaluated OpGBTRegressor, OpLinearRegression, OpRandomForestRegressor models using Cross Validation and mean absolute error metric.
+Evaluated 18 OpGBTRegressor models with mean absolute error metric between [0.3251252631966382, 0.7098831993796979].
+Evaluated 8 OpLinearRegression models with mean absolute error metric between [0.22562069262476553, 0.25087895892936546].
+Evaluated 18 OpRandomForestRegressor models with mean absolute error metric between [0.34977403164186477, 0.7130512444092457].
++------------------------------------------------------+
+|         Selected Model - OpLinearRegression          |
++------------------------------------------------------+
+| Model Param      | Value                             |
++------------------+-----------------------------------+
+| aggregationDepth | 2                                 |
+| elasticNetParam  | 0.1                               |
+| epsilon          | 1.35                              |
+| fitIntercept     | true                              |
+| loss             | squaredError                      |
+| maxIter          | 50                                |
+| modelType        | OpLinearRegression                |
+| name             | OpLinearRegression_00000000020a_3 |
+| regParam         | 0.1                               |
+| solver           | auto                              |
+| standardization  | true                              |
+| tol              | 1.0E-6                            |
+| uid              | OpLinearRegression_00000000020a   |
++------------------+-----------------------------------+
++--------------------------------------------------------------------+
+|                      Model Evaluation Metrics                      |
++--------------------------------------------------------------------+
+| Metric Name            | Training Set Value  | Hold Out Set Value  |
++------------------------+---------------------+---------------------+
+| mean absolute error    | 0.2047869956657554  | 0.3344308608475101  |
+| mean square error      | 0.08002178980014242 | 0.17775429152446373 |
+| r2                     | 0.9084883170743339  | 0.9248423375021316  |
+| root mean square error | 0.2828812291406809  | 0.4216091691655481  |
++------------------------+---------------------+---------------------+
++--------------------------------------------------+
+|                Top Model Insights                |
++--------------------------------------------------+
+| Top Positive Correlations |    Correlation Value |
++---------------------------+----------------------+
+| SC                        |   0.8692484629974117 |
+| NC                        |   0.8474018891428243 |
+| NWC                       |   0.7914381158614419 |
+| season_SPRING             |  0.13130217773140537 |
+| period                    |  0.09713231507193922 |
+| season_WINTER             | 0.014016862266411266 |
+| season_AUTUMN             | -0.04650887271420318 |
+| seeded_S                  | -0.08675991007048052 |
+| season_SUMMER             | -0.11834860128807534 |
++---------------------------+----------------------+
++------------------------------------------+
+| Top Contributions |   Contribution Value |
++-------------------+----------------------+
+| SC                |   0.4673324448496022 |
+| NC                |  0.42818886325926625 |
+| NWC               |  0.10669804311177312 |
+| season_WINTER     |  0.06527149162259198 |
+| season_SPRING     |  0.03365019659016444 |
+| season_SUMMER     | 0.021987168693297785 |
+| seeded_S          | 0.015531364067052841 |
+| period            | 0.001774297893639225 |
+| season_AUTUMN     |                  0.0 |
++-------------------+----------------------+

@@ -1,0 +1,82 @@
+START
+Wed Jul 22 21:26:25 WEST 2020
+
+
+
+END
+Wed Jul 22 21:30:09 WEST 2020
+
+
+
+PREDS
+([key: string, NC-NWC-SC-TE-period-season_AUTUMN-season_SPRING-season_SUMMER-season_WINTER-seeded_S-seeded_U_4-stagesApplied_Prediction_000000000018: map<string,double>],{
+  "RootMeanSquaredError" : 0.4271215165268827,
+  "MeanSquaredError" : 0.1824327898802241,
+  "R2" : 0.9113146554751577,
+  "MeanAbsoluteError" : 0.36368066729820486
+})
+
+
+
+SUMMARY
+Evaluated OpGBTRegressor, OpLinearRegression, OpRandomForestRegressor models using Cross Validation and mean absolute error metric.
+Evaluated 18 OpGBTRegressor models with mean absolute error metric between [0.46577603760052844, 0.7440856497699153].
+Evaluated 8 OpLinearRegression models with mean absolute error metric between [0.2660882791250329, 0.2786066704303223].
+Evaluated 18 OpRandomForestRegressor models with mean absolute error metric between [0.4011353447213757, 0.7446333174196934].
++------------------------------------------------------+
+|         Selected Model - OpLinearRegression          |
++------------------------------------------------------+
+| Model Param      | Value                             |
++------------------+-----------------------------------+
+| aggregationDepth | 2                                 |
+| elasticNetParam  | 0.5                               |
+| epsilon          | 1.35                              |
+| fitIntercept     | true                              |
+| loss             | squaredError                      |
+| maxIter          | 50                                |
+| modelType        | OpLinearRegression                |
+| name             | OpLinearRegression_000000000012_0 |
+| regParam         | 0.1                               |
+| solver           | auto                              |
+| standardization  | true                              |
+| tol              | 1.0E-6                            |
+| uid              | OpLinearRegression_000000000012   |
++------------------+-----------------------------------+
++--------------------------------------------------------------------+
+|                      Model Evaluation Metrics                      |
++--------------------------------------------------------------------+
+| Metric Name            | Training Set Value  | Hold Out Set Value  |
++------------------------+---------------------+---------------------+
+| mean absolute error    | 0.23171816460198413 | 0.23779860652112422 |
+| mean square error      | 0.1552624961716084  | 0.11627387398454611 |
+| r2                     | 0.8540158434434086  | 0.7835442461872485  |
+| root mean square error | 0.39403362314859425 | 0.3409895511369023  |
++------------------------+---------------------+---------------------+
++---------------------------------------------------+
+|                Top Model Insights                 |
++---------------------------------------------------+
+| Top Positive Correlations |     Correlation Value |
++---------------------------+-----------------------+
+| SC                        |    0.8356981605892303 |
+| NC                        |    0.8084758825321232 |
+| NWC                       |    0.7196727715678038 |
+| period                    |   0.14157614890958825 |
+| season_SPRING             |   0.07882659983940017 |
+| season_AUTUMN             |  0.027931445174321726 |
+| season_WINTER             |   0.00788318289400646 |
+| seeded_S                  | -0.003975578239329713 |
+| season_SUMMER             |  -0.14422329076544024 |
++---------------------------+-----------------------+
++------------------------------------------+
+| Top Contributions |   Contribution Value |
++-------------------+----------------------+
+| SC                |   0.5024171999377549 |
+| NC                |   0.4516691542650796 |
+| season_WINTER     | 0.013154366893611746 |
+| season_AUTUMN     | 7.155184678412837E-4 |
+| period            |                  0.0 |
+| seeded_S          |                  0.0 |
+| season_SPRING     |                  0.0 |
+| NWC               |                  0.0 |
+| season_SUMMER     |                  0.0 |
++-------------------+----------------------+

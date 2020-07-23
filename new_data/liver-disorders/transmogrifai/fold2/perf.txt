@@ -1,0 +1,76 @@
+START
+Wed Jul 22 21:32:42 WEST 2020
+
+
+
+END
+Wed Jul 22 21:37:33 WEST 2020
+
+
+
+PREDS
+([key: string, alkphos-drinks-gammagt-mcv-selector-sgot-sgpt_4-stagesApplied_Prediction_000000000048: map<string,double>],{
+  "RootMeanSquaredError" : 3.5296142079382467,
+  "MeanSquaredError" : 12.458176456879535,
+  "R2" : -0.02555380415815023,
+  "MeanAbsoluteError" : 2.86757927239935
+})
+
+
+
+SUMMARY
+Evaluated OpGBTRegressor, OpRandomForestRegressor, OpLinearRegression models using Cross Validation and mean absolute error metric.
+Evaluated 18 OpGBTRegressor models with mean absolute error metric between [2.4066621026193773, 2.704229015958331].
+Evaluated 18 OpRandomForestRegressor models with mean absolute error metric between [2.3403294387786544, 2.500188382078267].
+Evaluated 8 OpLinearRegression models with mean absolute error metric between [2.303798443173265, 2.311941579252984].
++------------------------------------------------------+
+|         Selected Model - OpLinearRegression          |
++------------------------------------------------------+
+| Model Param      | Value                             |
++------------------+-----------------------------------+
+| aggregationDepth | 2                                 |
+| elasticNetParam  | 0.1                               |
+| epsilon          | 1.35                              |
+| fitIntercept     | true                              |
+| loss             | squaredError                      |
+| maxIter          | 50                                |
+| modelType        | OpLinearRegression                |
+| name             | OpLinearRegression_000000000042_7 |
+| regParam         | 0.2                               |
+| solver           | auto                              |
+| standardization  | true                              |
+| tol              | 1.0E-6                            |
+| uid              | OpLinearRegression_000000000042   |
++------------------+-----------------------------------+
++--------------------------------------------------------------------+
+|                      Model Evaluation Metrics                      |
++--------------------------------------------------------------------+
+| Metric Name            | Training Set Value | Hold Out Set Value   |
++------------------------+--------------------+----------------------+
+| mean absolute error    | 2.2574873328030622 | 2.818652594000223    |
+| mean square error      | 8.397418455701954  | 12.26680218393523    |
+| r2                     | 0.2255505874984618 | 0.009457934678625768 |
+| root mean square error | 2.897829956312474  | 3.5023994894836354   |
++------------------------+--------------------+----------------------+
++--------------------------------------------------+
+|                Top Model Insights                |
++--------------------------------------------------+
+| Top Positive Correlations |    Correlation Value |
++---------------------------+----------------------+
+| gammagt                   |   0.3971422453008831 |
+| mcv                       |    0.317211569751837 |
+| sgot                      |  0.25650356926000967 |
+| sgpt                      |  0.18191833349335687 |
+| alkphos                   |  0.13472998947021883 |
+| selector                  | 0.039879203452235314 |
++---------------------------+----------------------+
++-------------------------------------------+
+| Top Contributions |    Contribution Value |
++-------------------+-----------------------+
+| gammagt           |    0.3301800572742682 |
+| mcv               |    0.2254993167520031 |
+| sgpt              |   0.11214504102722006 |
+| sgot              |    0.1073691208278691 |
+| alkphos           |   0.06447264176118579 |
+| selector          | 0.0035370195988032654 |
++-------------------+-----------------------+

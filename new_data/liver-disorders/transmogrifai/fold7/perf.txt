@@ -1,0 +1,78 @@
+START
+Wed Jul 22 22:01:14 WEST 2020
+
+
+
+END
+Wed Jul 22 22:06:33 WEST 2020
+
+
+
+PREDS
+([key: string, alkphos-drinks-gammagt-mcv-selector-sgot-sgpt_4-stagesApplied_Prediction_00000000014c: map<string,double>],{
+  "RootMeanSquaredError" : 2.7917121675127836,
+  "MeanSquaredError" : 7.793656826238925,
+  "R2" : -0.04712544062438395,
+  "MeanAbsoluteError" : 2.2667745721661925
+})
+
+
+
+SUMMARY
+Evaluated OpLinearRegression, OpRandomForestRegressor, OpGBTRegressor models using Cross Validation and mean absolute error metric.
+Evaluated 8 OpLinearRegression models with mean absolute error metric between [2.5461876545879107, 2.5687750613719413].
+Evaluated 18 OpRandomForestRegressor models with mean absolute error metric between [2.4215892578078964, 2.589635949508808].
+Evaluated 18 OpGBTRegressor models with mean absolute error metric between [2.504440513465161, 2.681439383090529].
++----------------------------------------------------------------+
+|            Selected Model - OpRandomForestRegressor            |
++----------------------------------------------------------------+
+| Model Param           | Value                                  |
++-----------------------+----------------------------------------+
+| cacheNodeIds          | false                                  |
+| checkpointInterval    | 10                                     |
+| featureSubsetStrategy | auto                                   |
+| impurity              | variance                               |
+| maxBins               | 32                                     |
+| maxDepth              | 6                                      |
+| maxMemoryInMB         | 256                                    |
+| minInfoGain           | 0.1                                    |
+| minInstancesPerNode   | 10                                     |
+| modelType             | OpRandomForestRegressor                |
+| name                  | OpRandomForestRegressor_000000000147_2 |
+| numTrees              | 50                                     |
+| seed                  | -747920772                             |
+| subsamplingRate       | 1.0                                    |
+| uid                   | OpRandomForestRegressor_000000000147   |
++-----------------------+----------------------------------------+
++-------------------------------------------------------------------+
+|                     Model Evaluation Metrics                      |
++-------------------------------------------------------------------+
+| Metric Name            | Training Set Value | Hold Out Set Value  |
++------------------------+--------------------+---------------------+
+| mean absolute error    | 2.0110595676345215 | 1.990275626518922   |
+| mean square error      | 6.653591990422215  | 6.469543042269504   |
+| r2                     | 0.4270379864406316 | 0.36019688399004535 |
+| root mean square error | 2.5794557546936554 | 2.543529642498688   |
++------------------------+--------------------+---------------------+
++--------------------------------------------------+
+|                Top Model Insights                |
++--------------------------------------------------+
+| Top Positive Correlations |    Correlation Value |
++---------------------------+----------------------+
+| gammagt                   |   0.3549783881008329 |
+| mcv                       |   0.3179811287029749 |
+| sgot                      |   0.3127425749614768 |
+| sgpt                      |   0.2429547369511724 |
+| alkphos                   |   0.1232159496538475 |
+| selector                  | -0.03602543838731278 |
++---------------------------+----------------------+
++-----------------------------------------+
+| Top Contributions |  Contribution Value |
++-------------------+---------------------+
+| sgot              |  0.2533987702167624 |
+| mcv               |   0.236494763276613 |
+| gammagt           | 0.19863355579978967 |
+| sgpt              | 0.14201396416617215 |
+| alkphos           | 0.12318853031707948 |
+| selector          | 0.04627041622358336 |
++-------------------+---------------------+

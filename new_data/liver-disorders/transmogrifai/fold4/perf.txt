@@ -1,0 +1,78 @@
+START
+Wed Jul 22 21:43:43 WEST 2020
+
+
+
+END
+Wed Jul 22 21:49:52 WEST 2020
+
+
+
+PREDS
+([key: string, alkphos-drinks-gammagt-mcv-selector-sgot-sgpt_4-stagesApplied_Prediction_0000000000b0: map<string,double>],{
+  "RootMeanSquaredError" : 2.768042916045962,
+  "MeanSquaredError" : 7.662061585072232,
+  "R2" : 0.0685232529436327,
+  "MeanAbsoluteError" : 2.226270259361115
+})
+
+
+
+SUMMARY
+Evaluated OpRandomForestRegressor, OpLinearRegression, OpGBTRegressor models using Cross Validation and mean absolute error metric.
+Evaluated 18 OpRandomForestRegressor models with mean absolute error metric between [2.335064562696293, 2.5564871792709316].
+Evaluated 8 OpLinearRegression models with mean absolute error metric between [2.4170667480255883, 2.418380754363713].
+Evaluated 18 OpGBTRegressor models with mean absolute error metric between [2.424667709295796, 2.7340156300410197].
++----------------------------------------------------------------+
+|            Selected Model - OpRandomForestRegressor            |
++----------------------------------------------------------------+
+| Model Param           | Value                                  |
++-----------------------+----------------------------------------+
+| cacheNodeIds          | false                                  |
+| checkpointInterval    | 10                                     |
+| featureSubsetStrategy | auto                                   |
+| impurity              | variance                               |
+| maxBins               | 32                                     |
+| maxDepth              | 6                                      |
+| maxMemoryInMB         | 256                                    |
+| minInfoGain           | 0.001                                  |
+| minInstancesPerNode   | 10                                     |
+| modelType             | OpRandomForestRegressor                |
+| name                  | OpRandomForestRegressor_0000000000ab_4 |
+| numTrees              | 50                                     |
+| seed                  | -747920772                             |
+| subsamplingRate       | 1.0                                    |
+| uid                   | OpRandomForestRegressor_0000000000ab   |
++-----------------------+----------------------------------------+
++--------------------------------------------------------------------+
+|                      Model Evaluation Metrics                      |
++--------------------------------------------------------------------+
+| Metric Name            | Training Set Value  | Hold Out Set Value  |
++------------------------+---------------------+---------------------+
+| mean absolute error    | 2.021251618159605   | 2.2375001066065057  |
+| mean square error      | 6.6315484716285535  | 7.77476952142584    |
+| r2                     | 0.42855418741673257 | 0.21667774370955484 |
+| root mean square error | 2.575179308636304   | 2.7883273698448394  |
++------------------------+---------------------+---------------------+
++--------------------------------------------------+
+|                Top Model Insights                |
++--------------------------------------------------+
+| Top Positive Correlations |    Correlation Value |
++---------------------------+----------------------+
+| gammagt                   |  0.34695012750014204 |
+| mcv                       |  0.34373668370337207 |
+| sgot                      |  0.28860972119423944 |
+| sgpt                      |  0.20671899817508724 |
+| alkphos                   |   0.1029052489683846 |
+| selector                  | -0.04498936144821367 |
++---------------------------+----------------------+
++-----------------------------------------+
+| Top Contributions |  Contribution Value |
++-------------------+---------------------+
+| mcv               |  0.2559824452033997 |
+| sgot              | 0.22742982693439626 |
+| gammagt           |  0.2187413109594532 |
+| sgpt              | 0.16120848550758504 |
+| alkphos           | 0.09751538424322459 |
+| selector          | 0.03912254715194112 |
++-------------------+---------------------+

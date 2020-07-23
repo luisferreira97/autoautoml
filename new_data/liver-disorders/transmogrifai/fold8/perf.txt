@@ -1,0 +1,78 @@
+START
+Wed Jul 22 22:06:35 WEST 2020
+
+
+
+END
+Wed Jul 22 22:11:28 WEST 2020
+
+
+
+PREDS
+([key: string, alkphos-drinks-gammagt-mcv-selector-sgot-sgpt_4-stagesApplied_Prediction_000000000180: map<string,double>],{
+  "RootMeanSquaredError" : 2.689819282733602,
+  "MeanSquaredError" : 7.235127773765508,
+  "R2" : 0.07574575722044052,
+  "MeanAbsoluteError" : 2.3994603749980143
+})
+
+
+
+SUMMARY
+Evaluated OpRandomForestRegressor, OpGBTRegressor, OpLinearRegression models using Cross Validation and mean absolute error metric.
+Evaluated 18 OpRandomForestRegressor models with mean absolute error metric between [2.244298284545467, 2.462619090783779].
+Evaluated 18 OpGBTRegressor models with mean absolute error metric between [2.31076761539079, 2.653185124180487].
+Evaluated 8 OpLinearRegression models with mean absolute error metric between [2.299951959775081, 2.3025102864906892].
++-----------------------------------------------------------------+
+|            Selected Model - OpRandomForestRegressor             |
++-----------------------------------------------------------------+
+| Model Param           | Value                                   |
++-----------------------+-----------------------------------------+
+| cacheNodeIds          | false                                   |
+| checkpointInterval    | 10                                      |
+| featureSubsetStrategy | auto                                    |
+| impurity              | variance                                |
+| maxBins               | 32                                      |
+| maxDepth              | 12                                      |
+| maxMemoryInMB         | 256                                     |
+| minInfoGain           | 0.001                                   |
+| minInstancesPerNode   | 10                                      |
+| modelType             | OpRandomForestRegressor                 |
+| name                  | OpRandomForestRegressor_00000000017b_14 |
+| numTrees              | 50                                      |
+| seed                  | -747920772                              |
+| subsamplingRate       | 1.0                                     |
+| uid                   | OpRandomForestRegressor_00000000017b    |
++-----------------------+-----------------------------------------+
++--------------------------------------------------------------------+
+|                      Model Evaluation Metrics                      |
++--------------------------------------------------------------------+
+| Metric Name            | Training Set Value | Hold Out Set Value   |
++------------------------+--------------------+----------------------+
+| mean absolute error    | 1.8816634850119223 | 3.272254906834102    |
+| mean square error      | 5.798641353829801  | 17.220672333134587   |
+| r2                     | 0.4537933674176591 | 0.009771933809473943 |
+| root mean square error | 2.4080368256797486 | 4.149779793330556    |
++------------------------+--------------------+----------------------+
++--------------------------------------------------+
+|                Top Model Insights                |
++--------------------------------------------------+
+| Top Positive Correlations |    Correlation Value |
++---------------------------+----------------------+
+| mcv                       |   0.3569119632053671 |
+| gammagt                   |   0.3414970334547478 |
+| sgot                      |   0.3136534815938032 |
+| sgpt                      |  0.24886639203883168 |
+| alkphos                   |  0.16231206181139526 |
+| selector                  | -0.02763850091356197 |
++---------------------------+----------------------+
++-----------------------------------------+
+| Top Contributions |  Contribution Value |
++-------------------+---------------------+
+| mcv               | 0.23077056290269232 |
+| sgot              | 0.21380037687952175 |
+| sgpt              |  0.2006146804730728 |
+| gammagt           | 0.19317158224501793 |
+| alkphos           |  0.1203087901010049 |
+| selector          | 0.04133400739869013 |
++-------------------+---------------------+

@@ -1,0 +1,90 @@
+START
+Wed Jul 22 21:35:08 WEST 2020
+
+
+
+END
+Wed Jul 22 21:41:42 WEST 2020
+
+
+
+PREDS
+([key: string, age-ca-chol-cp-exang-fbs-num-oldpeak-restecg-sex-slope-thal-thalach-trestbps_4-stagesApplied_Prediction_000000000091: map<string,double>],{
+  "RootMeanSquaredError" : 50.30468307998758,
+  "MeanSquaredError" : 2530.561139777989,
+  "R2" : 0.08220196743655395,
+  "MeanAbsoluteError" : 39.25891043666398
+})
+
+
+
+SUMMARY
+Evaluated OpRandomForestRegressor, OpGBTRegressor, OpLinearRegression models using Cross Validation and mean absolute error metric.
+Evaluated 18 OpRandomForestRegressor models with mean absolute error metric between [39.03176593574713, 40.03955277675929].
+Evaluated 18 OpGBTRegressor models with mean absolute error metric between [39.13189709198359, 45.496038283583715].
+Evaluated 8 OpLinearRegression models with mean absolute error metric between [38.872513975872465, 38.98589423130798].
++------------------------------------------------------+
+|         Selected Model - OpLinearRegression          |
++------------------------------------------------------+
+| Model Param      | Value                             |
++------------------+-----------------------------------+
+| aggregationDepth | 2                                 |
+| elasticNetParam  | 0.5                               |
+| epsilon          | 1.35                              |
+| fitIntercept     | true                              |
+| loss             | squaredError                      |
+| maxIter          | 50                                |
+| modelType        | OpLinearRegression                |
+| name             | OpLinearRegression_00000000008b_7 |
+| regParam         | 0.2                               |
+| solver           | auto                              |
+| standardization  | true                              |
+| tol              | 1.0E-6                            |
+| uid              | OpLinearRegression_00000000008b   |
++------------------+-----------------------------------+
++---------------------------------------------------------------------+
+|                      Model Evaluation Metrics                       |
++---------------------------------------------------------------------+
+| Metric Name            | Training Set Value  | Hold Out Set Value   |
++------------------------+---------------------+----------------------+
+| mean absolute error    | 36.69497687083939   | 36.37621583759586    |
+| mean square error      | 2359.3631702481357  | 1943.933306899519    |
+| r2                     | 0.13966315703389764 | -0.08212334742267635 |
+| root mean square error | 48.57327629724122   | 44.09005904849209    |
++------------------------+---------------------+----------------------+
++---------------------------------------------------+
+|                Top Model Insights                 |
++---------------------------------------------------+
+| Top Positive Correlations |     Correlation Value |
++---------------------------+-----------------------+
+| age                       |   0.24448412028936178 |
+| restecg                   |    0.1490352422329008 |
+| trestbps                  |   0.13562296097835996 |
+| ca                        |   0.12751257281846254 |
+| cp                        |   0.10034600901745712 |
+| num                       |   0.05912259863111903 |
+| exang                     |   0.05310861394455003 |
+| thal                      |  0.034657082216653604 |
+| oldpeak                   |  0.022815771584377923 |
+| fbs                       |  0.017110616099407817 |
+| slope                     | -0.009791530164260952 |
+| thalach                   | -0.010727054430275818 |
+| sex                       |   -0.2212164358301322 |
++---------------------------+-----------------------+
++------------------------------------------+
+| Top Contributions |   Contribution Value |
++-------------------+----------------------+
+| sex               |  0.23013683773032764 |
+| age               |  0.20225366502081532 |
+| restecg           |  0.11936464804477943 |
+| thalach           |   0.1180887253662088 |
+| thal              |   0.0894209648448974 |
+| exang             |  0.05790733054087145 |
+| cp                |  0.05584657563978008 |
+| slope             |  0.04319808917091894 |
+| trestbps          |   0.0351821724590223 |
+| ca                | 0.025767442553943448 |
+| oldpeak           | 0.017543022854979037 |
+| num               |  0.01605996551585123 |
+| fbs               |  0.01479272226684073 |
++-------------------+----------------------+
