@@ -83,6 +83,7 @@ Pillow==7.1.2
 plotly==4.6.0
 pluggy==0.13.1
 portalocker==1.7.0
+pre-commit
 protobuf==3.11.4
 psutil==5.7.0
 py==1.8.1
