@@ -141,7 +141,7 @@ tqdm==4.46.0
 typing==3.7.4.1
 typing-extensions==3.7.4.2
 update-checker==0.17
-urllib3==1.25.8
+urllib3==1.26.5
 wcwidth==0.1.9
 Werkzeug==1.0.1
 wrapt==1.12.1
