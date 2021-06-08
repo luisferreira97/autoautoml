@@ -79,7 +79,7 @@ packaging==20.3
 pandas==1.0.3
 paramiko==2.7.1
 partd==1.1.0
-Pillow==7.1.2
+Pillow==8.2.0
 plotly==4.6.0
 pluggy==0.13.1
 portalocker==1.7.0
