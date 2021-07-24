@@ -1,0 +1,133 @@
+dataset,categoria,ferramenta,tempo_medio
+Mfeat,Principal,H2O AutoML,05:26
+Mfeat,Principal,AutoGluon,02:33
+Mfeat,Principal,AutoSklearn,60:00
+Mfeat,Principal,TPOT,24:30
+Mfeat,Principal,Rminer,30:58
+Mfeat,Principal,TransmogrifAI,02:33
+Mfeat,Deep Learning,H2O AutoML,60:00
+Mfeat,Deep Learning,Auto-PyTorch,60:00
+Mfeat,Deep Learning,Auto-Keras,16:42
+Mfeat,XGBoost,H2O AutoML,02:01
+Mfeat,XGBoost,Rminer,00:15
+dmft,Principal,H2O AutoML,00:55
+dmft,Principal,AutoGluon,01:17
+dmft,Principal,AutoSklearn,60:00
+dmft,Principal,TPOT,07:11
+dmft,Principal,Rminer,04:53
+dmft,Principal,TransmogrifAI,01:51
+dmft,Deep Learning,H2O AutoML,60:00
+dmft,Deep Learning,Auto-PyTorch,60:00
+dmft,Deep Learning,Auto-Keras,13:10
+dmft,XGBoost,H2O AutoML,00:34
+dmft,XGBoost,Rminer,00:09
+cmc,Principal,H2O AutoML,00:59
+cmc,Principal,AutoGluon,01:34
+cmc,Principal,AutoSklearn,60:00
+cmc,Principal,TPOT,09:52
+cmc,Principal,Rminer,03:50
+cmc,Principal,TransmogrifAI,02:25
+cmc,Deep Learning,H2O AutoML,60:00
+cmc,Deep Learning,Auto-PyTorch,60:00
+cmc,Deep Learning,Auto-Keras,14:44
+cmc,XGBoost,H2O AutoML,00:35
+cmc,XGBoost,Rminer,00:06
+vehicle,Principal,H2O AutoML,02:08
+vehicle,Principal,AutoGluon,01:49
+vehicle,Principal,AutoSklearn,60:00
+vehicle,Principal,TPOT,25:59
+vehicle,Principal,Rminer,15:08
+vehicle,Principal,TransmogrifAI,02:36
+vehicle,Deep Learning,H2O AutoML,60:00
+vehicle,Deep Learning,Auto-PyTorch,60:00
+vehicle,Deep Learning,Auto-Keras,11:48
+vehicle,XGBoost,H2O AutoML,01:28
+vehicle,XGBoost,Rminer,00:07
+diabetes,Principal,H2O AutoML,00:35
+diabetes,Principal,AutoGluon,00:56
+diabetes,Principal,AutoSklearn,60:00
+diabetes,Principal,TPOT,16:30
+diabetes,Principal,Rminer,00:51
+diabetes,Principal,TransmogrifAI,06:55
+diabetes,Deep Learning,H2O AutoML,60:00
+diabetes,Deep Learning,Auto-PyTorch,60:00
+diabetes,Deep Learning,Auto-Keras,13:48
+diabetes,XGBoost,H2O AutoML,00:13
+diabetes,XGBoost,Rminer,00:03
+qsar,Principal,H2O AutoML,01:09
+qsar,Principal,AutoGluon,01:09
+qsar,Principal,AutoSklearn,60:00
+qsar,Principal,TPOT,06:21
+qsar,Principal,Rminer,05:20
+qsar,Principal,TransmogrifAI,03:21
+qsar,Deep Learning,H2O AutoML,60:00
+qsar,Deep Learning,Auto-PyTorch,60:00
+qsar,Deep Learning,Auto-Keras,19:14
+qsar,XGBoost,H2O AutoML,00:37
+qsar,XGBoost,Rminer,00:04
+credit,Principal,H2O AutoML,00:46
+credit,Principal,AutoGluon,01:02
+credit,Principal,AutoSklearn,60:00
+credit,Principal,TPOT,07:44
+credit,Principal,Rminer,04:16
+credit,Principal,TransmogrifAI,12:34
+credit,Deep Learning,H2O AutoML,60:00
+credit,Deep Learning,Auto-PyTorch,60:00
+credit,Deep Learning,Auto-Keras,24:58
+credit,XGBoost,H2O AutoML,00:21
+credit,XGBoost,Rminer,00:04
+churn,Principal,H2O AutoML,13:30
+churn,Principal,AutoGluon,01:38
+churn,Principal,AutoSklearn,60:00
+churn,Principal,TPOT,37:46
+churn,Principal,Rminer,14:49
+churn,Principal,TransmogrifAI,10:17
+churn,Deep Learning,H2O AutoML,60:00
+churn,Deep Learning,Auto-PyTorch,60:00
+churn,Deep Learning,Auto-Keras,38:14
+churn,XGBoost,H2O AutoML,05:56
+churn,XGBoost,Rminer,00:06
+plasma,Principal,H2O AutoML,00:59
+plasma,Principal,AutoGluon,00:30
+plasma,Principal,AutoSklearn,60:00
+plasma,Principal,TPOT,18:54
+plasma,Principal,Rminer,00:34
+plasma,Principal,TransmogrifAI,05:46
+plasma,Deep Learning,H2O AutoML,60:00
+plasma,Deep Learning,Auto-PyTorch,60:00
+plasma,Deep Learning,Auto-Keras,19:16
+plasma,XGBoost,H2O AutoML,00:42
+plasma,XGBoost,Rminer,00:02
+cloud,Principal,H2O AutoML,04:00
+cloud,Principal,AutoGluon,00:30
+cloud,Principal,AutoSklearn,60:00
+cloud,Principal,TPOT,07:02
+cloud,Principal,Rminer,00:11
+cloud,Principal,TransmogrifAI,04:11
+cloud,Deep Learning,H2O AutoML,58:17
+cloud,Deep Learning,Auto-PyTorch,60:00
+cloud,Deep Learning,Auto-Keras,09:09
+cloud,XGBoost,H2O AutoML,02:46
+cloud,XGBoost,Rminer,00:02
+colesterol,Principal,H2O AutoML,00:40
+colesterol,Principal,AutoGluon,00:28
+colesterol,Principal,AutoSklearn,60:00
+colesterol,Principal,TPOT,04:01
+colesterol,Principal,Rminer,00:29
+colesterol,Principal,TransmogrifAI,05:42
+colesterol,Deep Learning,H2O AutoML,41:49
+colesterol,Deep Learning,Auto-PyTorch,60:00
+colesterol,Deep Learning,Auto-Keras,11:05
+colesterol,XGBoost,H2O AutoML,00:25
+colesterol,XGBoost,Rminer,00:02
+liver,Principal,H2O AutoML,00:35
+liver,Principal,AutoGluon,00:36
+liver,Principal,AutoSklearn,60:00
+liver,Principal,TPOT,05:41
+liver,Principal,Rminer,00:19
+liver,Principal,TransmogrifAI,05:15
+liver,Deep Learning,H2O AutoML,58:38
+liver,Deep Learning,Auto-PyTorch,60:00
+liver,Deep Learning,Auto-Keras,14:39
+liver,XGBoost,H2O AutoML,00:20
+liver,XGBoost,Rminer,00:02

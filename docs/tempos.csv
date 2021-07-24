@@ -1,0 +1,1321 @@
+dataset,categoria,ferramenta,fold,tempo
+Mfeat,Principal,H2O AutoML,1,05:45
+Mfeat,Principal,H2O AutoML,2,05:30
+Mfeat,Principal,H2O AutoML,3,05:35
+Mfeat,Principal,H2O AutoML,4,04:43
+Mfeat,Principal,H2O AutoML,5,05:50
+Mfeat,Principal,H2O AutoML,6,05:22
+Mfeat,Principal,H2O AutoML,7,05:43
+Mfeat,Principal,H2O AutoML,8,04:47
+Mfeat,Principal,H2O AutoML,9,05:30
+Mfeat,Principal,H2O AutoML,10,05:33
+Mfeat,Principal,AutoGluon,1,02:29
+Mfeat,Principal,AutoGluon,2,02:32
+Mfeat,Principal,AutoGluon,3,02:41
+Mfeat,Principal,AutoGluon,4,02:45
+Mfeat,Principal,AutoGluon,5,02:48
+Mfeat,Principal,AutoGluon,6,02:25
+Mfeat,Principal,AutoGluon,7,02:25
+Mfeat,Principal,AutoGluon,8,02:41
+Mfeat,Principal,AutoGluon,9,02:13
+Mfeat,Principal,AutoGluon,10,02:27
+Mfeat,Principal,AutoSklearn,1,60:00
+Mfeat,Principal,AutoSklearn,2,60:00
+Mfeat,Principal,AutoSklearn,3,60:00
+Mfeat,Principal,AutoSklearn,4,60:00
+Mfeat,Principal,AutoSklearn,5,60:00
+Mfeat,Principal,AutoSklearn,6,60:00
+Mfeat,Principal,AutoSklearn,7,60:00
+Mfeat,Principal,AutoSklearn,8,60:00
+Mfeat,Principal,AutoSklearn,9,60:00
+Mfeat,Principal,AutoSklearn,10,60:00
+Mfeat,Principal,TPOT,1,07:20
+Mfeat,Principal,TPOT,2,43:47
+Mfeat,Principal,TPOT,3,06:44
+Mfeat,Principal,TPOT,4,39:45
+Mfeat,Principal,TPOT,5,31:21
+Mfeat,Principal,TPOT,6,14:32
+Mfeat,Principal,TPOT,7,08:39
+Mfeat,Principal,TPOT,8,21:38
+Mfeat,Principal,TPOT,9,60:00
+Mfeat,Principal,TPOT,10,11:19
+Mfeat,Principal,Rminer,1,46:59
+Mfeat,Principal,Rminer,2,46:05
+Mfeat,Principal,Rminer,3,46:26
+Mfeat,Principal,Rminer,4,31:40
+Mfeat,Principal,Rminer,5,23:07
+Mfeat,Principal,Rminer,6,22:10
+Mfeat,Principal,Rminer,7,24:05
+Mfeat,Principal,Rminer,8,21:15
+Mfeat,Principal,Rminer,9,24:12
+Mfeat,Principal,Rminer,10,23:40
+Mfeat,Principal,TransmogrifAI,1,03:04
+Mfeat,Principal,TransmogrifAI,2,02:33
+Mfeat,Principal,TransmogrifAI,3,02:36
+Mfeat,Principal,TransmogrifAI,4,02:28
+Mfeat,Principal,TransmogrifAI,5,02:29
+Mfeat,Principal,TransmogrifAI,6,02:29
+Mfeat,Principal,TransmogrifAI,7,02:27
+Mfeat,Principal,TransmogrifAI,8,02:21
+Mfeat,Principal,TransmogrifAI,9,02:34
+Mfeat,Principal,TransmogrifAI,10,02:28
+Mfeat,Deep Learning,H2O AutoML,1,60:00
+Mfeat,Deep Learning,H2O AutoML,2,60:00
+Mfeat,Deep Learning,H2O AutoML,3,60:00
+Mfeat,Deep Learning,H2O AutoML,4,60:00
+Mfeat,Deep Learning,H2O AutoML,5,60:00
+Mfeat,Deep Learning,H2O AutoML,6,60:00
+Mfeat,Deep Learning,H2O AutoML,7,60:00
+Mfeat,Deep Learning,H2O AutoML,8,60:00
+Mfeat,Deep Learning,H2O AutoML,9,60:00
+Mfeat,Deep Learning,H2O AutoML,10,60:00
+Mfeat,Deep Learning,Auto-PyTorch,1,60:00
+Mfeat,Deep Learning,Auto-PyTorch,2,60:00
+Mfeat,Deep Learning,Auto-PyTorch,3,60:00
+Mfeat,Deep Learning,Auto-PyTorch,4,60:00
+Mfeat,Deep Learning,Auto-PyTorch,5,60:00
+Mfeat,Deep Learning,Auto-PyTorch,6,60:00
+Mfeat,Deep Learning,Auto-PyTorch,7,60:00
+Mfeat,Deep Learning,Auto-PyTorch,8,60:00
+Mfeat,Deep Learning,Auto-PyTorch,9,60:00
+Mfeat,Deep Learning,Auto-PyTorch,10,60:00
+Mfeat,Deep Learning,Auto-Keras,1,60:00
+Mfeat,Deep Learning,Auto-Keras,2,10:29
+Mfeat,Deep Learning,Auto-Keras,3,11:30
+Mfeat,Deep Learning,Auto-Keras,4,12:12
+Mfeat,Deep Learning,Auto-Keras,5,13:04
+Mfeat,Deep Learning,Auto-Keras,6,15:43
+Mfeat,Deep Learning,Auto-Keras,7,08:52
+Mfeat,Deep Learning,Auto-Keras,8,10:56
+Mfeat,Deep Learning,Auto-Keras,9,13:42
+Mfeat,Deep Learning,Auto-Keras,10,10:28
+Mfeat,XGBoost,H2O AutoML,1,02:13
+Mfeat,XGBoost,H2O AutoML,2,02:14
+Mfeat,XGBoost,H2O AutoML,3,02:14
+Mfeat,XGBoost,H2O AutoML,4,01:42
+Mfeat,XGBoost,H2O AutoML,5,02:06
+Mfeat,XGBoost,H2O AutoML,6,02:08
+Mfeat,XGBoost,H2O AutoML,7,02:02
+Mfeat,XGBoost,H2O AutoML,8,01:37
+Mfeat,XGBoost,H2O AutoML,9,02:00
+Mfeat,XGBoost,H2O AutoML,10,01:57
+Mfeat,XGBoost,Rminer,1,00:18
+Mfeat,XGBoost,Rminer,2,00:18
+Mfeat,XGBoost,Rminer,3,00:15
+Mfeat,XGBoost,Rminer,4,00:15
+Mfeat,XGBoost,Rminer,5,00:14
+Mfeat,XGBoost,Rminer,6,00:15
+Mfeat,XGBoost,Rminer,7,00:15
+Mfeat,XGBoost,Rminer,8,00:14
+Mfeat,XGBoost,Rminer,9,00:14
+Mfeat,XGBoost,Rminer,10,00:14
+dmft,Principal,H2O AutoML,1,00:55
+dmft,Principal,H2O AutoML,2,00:54
+dmft,Principal,H2O AutoML,3,00:53
+dmft,Principal,H2O AutoML,4,00:55
+dmft,Principal,H2O AutoML,5,00:54
+dmft,Principal,H2O AutoML,6,00:55
+dmft,Principal,H2O AutoML,7,00:54
+dmft,Principal,H2O AutoML,8,00:55
+dmft,Principal,H2O AutoML,9,00:56
+dmft,Principal,H2O AutoML,10,00:55
+dmft,Principal,AutoGluon,1,01:19
+dmft,Principal,AutoGluon,2,01:13
+dmft,Principal,AutoGluon,3,01:14
+dmft,Principal,AutoGluon,4,01:16
+dmft,Principal,AutoGluon,5,01:11
+dmft,Principal,AutoGluon,6,01:24
+dmft,Principal,AutoGluon,7,01:17
+dmft,Principal,AutoGluon,8,01:25
+dmft,Principal,AutoGluon,9,01:18
+dmft,Principal,AutoGluon,10,01:17
+dmft,Principal,AutoSklearn,1,60:00
+dmft,Principal,AutoSklearn,2,60:00
+dmft,Principal,AutoSklearn,3,60:00
+dmft,Principal,AutoSklearn,4,60:00
+dmft,Principal,AutoSklearn,5,60:00
+dmft,Principal,AutoSklearn,6,60:00
+dmft,Principal,AutoSklearn,7,60:00
+dmft,Principal,AutoSklearn,8,60:00
+dmft,Principal,AutoSklearn,9,60:00
+dmft,Principal,AutoSklearn,10,60:00
+dmft,Principal,TPOT,1,05:12
+dmft,Principal,TPOT,2,02:22
+dmft,Principal,TPOT,3,02:34
+dmft,Principal,TPOT,4,05:23
+dmft,Principal,TPOT,5,04:57
+dmft,Principal,TPOT,6,09:07
+dmft,Principal,TPOT,7,04:06
+dmft,Principal,TPOT,8,05:56
+dmft,Principal,TPOT,9,08:34
+dmft,Principal,TPOT,10,23:40
+dmft,Principal,Rminer,1,05:06
+dmft,Principal,Rminer,2,05:54
+dmft,Principal,Rminer,3,04:57
+dmft,Principal,Rminer,4,04:29
+dmft,Principal,Rminer,5,05:18
+dmft,Principal,Rminer,6,04:35
+dmft,Principal,Rminer,7,03:38
+dmft,Principal,Rminer,8,05:08
+dmft,Principal,Rminer,9,04:45
+dmft,Principal,Rminer,10,04:57
+dmft,Principal,TransmogrifAI,1,02:15
+dmft,Principal,TransmogrifAI,2,01:50
+dmft,Principal,TransmogrifAI,3,01:43
+dmft,Principal,TransmogrifAI,4,01:39
+dmft,Principal,TransmogrifAI,5,01:48
+dmft,Principal,TransmogrifAI,6,01:50
+dmft,Principal,TransmogrifAI,7,01:47
+dmft,Principal,TransmogrifAI,8,01:52
+dmft,Principal,TransmogrifAI,9,01:50
+dmft,Principal,TransmogrifAI,10,01:53
+dmft,Deep Learning,H2O AutoML,1,60:00
+dmft,Deep Learning,H2O AutoML,2,60:00
+dmft,Deep Learning,H2O AutoML,3,60:00
+dmft,Deep Learning,H2O AutoML,4,60:00
+dmft,Deep Learning,H2O AutoML,5,60:00
+dmft,Deep Learning,H2O AutoML,6,60:00
+dmft,Deep Learning,H2O AutoML,7,60:00
+dmft,Deep Learning,H2O AutoML,8,60:00
+dmft,Deep Learning,H2O AutoML,9,60:00
+dmft,Deep Learning,H2O AutoML,10,60:00
+dmft,Deep Learning,Auto-PyTorch,1,60:00
+dmft,Deep Learning,Auto-PyTorch,2,60:00
+dmft,Deep Learning,Auto-PyTorch,3,60:00
+dmft,Deep Learning,Auto-PyTorch,4,60:00
+dmft,Deep Learning,Auto-PyTorch,5,60:00
+dmft,Deep Learning,Auto-PyTorch,6,60:00
+dmft,Deep Learning,Auto-PyTorch,7,60:00
+dmft,Deep Learning,Auto-PyTorch,8,60:00
+dmft,Deep Learning,Auto-PyTorch,9,60:00
+dmft,Deep Learning,Auto-PyTorch,10,60:00
+dmft,Deep Learning,Auto-Keras,1,08:45
+dmft,Deep Learning,Auto-Keras,2,08:10
+dmft,Deep Learning,Auto-Keras,3,07:45
+dmft,Deep Learning,Auto-Keras,4,60:00
+dmft,Deep Learning,Auto-Keras,5,06:57
+dmft,Deep Learning,Auto-Keras,6,07:44
+dmft,Deep Learning,Auto-Keras,7,09:58
+dmft,Deep Learning,Auto-Keras,8,07:29
+dmft,Deep Learning,Auto-Keras,9,08:09
+dmft,Deep Learning,Auto-Keras,10,06:43
+dmft,XGBoost,H2O AutoML,1,00:37
+dmft,XGBoost,H2O AutoML,2,00:37
+dmft,XGBoost,H2O AutoML,3,00:32
+dmft,XGBoost,H2O AutoML,4,00:34
+dmft,XGBoost,H2O AutoML,5,00:33
+dmft,XGBoost,H2O AutoML,6,00:31
+dmft,XGBoost,H2O AutoML,7,00:34
+dmft,XGBoost,H2O AutoML,8,00:37
+dmft,XGBoost,H2O AutoML,9,00:31
+dmft,XGBoost,H2O AutoML,10,00:32
+dmft,XGBoost,Rminer,1,00:09
+dmft,XGBoost,Rminer,2,00:09
+dmft,XGBoost,Rminer,3,00:09
+dmft,XGBoost,Rminer,4,00:09
+dmft,XGBoost,Rminer,5,00:09
+dmft,XGBoost,Rminer,6,00:09
+dmft,XGBoost,Rminer,7,00:09
+dmft,XGBoost,Rminer,8,00:09
+dmft,XGBoost,Rminer,9,00:10
+dmft,XGBoost,Rminer,10,00:09
+cmc,Principal,H2O AutoML,1,00:56
+cmc,Principal,H2O AutoML,2,00:59
+cmc,Principal,H2O AutoML,3,00:58
+cmc,Principal,H2O AutoML,4,01:01
+cmc,Principal,H2O AutoML,5,01:00
+cmc,Principal,H2O AutoML,6,00:59
+cmc,Principal,H2O AutoML,7,01:01
+cmc,Principal,H2O AutoML,8,00:58
+cmc,Principal,H2O AutoML,9,01:00
+cmc,Principal,H2O AutoML,10,00:56
+cmc,Principal,AutoGluon,1,01:39
+cmc,Principal,AutoGluon,2,01:38
+cmc,Principal,AutoGluon,3,01:33
+cmc,Principal,AutoGluon,4,01:42
+cmc,Principal,AutoGluon,5,01:35
+cmc,Principal,AutoGluon,6,01:29
+cmc,Principal,AutoGluon,7,01:29
+cmc,Principal,AutoGluon,8,01:26
+cmc,Principal,AutoGluon,9,01:32
+cmc,Principal,AutoGluon,10,01:37
+cmc,Principal,AutoSklearn,1,60:00
+cmc,Principal,AutoSklearn,2,60:00
+cmc,Principal,AutoSklearn,3,60:00
+cmc,Principal,AutoSklearn,4,60:00
+cmc,Principal,AutoSklearn,5,60:00
+cmc,Principal,AutoSklearn,6,60:00
+cmc,Principal,AutoSklearn,7,60:00
+cmc,Principal,AutoSklearn,8,60:00
+cmc,Principal,AutoSklearn,9,60:00
+cmc,Principal,AutoSklearn,10,60:00
+cmc,Principal,TPOT,1,15:51
+cmc,Principal,TPOT,2,18:29
+cmc,Principal,TPOT,3,12:37
+cmc,Principal,TPOT,4,12:19
+cmc,Principal,TPOT,5,11:31
+cmc,Principal,TPOT,6,04:54
+cmc,Principal,TPOT,7,02:15
+cmc,Principal,TPOT,8,06:07
+cmc,Principal,TPOT,9,07:19
+cmc,Principal,TPOT,10,07:19
+cmc,Principal,Rminer,1,03:46
+cmc,Principal,Rminer,2,03:43
+cmc,Principal,Rminer,3,03:53
+cmc,Principal,Rminer,4,03:47
+cmc,Principal,Rminer,5,03:36
+cmc,Principal,Rminer,6,04:16
+cmc,Principal,Rminer,7,03:45
+cmc,Principal,Rminer,8,03:46
+cmc,Principal,Rminer,9,03:53
+cmc,Principal,Rminer,10,04:00
+cmc,Principal,TransmogrifAI,1,02:57
+cmc,Principal,TransmogrifAI,2,02:28
+cmc,Principal,TransmogrifAI,3,02:24
+cmc,Principal,TransmogrifAI,4,02:15
+cmc,Principal,TransmogrifAI,5,02:23
+cmc,Principal,TransmogrifAI,6,02:27
+cmc,Principal,TransmogrifAI,7,02:26
+cmc,Principal,TransmogrifAI,8,02:16
+cmc,Principal,TransmogrifAI,9,02:18
+cmc,Principal,TransmogrifAI,10,02:18
+cmc,Deep Learning,H2O AutoML,1,60:00
+cmc,Deep Learning,H2O AutoML,2,60:00
+cmc,Deep Learning,H2O AutoML,3,60:00
+cmc,Deep Learning,H2O AutoML,4,60:00
+cmc,Deep Learning,H2O AutoML,5,60:00
+cmc,Deep Learning,H2O AutoML,6,60:00
+cmc,Deep Learning,H2O AutoML,7,60:00
+cmc,Deep Learning,H2O AutoML,8,60:00
+cmc,Deep Learning,H2O AutoML,9,60:00
+cmc,Deep Learning,H2O AutoML,10,60:00
+cmc,Deep Learning,Auto-PyTorch,1,60:00
+cmc,Deep Learning,Auto-PyTorch,2,60:00
+cmc,Deep Learning,Auto-PyTorch,3,60:00
+cmc,Deep Learning,Auto-PyTorch,4,60:00
+cmc,Deep Learning,Auto-PyTorch,5,60:00
+cmc,Deep Learning,Auto-PyTorch,6,60:00
+cmc,Deep Learning,Auto-PyTorch,7,60:00
+cmc,Deep Learning,Auto-PyTorch,8,60:00
+cmc,Deep Learning,Auto-PyTorch,9,60:00
+cmc,Deep Learning,Auto-PyTorch,10,60:00
+cmc,Deep Learning,Auto-Keras,1,14:23
+cmc,Deep Learning,Auto-Keras,2,12:16
+cmc,Deep Learning,Auto-Keras,3,12:09
+cmc,Deep Learning,Auto-Keras,4,12:14
+cmc,Deep Learning,Auto-Keras,5,13:38
+cmc,Deep Learning,Auto-Keras,6,15:28
+cmc,Deep Learning,Auto-Keras,7,13:28
+cmc,Deep Learning,Auto-Keras,8,15:09
+cmc,Deep Learning,Auto-Keras,9,23:11
+cmc,Deep Learning,Auto-Keras,10,15:24
+cmc,XGBoost,H2O AutoML,1,00:34
+cmc,XGBoost,H2O AutoML,2,00:36
+cmc,XGBoost,H2O AutoML,3,00:32
+cmc,XGBoost,H2O AutoML,4,00:36
+cmc,XGBoost,H2O AutoML,5,00:34
+cmc,XGBoost,H2O AutoML,6,00:34
+cmc,XGBoost,H2O AutoML,7,00:43
+cmc,XGBoost,H2O AutoML,8,00:33
+cmc,XGBoost,H2O AutoML,9,00:36
+cmc,XGBoost,H2O AutoML,10,00:33
+cmc,XGBoost,Rminer,1,00:06
+cmc,XGBoost,Rminer,2,00:06
+cmc,XGBoost,Rminer,3,00:06
+cmc,XGBoost,Rminer,4,00:06
+cmc,XGBoost,Rminer,5,00:06
+cmc,XGBoost,Rminer,6,00:12
+cmc,XGBoost,Rminer,7,00:05
+cmc,XGBoost,Rminer,8,00:06
+cmc,XGBoost,Rminer,9,00:06
+cmc,XGBoost,Rminer,10,00:06
+vehicle,Principal,H2O AutoML,1,02:16
+vehicle,Principal,H2O AutoML,2,01:51
+vehicle,Principal,H2O AutoML,3,02:06
+vehicle,Principal,H2O AutoML,4,01:35
+vehicle,Principal,H2O AutoML,5,02:13
+vehicle,Principal,H2O AutoML,6,02:43
+vehicle,Principal,H2O AutoML,7,02:37
+vehicle,Principal,H2O AutoML,8,02:02
+vehicle,Principal,H2O AutoML,9,01:57
+vehicle,Principal,H2O AutoML,10,02:01
+vehicle,Principal,AutoGluon,1,01:50
+vehicle,Principal,AutoGluon,2,01:50
+vehicle,Principal,AutoGluon,3,01:49
+vehicle,Principal,AutoGluon,4,01:48
+vehicle,Principal,AutoGluon,5,01:38
+vehicle,Principal,AutoGluon,6,01:55
+vehicle,Principal,AutoGluon,7,01:50
+vehicle,Principal,AutoGluon,8,01:59
+vehicle,Principal,AutoGluon,9,01:44
+vehicle,Principal,AutoGluon,10,01:45
+vehicle,Principal,AutoSklearn,1,60:00
+vehicle,Principal,AutoSklearn,2,60:00
+vehicle,Principal,AutoSklearn,3,60:00
+vehicle,Principal,AutoSklearn,4,60:00
+vehicle,Principal,AutoSklearn,5,60:00
+vehicle,Principal,AutoSklearn,6,60:00
+vehicle,Principal,AutoSklearn,7,60:00
+vehicle,Principal,AutoSklearn,8,60:00
+vehicle,Principal,AutoSklearn,9,60:00
+vehicle,Principal,AutoSklearn,10,60:00
+vehicle,Principal,TPOT,1,32:09
+vehicle,Principal,TPOT,2,60:00
+vehicle,Principal,TPOT,3,08:15
+vehicle,Principal,TPOT,4,31:38
+vehicle,Principal,TPOT,5,13:50
+vehicle,Principal,TPOT,6,20:09
+vehicle,Principal,TPOT,7,57:24
+vehicle,Principal,TPOT,8,07:58
+vehicle,Principal,TPOT,9,22:10
+vehicle,Principal,TPOT,10,06:14
+vehicle,Principal,Rminer,1,06:10
+vehicle,Principal,Rminer,2,17:10
+vehicle,Principal,Rminer,3,16:28
+vehicle,Principal,Rminer,4,15:35
+vehicle,Principal,Rminer,5,15:12
+vehicle,Principal,Rminer,6,16:29
+vehicle,Principal,Rminer,7,15:19
+vehicle,Principal,Rminer,8,16:22
+vehicle,Principal,Rminer,9,17:00
+vehicle,Principal,Rminer,10,15:33
+vehicle,Principal,TransmogrifAI,1,02:54
+vehicle,Principal,TransmogrifAI,2,02:36
+vehicle,Principal,TransmogrifAI,3,02:35
+vehicle,Principal,TransmogrifAI,4,02:32
+vehicle,Principal,TransmogrifAI,5,02:38
+vehicle,Principal,TransmogrifAI,6,02:36
+vehicle,Principal,TransmogrifAI,7,02:35
+vehicle,Principal,TransmogrifAI,8,02:40
+vehicle,Principal,TransmogrifAI,9,02:26
+vehicle,Principal,TransmogrifAI,10,02:28
+vehicle,Deep Learning,H2O AutoML,1,60:00
+vehicle,Deep Learning,H2O AutoML,2,60:00
+vehicle,Deep Learning,H2O AutoML,3,60:00
+vehicle,Deep Learning,H2O AutoML,4,60:00
+vehicle,Deep Learning,H2O AutoML,5,60:00
+vehicle,Deep Learning,H2O AutoML,6,60:00
+vehicle,Deep Learning,H2O AutoML,7,60:00
+vehicle,Deep Learning,H2O AutoML,8,60:00
+vehicle,Deep Learning,H2O AutoML,9,60:00
+vehicle,Deep Learning,H2O AutoML,10,60:00
+vehicle,Deep Learning,Auto-PyTorch,1,60:00
+vehicle,Deep Learning,Auto-PyTorch,2,60:00
+vehicle,Deep Learning,Auto-PyTorch,3,60:00
+vehicle,Deep Learning,Auto-PyTorch,4,60:00
+vehicle,Deep Learning,Auto-PyTorch,5,60:00
+vehicle,Deep Learning,Auto-PyTorch,6,60:00
+vehicle,Deep Learning,Auto-PyTorch,7,60:00
+vehicle,Deep Learning,Auto-PyTorch,8,60:00
+vehicle,Deep Learning,Auto-PyTorch,9,60:00
+vehicle,Deep Learning,Auto-PyTorch,10,60:00
+vehicle,Deep Learning,Auto-Keras,1,11:41
+vehicle,Deep Learning,Auto-Keras,2,12:39
+vehicle,Deep Learning,Auto-Keras,3,10:02
+vehicle,Deep Learning,Auto-Keras,4,11:35
+vehicle,Deep Learning,Auto-Keras,5,11:14
+vehicle,Deep Learning,Auto-Keras,6,10:58
+vehicle,Deep Learning,Auto-Keras,7,11:18
+vehicle,Deep Learning,Auto-Keras,8,11:30
+vehicle,Deep Learning,Auto-Keras,9,12:19
+vehicle,Deep Learning,Auto-Keras,10,14:41
+vehicle,XGBoost,H2O AutoML,1,01:33
+vehicle,XGBoost,H2O AutoML,2,01:20
+vehicle,XGBoost,H2O AutoML,3,01:30
+vehicle,XGBoost,H2O AutoML,4,00:50
+vehicle,XGBoost,H2O AutoML,5,01:28
+vehicle,XGBoost,H2O AutoML,6,01:51
+vehicle,XGBoost,H2O AutoML,7,01:50
+vehicle,XGBoost,H2O AutoML,8,01:24
+vehicle,XGBoost,H2O AutoML,9,01:26
+vehicle,XGBoost,H2O AutoML,10,01:26
+vehicle,XGBoost,Rminer,1,00:07
+vehicle,XGBoost,Rminer,2,00:07
+vehicle,XGBoost,Rminer,3,00:07
+vehicle,XGBoost,Rminer,4,00:07
+vehicle,XGBoost,Rminer,5,00:07
+vehicle,XGBoost,Rminer,6,00:07
+vehicle,XGBoost,Rminer,7,00:07
+vehicle,XGBoost,Rminer,8,00:07
+vehicle,XGBoost,Rminer,9,00:07
+vehicle,XGBoost,Rminer,10,00:07
+diabetes,Principal,H2O AutoML,1,00:34
+diabetes,Principal,H2O AutoML,2,00:34
+diabetes,Principal,H2O AutoML,3,00:34
+diabetes,Principal,H2O AutoML,4,00:37
+diabetes,Principal,H2O AutoML,5,00:35
+diabetes,Principal,H2O AutoML,6,00:37
+diabetes,Principal,H2O AutoML,7,00:35
+diabetes,Principal,H2O AutoML,8,00:34
+diabetes,Principal,H2O AutoML,9,00:34
+diabetes,Principal,H2O AutoML,10,00:35
+diabetes,Principal,AutoGluon,1,00:52
+diabetes,Principal,AutoGluon,2,00:59
+diabetes,Principal,AutoGluon,3,00:55
+diabetes,Principal,AutoGluon,4,00:54
+diabetes,Principal,AutoGluon,5,00:58
+diabetes,Principal,AutoGluon,6,00:56
+diabetes,Principal,AutoGluon,7,00:57
+diabetes,Principal,AutoGluon,8,00:58
+diabetes,Principal,AutoGluon,9,00:55
+diabetes,Principal,AutoGluon,10,01:00
+diabetes,Principal,AutoSklearn,1,60:00
+diabetes,Principal,AutoSklearn,2,60:00
+diabetes,Principal,AutoSklearn,3,60:00
+diabetes,Principal,AutoSklearn,4,60:00
+diabetes,Principal,AutoSklearn,5,60:00
+diabetes,Principal,AutoSklearn,6,60:00
+diabetes,Principal,AutoSklearn,7,60:00
+diabetes,Principal,AutoSklearn,8,60:00
+diabetes,Principal,AutoSklearn,9,60:00
+diabetes,Principal,AutoSklearn,10,60:00
+diabetes,Principal,TPOT,1,12:32
+diabetes,Principal,TPOT,2,15:52
+diabetes,Principal,TPOT,3,03:52
+diabetes,Principal,TPOT,4,31:39
+diabetes,Principal,TPOT,5,09:29
+diabetes,Principal,TPOT,6,05:27
+diabetes,Principal,TPOT,7,01:19
+diabetes,Principal,TPOT,8,60:00
+diabetes,Principal,TPOT,9,14:16
+diabetes,Principal,TPOT,10,10:32
+diabetes,Principal,Rminer,1,01:09
+diabetes,Principal,Rminer,2,00:54
+diabetes,Principal,Rminer,3,00:50
+diabetes,Principal,Rminer,4,00:48
+diabetes,Principal,Rminer,5,00:50
+diabetes,Principal,Rminer,6,00:48
+diabetes,Principal,Rminer,7,00:47
+diabetes,Principal,Rminer,8,00:47
+diabetes,Principal,Rminer,9,00:47
+diabetes,Principal,Rminer,10,00:49
+diabetes,Principal,TransmogrifAI,1,08:11
+diabetes,Principal,TransmogrifAI,2,07:51
+diabetes,Principal,TransmogrifAI,3,07:37
+diabetes,Principal,TransmogrifAI,4,07:14
+diabetes,Principal,TransmogrifAI,5,06:23
+diabetes,Principal,TransmogrifAI,6,06:15
+diabetes,Principal,TransmogrifAI,7,06:16
+diabetes,Principal,TransmogrifAI,8,06:22
+diabetes,Principal,TransmogrifAI,9,06:25
+diabetes,Principal,TransmogrifAI,10,06:32
+diabetes,Deep Learning,H2O AutoML,1,60:00
+diabetes,Deep Learning,H2O AutoML,2,60:00
+diabetes,Deep Learning,H2O AutoML,3,60:00
+diabetes,Deep Learning,H2O AutoML,4,60:00
+diabetes,Deep Learning,H2O AutoML,5,60:00
+diabetes,Deep Learning,H2O AutoML,6,60:00
+diabetes,Deep Learning,H2O AutoML,7,60:00
+diabetes,Deep Learning,H2O AutoML,8,60:00
+diabetes,Deep Learning,H2O AutoML,9,60:00
+diabetes,Deep Learning,H2O AutoML,10,60:00
+diabetes,Deep Learning,Auto-PyTorch,1,60:00
+diabetes,Deep Learning,Auto-PyTorch,2,60:00
+diabetes,Deep Learning,Auto-PyTorch,3,60:00
+diabetes,Deep Learning,Auto-PyTorch,4,60:00
+diabetes,Deep Learning,Auto-PyTorch,5,60:00
+diabetes,Deep Learning,Auto-PyTorch,6,60:00
+diabetes,Deep Learning,Auto-PyTorch,7,60:00
+diabetes,Deep Learning,Auto-PyTorch,8,60:00
+diabetes,Deep Learning,Auto-PyTorch,9,60:00
+diabetes,Deep Learning,Auto-PyTorch,10,60:00
+diabetes,Deep Learning,Auto-Keras,1,10:56
+diabetes,Deep Learning,Auto-Keras,2,21:27
+diabetes,Deep Learning,Auto-Keras,3,12:06
+diabetes,Deep Learning,Auto-Keras,4,12:15
+diabetes,Deep Learning,Auto-Keras,5,09:24
+diabetes,Deep Learning,Auto-Keras,6,12:47
+diabetes,Deep Learning,Auto-Keras,7,21:12
+diabetes,Deep Learning,Auto-Keras,8,14:37
+diabetes,Deep Learning,Auto-Keras,9,11:47
+diabetes,Deep Learning,Auto-Keras,10,11:33
+diabetes,XGBoost,H2O AutoML,1,00:12
+diabetes,XGBoost,H2O AutoML,2,00:12
+diabetes,XGBoost,H2O AutoML,3,00:12
+diabetes,XGBoost,H2O AutoML,4,00:12
+diabetes,XGBoost,H2O AutoML,5,00:12
+diabetes,XGBoost,H2O AutoML,6,00:12
+diabetes,XGBoost,H2O AutoML,7,00:12
+diabetes,XGBoost,H2O AutoML,8,00:23
+diabetes,XGBoost,H2O AutoML,9,00:12
+diabetes,XGBoost,H2O AutoML,10,00:12
+diabetes,XGBoost,Rminer,1,00:02
+diabetes,XGBoost,Rminer,2,00:05
+diabetes,XGBoost,Rminer,3,00:03
+diabetes,XGBoost,Rminer,4,00:03
+diabetes,XGBoost,Rminer,5,00:03
+diabetes,XGBoost,Rminer,6,00:03
+diabetes,XGBoost,Rminer,7,00:03
+diabetes,XGBoost,Rminer,8,00:02
+diabetes,XGBoost,Rminer,9,00:02
+diabetes,XGBoost,Rminer,10,00:03
+qsar,Principal,H2O AutoML,1,01:07
+qsar,Principal,H2O AutoML,2,01:03
+qsar,Principal,H2O AutoML,3,01:14
+qsar,Principal,H2O AutoML,4,01:10
+qsar,Principal,H2O AutoML,5,01:10
+qsar,Principal,H2O AutoML,6,01:04
+qsar,Principal,H2O AutoML,7,01.07
+qsar,Principal,H2O AutoML,8,01:19
+qsar,Principal,H2O AutoML,9,01:08
+qsar,Principal,H2O AutoML,10,01:05
+qsar,Principal,AutoGluon,1,01:12
+qsar,Principal,AutoGluon,2,01:10
+qsar,Principal,AutoGluon,3,01:04
+qsar,Principal,AutoGluon,4,01:12
+qsar,Principal,AutoGluon,5,01:09
+qsar,Principal,AutoGluon,6,01:08
+qsar,Principal,AutoGluon,7,01:09
+qsar,Principal,AutoGluon,8,01:08
+qsar,Principal,AutoGluon,9,01:06
+qsar,Principal,AutoGluon,10,01:08
+qsar,Principal,AutoSklearn,1,60:00
+qsar,Principal,AutoSklearn,2,60:00
+qsar,Principal,AutoSklearn,3,60:00
+qsar,Principal,AutoSklearn,4,60:00
+qsar,Principal,AutoSklearn,5,60:00
+qsar,Principal,AutoSklearn,6,60:00
+qsar,Principal,AutoSklearn,7,60:00
+qsar,Principal,AutoSklearn,8,60:00
+qsar,Principal,AutoSklearn,9,60:00
+qsar,Principal,AutoSklearn,10,60:00
+qsar,Principal,TPOT,1,02:46
+qsar,Principal,TPOT,2,06:44
+qsar,Principal,TPOT,3,13:35
+qsar,Principal,TPOT,4,10:05
+qsar,Principal,TPOT,5,03:42
+qsar,Principal,TPOT,6,06:52
+qsar,Principal,TPOT,7,09:33
+qsar,Principal,TPOT,8,00:04
+qsar,Principal,TPOT,9,06:40
+qsar,Principal,TPOT,10,03:30
+qsar,Principal,Rminer,1,02:58
+qsar,Principal,Rminer,2,02:55
+qsar,Principal,Rminer,3,06:48
+qsar,Principal,Rminer,4,05:59
+qsar,Principal,Rminer,5,06:13
+qsar,Principal,Rminer,6,06:03
+qsar,Principal,Rminer,7,06:34
+qsar,Principal,Rminer,8,06:30
+qsar,Principal,Rminer,9,05:14
+qsar,Principal,Rminer,10,04:05
+qsar,Principal,TransmogrifAI,1,03:33
+qsar,Principal,TransmogrifAI,2,03:49
+qsar,Principal,TransmogrifAI,3,03:24
+qsar,Principal,TransmogrifAI,4,03:27
+qsar,Principal,TransmogrifAI,5,03:26
+qsar,Principal,TransmogrifAI,6,03:22
+qsar,Principal,TransmogrifAI,7,03:16
+qsar,Principal,TransmogrifAI,8,03:16
+qsar,Principal,TransmogrifAI,9,02:57
+qsar,Principal,TransmogrifAI,10,03:00
+qsar,Deep Learning,H2O AutoML,1,60:00
+qsar,Deep Learning,H2O AutoML,2,60:00
+qsar,Deep Learning,H2O AutoML,3,60:00
+qsar,Deep Learning,H2O AutoML,4,60:00
+qsar,Deep Learning,H2O AutoML,5,60:00
+qsar,Deep Learning,H2O AutoML,6,60:00
+qsar,Deep Learning,H2O AutoML,7,60:00
+qsar,Deep Learning,H2O AutoML,8,60:00
+qsar,Deep Learning,H2O AutoML,9,60:00
+qsar,Deep Learning,H2O AutoML,10,60:00
+qsar,Deep Learning,Auto-PyTorch,1,60:00
+qsar,Deep Learning,Auto-PyTorch,2,60:00
+qsar,Deep Learning,Auto-PyTorch,3,60:00
+qsar,Deep Learning,Auto-PyTorch,4,60:00
+qsar,Deep Learning,Auto-PyTorch,5,60:00
+qsar,Deep Learning,Auto-PyTorch,6,60:00
+qsar,Deep Learning,Auto-PyTorch,7,60:00
+qsar,Deep Learning,Auto-PyTorch,8,60:00
+qsar,Deep Learning,Auto-PyTorch,9,60:00
+qsar,Deep Learning,Auto-PyTorch,10,60:00
+qsar,Deep Learning,Auto-Keras,1,16:24
+qsar,Deep Learning,Auto-Keras,2,14:39
+qsar,Deep Learning,Auto-Keras,3,39:16
+qsar,Deep Learning,Auto-Keras,4,14:35
+qsar,Deep Learning,Auto-Keras,5,17:46
+qsar,Deep Learning,Auto-Keras,6,25:13
+qsar,Deep Learning,Auto-Keras,7,15:19
+qsar,Deep Learning,Auto-Keras,8,14:33
+qsar,Deep Learning,Auto-Keras,9,20:13
+qsar,Deep Learning,Auto-Keras,10,14:19
+qsar,XGBoost,H2O AutoML,1,00:36
+qsar,XGBoost,H2O AutoML,2,00:34
+qsar,XGBoost,H2O AutoML,3,00:46
+qsar,XGBoost,H2O AutoML,4,00:36
+qsar,XGBoost,H2O AutoML,5,00:31
+qsar,XGBoost,H2O AutoML,6,00:33
+qsar,XGBoost,H2O AutoML,7,00:36
+qsar,XGBoost,H2O AutoML,8,00:47
+qsar,XGBoost,H2O AutoML,9,00:35
+qsar,XGBoost,H2O AutoML,10,00:35
+qsar,XGBoost,Rminer,1,00:04
+qsar,XGBoost,Rminer,2,00:04
+qsar,XGBoost,Rminer,3,00:04
+qsar,XGBoost,Rminer,4,00:04
+qsar,XGBoost,Rminer,5,00:04
+qsar,XGBoost,Rminer,6,00:03
+qsar,XGBoost,Rminer,7,00:04
+qsar,XGBoost,Rminer,8,00:04
+qsar,XGBoost,Rminer,9,00:04
+qsar,XGBoost,Rminer,10,00:04
+credit,Principal,H2O AutoML,1,00:49
+credit,Principal,H2O AutoML,2,00:43
+credit,Principal,H2O AutoML,3,00:45
+credit,Principal,H2O AutoML,4,00:41
+credit,Principal,H2O AutoML,5,00:49
+credit,Principal,H2O AutoML,6,00:44
+credit,Principal,H2O AutoML,7,00:49
+credit,Principal,H2O AutoML,8,00:43
+credit,Principal,H2O AutoML,9,00:43
+credit,Principal,H2O AutoML,10,00:50
+credit,Principal,AutoGluon,1,01:06
+credit,Principal,AutoGluon,2,01:02
+credit,Principal,AutoGluon,3,01:02
+credit,Principal,AutoGluon,4,01:00
+credit,Principal,AutoGluon,5,01:04
+credit,Principal,AutoGluon,6,01:01
+credit,Principal,AutoGluon,7,01:04
+credit,Principal,AutoGluon,8,01:02
+credit,Principal,AutoGluon,9,01:00
+credit,Principal,AutoGluon,10,00:59
+credit,Principal,AutoSklearn,1,60:00
+credit,Principal,AutoSklearn,2,60:00
+credit,Principal,AutoSklearn,3,60:00
+credit,Principal,AutoSklearn,4,60:00
+credit,Principal,AutoSklearn,5,60:00
+credit,Principal,AutoSklearn,6,60:00
+credit,Principal,AutoSklearn,7,60:00
+credit,Principal,AutoSklearn,8,60:00
+credit,Principal,AutoSklearn,9,60:00
+credit,Principal,AutoSklearn,10,60:00
+credit,Principal,TPOT,1,03:58
+credit,Principal,TPOT,2,03:04
+credit,Principal,TPOT,3,07:41
+credit,Principal,TPOT,4,03:33
+credit,Principal,TPOT,5,12:28
+credit,Principal,TPOT,6,11:08
+credit,Principal,TPOT,7,21:17
+credit,Principal,TPOT,8,02:41
+credit,Principal,TPOT,9,09:15
+credit,Principal,TPOT,10,02:19
+credit,Principal,Rminer,1,04:07
+credit,Principal,Rminer,2,04:07
+credit,Principal,Rminer,3,04:06
+credit,Principal,Rminer,4,04:07
+credit,Principal,Rminer,5,04:13
+credit,Principal,Rminer,6,04:12
+credit,Principal,Rminer,7,04:14
+credit,Principal,Rminer,8,04:11
+credit,Principal,Rminer,9,04:46
+credit,Principal,Rminer,10,04:32
+credit,Principal,TransmogrifAI,1,14:24
+credit,Principal,TransmogrifAI,2,14:02
+credit,Principal,TransmogrifAI,3,11:53
+credit,Principal,TransmogrifAI,4,11:28
+credit,Principal,TransmogrifAI,5,11:52
+credit,Principal,TransmogrifAI,6,11:59
+credit,Principal,TransmogrifAI,7,12:19
+credit,Principal,TransmogrifAI,8,12:18
+credit,Principal,TransmogrifAI,9,12:45
+credit,Principal,TransmogrifAI,10,12:40
+credit,Deep Learning,H2O AutoML,1,60:00
+credit,Deep Learning,H2O AutoML,2,60:00
+credit,Deep Learning,H2O AutoML,3,60:00
+credit,Deep Learning,H2O AutoML,4,60:00
+credit,Deep Learning,H2O AutoML,5,60:00
+credit,Deep Learning,H2O AutoML,6,60:00
+credit,Deep Learning,H2O AutoML,7,60:00
+credit,Deep Learning,H2O AutoML,8,60:00
+credit,Deep Learning,H2O AutoML,9,60:00
+credit,Deep Learning,H2O AutoML,10,60:00
+credit,Deep Learning,Auto-PyTorch,1,60:00
+credit,Deep Learning,Auto-PyTorch,2,60:00
+credit,Deep Learning,Auto-PyTorch,3,60:00
+credit,Deep Learning,Auto-PyTorch,4,60:00
+credit,Deep Learning,Auto-PyTorch,5,60:00
+credit,Deep Learning,Auto-PyTorch,6,60:00
+credit,Deep Learning,Auto-PyTorch,7,60:00
+credit,Deep Learning,Auto-PyTorch,8,60:00
+credit,Deep Learning,Auto-PyTorch,9,60:00
+credit,Deep Learning,Auto-PyTorch,10,60:00
+credit,Deep Learning,Auto-Keras,1,24:17
+credit,Deep Learning,Auto-Keras,2,20:20
+credit,Deep Learning,Auto-Keras,3,25:11
+credit,Deep Learning,Auto-Keras,4,25:51
+credit,Deep Learning,Auto-Keras,5,45:29
+credit,Deep Learning,Auto-Keras,6,26:27
+credit,Deep Learning,Auto-Keras,7,23:36
+credit,Deep Learning,Auto-Keras,8,20:58
+credit,Deep Learning,Auto-Keras,9,18:06
+credit,Deep Learning,Auto-Keras,10,19:27
+credit,XGBoost,H2O AutoML,1,00:25
+credit,XGBoost,H2O AutoML,2,00:19
+credit,XGBoost,H2O AutoML,3,00:18
+credit,XGBoost,H2O AutoML,4,00:20
+credit,XGBoost,H2O AutoML,5,00:25
+credit,XGBoost,H2O AutoML,6,00:18
+credit,XGBoost,H2O AutoML,7,00:25
+credit,XGBoost,H2O AutoML,8,00:19
+credit,XGBoost,H2O AutoML,9,00:19
+credit,XGBoost,H2O AutoML,10,00:19
+credit,XGBoost,Rminer,1,00:04
+credit,XGBoost,Rminer,2,00:04
+credit,XGBoost,Rminer,3,00:04
+credit,XGBoost,Rminer,4,00:04
+credit,XGBoost,Rminer,5,00:04
+credit,XGBoost,Rminer,6,00:04
+credit,XGBoost,Rminer,7,00:04
+credit,XGBoost,Rminer,8,00:04
+credit,XGBoost,Rminer,9,00:04
+credit,XGBoost,Rminer,10,00:04
+churn,Principal,H2O AutoML,1,06:56
+churn,Principal,H2O AutoML,2,18:52
+churn,Principal,H2O AutoML,3,11:46
+churn,Principal,H2O AutoML,4,17:25
+churn,Principal,H2O AutoML,5,16:34
+churn,Principal,H2O AutoML,6,15:54
+churn,Principal,H2O AutoML,7,14:44
+churn,Principal,H2O AutoML,8,09:06
+churn,Principal,H2O AutoML,9,07:18
+churn,Principal,H2O AutoML,10,16:28
+churn,Principal,AutoGluon,1,01:37
+churn,Principal,AutoGluon,2,01:33
+churn,Principal,AutoGluon,3,01:45
+churn,Principal,AutoGluon,4,01:41
+churn,Principal,AutoGluon,5,01:37
+churn,Principal,AutoGluon,6,01:37
+churn,Principal,AutoGluon,7,01:43
+churn,Principal,AutoGluon,8,01:32
+churn,Principal,AutoGluon,9,01:38
+churn,Principal,AutoGluon,10,01:40
+churn,Principal,AutoSklearn,1,60:00
+churn,Principal,AutoSklearn,2,60:00
+churn,Principal,AutoSklearn,3,60:00
+churn,Principal,AutoSklearn,4,60:00
+churn,Principal,AutoSklearn,5,60:00
+churn,Principal,AutoSklearn,6,60:00
+churn,Principal,AutoSklearn,7,60:00
+churn,Principal,AutoSklearn,8,60:00
+churn,Principal,AutoSklearn,9,60:00
+churn,Principal,AutoSklearn,10,60:00
+churn,Principal,TPOT,1,60:00
+churn,Principal,TPOT,2,60:00
+churn,Principal,TPOT,3,04:24
+churn,Principal,TPOT,4,27:41
+churn,Principal,TPOT,5,44:41
+churn,Principal,TPOT,6,50:36
+churn,Principal,TPOT,7,13:35
+churn,Principal,TPOT,8,01:37
+churn,Principal,TPOT,9,55:05
+churn,Principal,TPOT,10,60:00
+churn,Principal,Rminer,1,15:10
+churn,Principal,Rminer,2,14:59
+churn,Principal,Rminer,3,15:04
+churn,Principal,Rminer,4,15:10
+churn,Principal,Rminer,5,14:59
+churn,Principal,Rminer,6,12:24
+churn,Principal,Rminer,7,15:15
+churn,Principal,Rminer,8,15:07
+churn,Principal,Rminer,9,15:17
+churn,Principal,Rminer,10,14:48
+churn,Principal,TransmogrifAI,1,11:06
+churn,Principal,TransmogrifAI,2,11:57
+churn,Principal,TransmogrifAI,3,10:54
+churn,Principal,TransmogrifAI,4,09:44
+churn,Principal,TransmogrifAI,5,09:31
+churn,Principal,TransmogrifAI,6,09:37
+churn,Principal,TransmogrifAI,7,09:51
+churn,Principal,TransmogrifAI,8,10:07
+churn,Principal,TransmogrifAI,9,09:57
+churn,Principal,TransmogrifAI,10,10:09
+churn,Deep Learning,H2O AutoML,1,60:00
+churn,Deep Learning,H2O AutoML,2,60:00
+churn,Deep Learning,H2O AutoML,3,60:00
+churn,Deep Learning,H2O AutoML,4,60:00
+churn,Deep Learning,H2O AutoML,5,60:00
+churn,Deep Learning,H2O AutoML,6,60:00
+churn,Deep Learning,H2O AutoML,7,60:00
+churn,Deep Learning,H2O AutoML,8,60:00
+churn,Deep Learning,H2O AutoML,9,60:00
+churn,Deep Learning,H2O AutoML,10,60:00
+churn,Deep Learning,Auto-PyTorch,1,60:00
+churn,Deep Learning,Auto-PyTorch,2,60:00
+churn,Deep Learning,Auto-PyTorch,3,60:00
+churn,Deep Learning,Auto-PyTorch,4,60:00
+churn,Deep Learning,Auto-PyTorch,5,60:00
+churn,Deep Learning,Auto-PyTorch,6,60:00
+churn,Deep Learning,Auto-PyTorch,7,60:00
+churn,Deep Learning,Auto-PyTorch,8,60:00
+churn,Deep Learning,Auto-PyTorch,9,60:00
+churn,Deep Learning,Auto-PyTorch,10,60:00
+churn,Deep Learning,Auto-Keras,1,35:19
+churn,Deep Learning,Auto-Keras,2,25:04
+churn,Deep Learning,Auto-Keras,3,36:54
+churn,Deep Learning,Auto-Keras,4,43:04
+churn,Deep Learning,Auto-Keras,5,26:53
+churn,Deep Learning,Auto-Keras,6,41:48
+churn,Deep Learning,Auto-Keras,7,45:04
+churn,Deep Learning,Auto-Keras,8,44:22
+churn,Deep Learning,Auto-Keras,9,39:56
+churn,Deep Learning,Auto-Keras,10,43:52
+churn,XGBoost,H2O AutoML,1,01:30
+churn,XGBoost,H2O AutoML,2,12:24
+churn,XGBoost,H2O AutoML,3,01:26
+churn,XGBoost,H2O AutoML,4,11:25
+churn,XGBoost,H2O AutoML,5,06:12
+churn,XGBoost,H2O AutoML,6,10:37
+churn,XGBoost,H2O AutoML,7,04:01
+churn,XGBoost,H2O AutoML,8,03:57
+churn,XGBoost,H2O AutoML,9,01:29
+churn,XGBoost,H2O AutoML,10,06:21
+churn,XGBoost,Rminer,1,00:06
+churn,XGBoost,Rminer,2,00:06
+churn,XGBoost,Rminer,3,00:06
+churn,XGBoost,Rminer,4,00:06
+churn,XGBoost,Rminer,5,00:06
+churn,XGBoost,Rminer,6,00:06
+churn,XGBoost,Rminer,7,00:06
+churn,XGBoost,Rminer,8,00:06
+churn,XGBoost,Rminer,9,00:06
+churn,XGBoost,Rminer,10,00:06
+plasma,Principal,H2O AutoML,1,00:48
+plasma,Principal,H2O AutoML,2,00:44
+plasma,Principal,H2O AutoML,3,01:08
+plasma,Principal,H2O AutoML,4,01:18
+plasma,Principal,H2O AutoML,5,01:10
+plasma,Principal,H2O AutoML,6,00:47
+plasma,Principal,H2O AutoML,7,01:11
+plasma,Principal,H2O AutoML,8,01:09
+plasma,Principal,H2O AutoML,9,00:49
+plasma,Principal,H2O AutoML,10,00:50
+plasma,Principal,AutoGluon,1,00:30
+plasma,Principal,AutoGluon,2,00:30
+plasma,Principal,AutoGluon,3,00:30
+plasma,Principal,AutoGluon,4,00:28
+plasma,Principal,AutoGluon,5,00:28
+plasma,Principal,AutoGluon,6,00:32
+plasma,Principal,AutoGluon,7,00:31
+plasma,Principal,AutoGluon,8,00:30
+plasma,Principal,AutoGluon,9,00:30
+plasma,Principal,AutoGluon,10,00:31
+plasma,Principal,AutoSklearn,1,60:00
+plasma,Principal,AutoSklearn,2,60:00
+plasma,Principal,AutoSklearn,3,60:00
+plasma,Principal,AutoSklearn,4,60:00
+plasma,Principal,AutoSklearn,5,60:00
+plasma,Principal,AutoSklearn,6,60:00
+plasma,Principal,AutoSklearn,7,60:00
+plasma,Principal,AutoSklearn,8,60:00
+plasma,Principal,AutoSklearn,9,60:00
+plasma,Principal,AutoSklearn,10,60:00
+plasma,Principal,TPOT,1,02:40
+plasma,Principal,TPOT,2,32:55
+plasma,Principal,TPOT,3,19:17
+plasma,Principal,TPOT,4,05:09
+plasma,Principal,TPOT,5,48:57
+plasma,Principal,TPOT,6,05:11
+plasma,Principal,TPOT,7,16:29
+plasma,Principal,TPOT,8,08:37
+plasma,Principal,TPOT,9,15:44
+plasma,Principal,TPOT,10,34:04
+plasma,Principal,Rminer,1,00:40
+plasma,Principal,Rminer,2,00:33
+plasma,Principal,Rminer,3,00:34
+plasma,Principal,Rminer,4,00:34
+plasma,Principal,Rminer,5,00:32
+plasma,Principal,Rminer,6,00:33
+plasma,Principal,Rminer,7,00:33
+plasma,Principal,Rminer,8,00:33
+plasma,Principal,Rminer,9,00:32
+plasma,Principal,Rminer,10,00:33
+plasma,Principal,TransmogrifAI,1,05:40
+plasma,Principal,TransmogrifAI,2,06:17
+plasma,Principal,TransmogrifAI,3,06:31
+plasma,Principal,TransmogrifAI,4,06:32
+plasma,Principal,TransmogrifAI,5,06:19
+plasma,Principal,TransmogrifAI,6,05:46
+plasma,Principal,TransmogrifAI,7,05:24
+plasma,Principal,TransmogrifAI,8,04:57
+plasma,Principal,TransmogrifAI,9,05:05
+plasma,Principal,TransmogrifAI,10,05:06
+plasma,Deep Learning,H2O AutoML,1,60:00
+plasma,Deep Learning,H2O AutoML,2,60:00
+plasma,Deep Learning,H2O AutoML,3,60:00
+plasma,Deep Learning,H2O AutoML,4,60:00
+plasma,Deep Learning,H2O AutoML,5,60:00
+plasma,Deep Learning,H2O AutoML,6,60:00
+plasma,Deep Learning,H2O AutoML,7,60:00
+plasma,Deep Learning,H2O AutoML,8,60:00
+plasma,Deep Learning,H2O AutoML,9,60:00
+plasma,Deep Learning,H2O AutoML,10,60:00
+plasma,Deep Learning,Auto-PyTorch,1,60:00
+plasma,Deep Learning,Auto-PyTorch,2,60:00
+plasma,Deep Learning,Auto-PyTorch,3,60:00
+plasma,Deep Learning,Auto-PyTorch,4,60:00
+plasma,Deep Learning,Auto-PyTorch,5,60:00
+plasma,Deep Learning,Auto-PyTorch,6,60:00
+plasma,Deep Learning,Auto-PyTorch,7,60:00
+plasma,Deep Learning,Auto-PyTorch,8,60:00
+plasma,Deep Learning,Auto-PyTorch,9,60:00
+plasma,Deep Learning,Auto-PyTorch,10,60:00
+plasma,Deep Learning,Auto-Keras,1,26:22
+plasma,Deep Learning,Auto-Keras,2,18:13
+plasma,Deep Learning,Auto-Keras,3,18:24
+plasma,Deep Learning,Auto-Keras,4,19:51
+plasma,Deep Learning,Auto-Keras,5,18:09
+plasma,Deep Learning,Auto-Keras,6,17:40
+plasma,Deep Learning,Auto-Keras,7,18:40
+plasma,Deep Learning,Auto-Keras,8,18:09
+plasma,Deep Learning,Auto-Keras,9,17:51
+plasma,Deep Learning,Auto-Keras,10,19:23
+plasma,XGBoost,H2O AutoML,1,00:33
+plasma,XGBoost,H2O AutoML,2,00:31
+plasma,XGBoost,H2O AutoML,3,00:48
+plasma,XGBoost,H2O AutoML,4,00:57
+plasma,XGBoost,H2O AutoML,5,00:50
+plasma,XGBoost,H2O AutoML,6,00:30
+plasma,XGBoost,H2O AutoML,7,00:56
+plasma,XGBoost,H2O AutoML,8,00:51
+plasma,XGBoost,H2O AutoML,9,00:30
+plasma,XGBoost,H2O AutoML,10,00:31
+plasma,XGBoost,Rminer,1,00:03
+plasma,XGBoost,Rminer,2,00:03
+plasma,XGBoost,Rminer,3,00:03
+plasma,XGBoost,Rminer,4,00:03
+plasma,XGBoost,Rminer,5,00:03
+plasma,XGBoost,Rminer,6,00:02
+plasma,XGBoost,Rminer,7,00:02
+plasma,XGBoost,Rminer,8,00:02
+plasma,XGBoost,Rminer,9,00:02
+plasma,XGBoost,Rminer,10,00:02
+cloud,Principal,H2O AutoML,1,00:55
+cloud,Principal,H2O AutoML,2,08:54
+cloud,Principal,H2O AutoML,3,01:34
+cloud,Principal,H2O AutoML,4,03:07
+cloud,Principal,H2O AutoML,5,02:10
+cloud,Principal,H2O AutoML,6,02:23
+cloud,Principal,H2O AutoML,7,01:52
+cloud,Principal,H2O AutoML,8,02:24
+cloud,Principal,H2O AutoML,9,03:38
+cloud,Principal,H2O AutoML,10,12:59
+cloud,Principal,AutoGluon,1,00:32
+cloud,Principal,AutoGluon,2,00:30
+cloud,Principal,AutoGluon,3,00:29
+cloud,Principal,AutoGluon,4,00:29
+cloud,Principal,AutoGluon,5,00:31
+cloud,Principal,AutoGluon,6,00:28
+cloud,Principal,AutoGluon,7,00:28
+cloud,Principal,AutoGluon,8,00:32
+cloud,Principal,AutoGluon,9,00:33
+cloud,Principal,AutoGluon,10,00:28
+cloud,Principal,AutoSklearn,1,60:00
+cloud,Principal,AutoSklearn,2,60:00
+cloud,Principal,AutoSklearn,3,60:00
+cloud,Principal,AutoSklearn,4,60:00
+cloud,Principal,AutoSklearn,5,60:00
+cloud,Principal,AutoSklearn,6,60:00
+cloud,Principal,AutoSklearn,7,60:00
+cloud,Principal,AutoSklearn,8,60:00
+cloud,Principal,AutoSklearn,9,60:00
+cloud,Principal,AutoSklearn,10,60:00
+cloud,Principal,TPOT,1,02:51
+cloud,Principal,TPOT,2,01:57
+cloud,Principal,TPOT,3,06:18
+cloud,Principal,TPOT,4,06:24
+cloud,Principal,TPOT,5,13:21
+cloud,Principal,TPOT,6,04:40
+cloud,Principal,TPOT,7,04:03
+cloud,Principal,TPOT,8,02:42
+cloud,Principal,TPOT,9,24:35
+cloud,Principal,TPOT,10,03:32
+cloud,Principal,Rminer,1,00:11
+cloud,Principal,Rminer,2,00:11
+cloud,Principal,Rminer,3,00:10
+cloud,Principal,Rminer,4,00:11
+cloud,Principal,Rminer,5,00:10
+cloud,Principal,Rminer,6,00:11
+cloud,Principal,Rminer,7,00:10
+cloud,Principal,Rminer,8,00:11
+cloud,Principal,Rminer,9,00:10
+cloud,Principal,Rminer,10,00:13
+cloud,Principal,TransmogrifAI,1,03:44
+cloud,Principal,TransmogrifAI,2,03:40
+cloud,Principal,TransmogrifAI,3,03:55
+cloud,Principal,TransmogrifAI,4,05:01
+cloud,Principal,TransmogrifAI,5,04:26
+cloud,Principal,TransmogrifAI,6,04:39
+cloud,Principal,TransmogrifAI,7,04:47
+cloud,Principal,TransmogrifAI,8,03:59
+cloud,Principal,TransmogrifAI,9,04:06
+cloud,Principal,TransmogrifAI,10,03:34
+cloud,Deep Learning,H2O AutoML,1,60:00
+cloud,Deep Learning,H2O AutoML,2,60:00
+cloud,Deep Learning,H2O AutoML,3,55:07
+cloud,Deep Learning,H2O AutoML,4,60:00
+cloud,Deep Learning,H2O AutoML,5,56:40
+cloud,Deep Learning,H2O AutoML,6,51:00
+cloud,Deep Learning,H2O AutoML,7,60:00
+cloud,Deep Learning,H2O AutoML,8,60:00
+cloud,Deep Learning,H2O AutoML,9,60:00
+cloud,Deep Learning,H2O AutoML,10,60:00
+cloud,Deep Learning,Auto-PyTorch,1,60:00
+cloud,Deep Learning,Auto-PyTorch,2,60:00
+cloud,Deep Learning,Auto-PyTorch,3,60:00
+cloud,Deep Learning,Auto-PyTorch,4,60:00
+cloud,Deep Learning,Auto-PyTorch,5,60:00
+cloud,Deep Learning,Auto-PyTorch,6,60:00
+cloud,Deep Learning,Auto-PyTorch,7,60:00
+cloud,Deep Learning,Auto-PyTorch,8,60:00
+cloud,Deep Learning,Auto-PyTorch,9,60:00
+cloud,Deep Learning,Auto-PyTorch,10,60:00
+cloud,Deep Learning,Auto-Keras,1,04:40
+cloud,Deep Learning,Auto-Keras,2,04:22
+cloud,Deep Learning,Auto-Keras,3,04:19
+cloud,Deep Learning,Auto-Keras,4,46:56
+cloud,Deep Learning,Auto-Keras,5,04:08
+cloud,Deep Learning,Auto-Keras,6,04:43
+cloud,Deep Learning,Auto-Keras,7,04:45
+cloud,Deep Learning,Auto-Keras,8,08:19
+cloud,Deep Learning,Auto-Keras,9,04:37
+cloud,Deep Learning,Auto-Keras,10,04:37
+cloud,XGBoost,H2O AutoML,1,00:31
+cloud,XGBoost,H2O AutoML,2,07:42
+cloud,XGBoost,H2O AutoML,3,00:17
+cloud,XGBoost,H2O AutoML,4,02:35
+cloud,XGBoost,H2O AutoML,5,00:58
+cloud,XGBoost,H2O AutoML,6,01:45
+cloud,XGBoost,H2O AutoML,7,01:29
+cloud,XGBoost,H2O AutoML,8,01:26
+cloud,XGBoost,H2O AutoML,9,03:06
+cloud,XGBoost,H2O AutoML,10,07:56
+cloud,XGBoost,Rminer,1,00:02
+cloud,XGBoost,Rminer,2,00:02
+cloud,XGBoost,Rminer,3,00:02
+cloud,XGBoost,Rminer,4,00:02
+cloud,XGBoost,Rminer,5,00:02
+cloud,XGBoost,Rminer,6,00:02
+cloud,XGBoost,Rminer,7,00:02
+cloud,XGBoost,Rminer,8,00:02
+cloud,XGBoost,Rminer,9,00:02
+cloud,XGBoost,Rminer,10,00:02
+colesterol,Principal,H2O AutoML,1,00:45
+colesterol,Principal,H2O AutoML,2,00:35
+colesterol,Principal,H2O AutoML,3,00:41
+colesterol,Principal,H2O AutoML,4,00:38
+colesterol,Principal,H2O AutoML,5,00:47
+colesterol,Principal,H2O AutoML,6,00:41
+colesterol,Principal,H2O AutoML,7,00:39
+colesterol,Principal,H2O AutoML,8,00:31
+colesterol,Principal,H2O AutoML,9,00:46
+colesterol,Principal,H2O AutoML,10,00:35
+colesterol,Principal,AutoGluon,1,00:27
+colesterol,Principal,AutoGluon,2,00:28
+colesterol,Principal,AutoGluon,3,00:30
+colesterol,Principal,AutoGluon,4,00:28
+colesterol,Principal,AutoGluon,5,00:29
+colesterol,Principal,AutoGluon,6,00:28
+colesterol,Principal,AutoGluon,7,00:29
+colesterol,Principal,AutoGluon,8,00:27
+colesterol,Principal,AutoGluon,9,00:29
+colesterol,Principal,AutoGluon,10,00:28
+colesterol,Principal,AutoSklearn,1,60:00
+colesterol,Principal,AutoSklearn,2,60:00
+colesterol,Principal,AutoSklearn,3,60:00
+colesterol,Principal,AutoSklearn,4,60:00
+colesterol,Principal,AutoSklearn,5,60:00
+colesterol,Principal,AutoSklearn,6,60:00
+colesterol,Principal,AutoSklearn,7,60:00
+colesterol,Principal,AutoSklearn,8,60:00
+colesterol,Principal,AutoSklearn,9,60:00
+colesterol,Principal,AutoSklearn,10,60:00
+colesterol,Principal,TPOT,1,04:33
+colesterol,Principal,TPOT,2,01:10
+colesterol,Principal,TPOT,3,01:34
+colesterol,Principal,TPOT,4,10:28
+colesterol,Principal,TPOT,5,09:59
+colesterol,Principal,TPOT,6,01:36
+colesterol,Principal,TPOT,7,01:21
+colesterol,Principal,TPOT,8,01:17
+colesterol,Principal,TPOT,9,02:02
+colesterol,Principal,TPOT,10,06:14
+colesterol,Principal,Rminer,1,00:32
+colesterol,Principal,Rminer,2,00:29
+colesterol,Principal,Rminer,3,00:28
+colesterol,Principal,Rminer,4,00:30
+colesterol,Principal,Rminer,5,00:28
+colesterol,Principal,Rminer,6,00:28
+colesterol,Principal,Rminer,7,00:28
+colesterol,Principal,Rminer,8,00:28
+colesterol,Principal,Rminer,9,00:28
+colesterol,Principal,Rminer,10,00:28
+colesterol,Principal,TransmogrifAI,1,05:13
+colesterol,Principal,TransmogrifAI,2,04:47
+colesterol,Principal,TransmogrifAI,3,06:34
+colesterol,Principal,TransmogrifAI,4,06:27
+colesterol,Principal,TransmogrifAI,5,06:33
+colesterol,Principal,TransmogrifAI,6,05:59
+colesterol,Principal,TransmogrifAI,7,05:51
+colesterol,Principal,TransmogrifAI,8,05:26
+colesterol,Principal,TransmogrifAI,9,04:52
+colesterol,Principal,TransmogrifAI,10,05:16
+colesterol,Deep Learning,H2O AutoML,1,37:12
+colesterol,Deep Learning,H2O AutoML,2,38:35
+colesterol,Deep Learning,H2O AutoML,3,41:50
+colesterol,Deep Learning,H2O AutoML,4,42:47
+colesterol,Deep Learning,H2O AutoML,5,45:23
+colesterol,Deep Learning,H2O AutoML,6,51:04
+colesterol,Deep Learning,H2O AutoML,7,36:12
+colesterol,Deep Learning,H2O AutoML,8,39:47
+colesterol,Deep Learning,H2O AutoML,9,52:56
+colesterol,Deep Learning,H2O AutoML,10,32:21
+colesterol,Deep Learning,Auto-PyTorch,1,60:00
+colesterol,Deep Learning,Auto-PyTorch,2,60:00
+colesterol,Deep Learning,Auto-PyTorch,3,60:00
+colesterol,Deep Learning,Auto-PyTorch,4,60:00
+colesterol,Deep Learning,Auto-PyTorch,5,60:00
+colesterol,Deep Learning,Auto-PyTorch,6,60:00
+colesterol,Deep Learning,Auto-PyTorch,7,60:00
+colesterol,Deep Learning,Auto-PyTorch,8,60:00
+colesterol,Deep Learning,Auto-PyTorch,9,60:00
+colesterol,Deep Learning,Auto-PyTorch,10,60:00
+colesterol,Deep Learning,Auto-Keras,1,12:36
+colesterol,Deep Learning,Auto-Keras,2,11:35
+colesterol,Deep Learning,Auto-Keras,3,11:23
+colesterol,Deep Learning,Auto-Keras,4,09:08
+colesterol,Deep Learning,Auto-Keras,5,11:44
+colesterol,Deep Learning,Auto-Keras,6,13:14
+colesterol,Deep Learning,Auto-Keras,7,11:24
+colesterol,Deep Learning,Auto-Keras,8,10:44
+colesterol,Deep Learning,Auto-Keras,9,09:54
+colesterol,Deep Learning,Auto-Keras,10,09:10
+colesterol,XGBoost,H2O AutoML,1,00:24
+colesterol,XGBoost,H2O AutoML,2,00:11
+colesterol,XGBoost,H2O AutoML,3,00:30
+colesterol,XGBoost,H2O AutoML,4,00:20
+colesterol,XGBoost,H2O AutoML,5,00:29
+colesterol,XGBoost,H2O AutoML,6,00:30
+colesterol,XGBoost,H2O AutoML,7,00:31
+colesterol,XGBoost,H2O AutoML,8,00:19
+colesterol,XGBoost,H2O AutoML,9,00:33
+colesterol,XGBoost,H2O AutoML,10,00:20
+colesterol,XGBoost,Rminer,1,00:03
+colesterol,XGBoost,Rminer,2,00:02
+colesterol,XGBoost,Rminer,3,00:03
+colesterol,XGBoost,Rminer,4,00:02
+colesterol,XGBoost,Rminer,5,00:02
+colesterol,XGBoost,Rminer,6,00:03
+colesterol,XGBoost,Rminer,7,00:02
+colesterol,XGBoost,Rminer,8,00:02
+colesterol,XGBoost,Rminer,9,00:02
+colesterol,XGBoost,Rminer,10,00:03
+liver,Principal,H2O AutoML,1,00:32
+liver,Principal,H2O AutoML,2,00:31
+liver,Principal,H2O AutoML,3,00:30
+liver,Principal,H2O AutoML,4,00:31
+liver,Principal,H2O AutoML,5,00:35
+liver,Principal,H2O AutoML,6,00:41
+liver,Principal,H2O AutoML,7,00:35
+liver,Principal,H2O AutoML,8,00:35
+liver,Principal,H2O AutoML,9,00:36
+liver,Principal,H2O AutoML,10,00:41
+liver,Principal,AutoGluon,1,00:33
+liver,Principal,AutoGluon,2,00:36
+liver,Principal,AutoGluon,3,00:35
+liver,Principal,AutoGluon,4,00:36
+liver,Principal,AutoGluon,5,00:47
+liver,Principal,AutoGluon,6,00:41
+liver,Principal,AutoGluon,7,00:31
+liver,Principal,AutoGluon,8,00:33
+liver,Principal,AutoGluon,9,00:36
+liver,Principal,AutoGluon,10,00:31
+liver,Principal,AutoSklearn,1,60:00
+liver,Principal,AutoSklearn,2,60:00
+liver,Principal,AutoSklearn,3,60:00
+liver,Principal,AutoSklearn,4,60:00
+liver,Principal,AutoSklearn,5,60:00
+liver,Principal,AutoSklearn,6,60:00
+liver,Principal,AutoSklearn,7,60:00
+liver,Principal,AutoSklearn,8,60:00
+liver,Principal,AutoSklearn,9,60:00
+liver,Principal,AutoSklearn,10,60:00
+liver,Principal,TPOT,1,05:35
+liver,Principal,TPOT,2,03:44
+liver,Principal,TPOT,3,08:18
+liver,Principal,TPOT,4,10:17
+liver,Principal,TPOT,5,02:19
+liver,Principal,TPOT,6,07:36
+liver,Principal,TPOT,7,03:52
+liver,Principal,TPOT,8,01:16
+liver,Principal,TPOT,9,11:44
+liver,Principal,TPOT,10,02:08
+liver,Principal,Rminer,1,00:22
+liver,Principal,Rminer,2,00:18
+liver,Principal,Rminer,3,00:18
+liver,Principal,Rminer,4,00:19
+liver,Principal,Rminer,5,00:18
+liver,Principal,Rminer,6,00:19
+liver,Principal,Rminer,7,00:19
+liver,Principal,Rminer,8,00:18
+liver,Principal,Rminer,9,00:18
+liver,Principal,Rminer,10,00:18
+liver,Principal,TransmogrifAI,1,04:44
+liver,Principal,TransmogrifAI,2,04:51
+liver,Principal,TransmogrifAI,3,06:05
+liver,Principal,TransmogrifAI,4,06:25
+liver,Principal,TransmogrifAI,5,05:41
+liver,Principal,TransmogrifAI,6,05:34
+liver,Principal,TransmogrifAI,7,05:19
+liver,Principal,TransmogrifAI,8,04:53
+liver,Principal,TransmogrifAI,9,04:28
+liver,Principal,TransmogrifAI,10,04:29
+liver,Deep Learning,H2O AutoML,1,60:00
+liver,Deep Learning,H2O AutoML,2,60:00
+liver,Deep Learning,H2O AutoML,3,60:00
+liver,Deep Learning,H2O AutoML,4,60:00
+liver,Deep Learning,H2O AutoML,5,60:00
+liver,Deep Learning,H2O AutoML,6,60:00
+liver,Deep Learning,H2O AutoML,7,60:00
+liver,Deep Learning,H2O AutoML,8,56:40
+liver,Deep Learning,H2O AutoML,9,58:20
+liver,Deep Learning,H2O AutoML,10,51:19
+liver,Deep Learning,Auto-PyTorch,1,60:00
+liver,Deep Learning,Auto-PyTorch,2,60:00
+liver,Deep Learning,Auto-PyTorch,3,60:00
+liver,Deep Learning,Auto-PyTorch,4,60:00
+liver,Deep Learning,Auto-PyTorch,5,60:00
+liver,Deep Learning,Auto-PyTorch,6,60:00
+liver,Deep Learning,Auto-PyTorch,7,60:00
+liver,Deep Learning,Auto-PyTorch,8,60:00
+liver,Deep Learning,Auto-PyTorch,9,60:00
+liver,Deep Learning,Auto-PyTorch,10,60:00
+liver,Deep Learning,Auto-Keras,1,05:39
+liver,Deep Learning,Auto-Keras,2,49:31
+liver,Deep Learning,Auto-Keras,3,05:16
+liver,Deep Learning,Auto-Keras,4,50:11
+liver,Deep Learning,Auto-Keras,5,07:47
+liver,Deep Learning,Auto-Keras,6,06:41
+liver,Deep Learning,Auto-Keras,7,05:16
+liver,Deep Learning,Auto-Keras,8,05:00
+liver,Deep Learning,Auto-Keras,9,05:49
+liver,Deep Learning,Auto-Keras,10,05:24
+liver,XGBoost,H2O AutoML,1,00:17
+liver,XGBoost,H2O AutoML,2,00:14
+liver,XGBoost,H2O AutoML,3,00:15
+liver,XGBoost,H2O AutoML,4,00:14
+liver,XGBoost,H2O AutoML,5,00:20
+liver,XGBoost,H2O AutoML,6,00:30
+liver,XGBoost,H2O AutoML,7,00:22
+liver,XGBoost,H2O AutoML,8,00:22
+liver,XGBoost,H2O AutoML,9,00:22
+liver,XGBoost,H2O AutoML,10,00:28
+liver,XGBoost,Rminer,1,00:02
+liver,XGBoost,Rminer,2,00:02
+liver,XGBoost,Rminer,3,00:02
+liver,XGBoost,Rminer,4,00:02
+liver,XGBoost,Rminer,5,00:03
+liver,XGBoost,Rminer,6,00:02
+liver,XGBoost,Rminer,7,00:02
+liver,XGBoost,Rminer,8,00:02
+liver,XGBoost,Rminer,9,00:02
+liver,XGBoost,Rminer,10,00:02
