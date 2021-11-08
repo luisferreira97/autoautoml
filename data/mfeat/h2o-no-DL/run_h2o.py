@@ -1,6 +1,9 @@
-import pandas as pd
-from datetime import datetime
 import json
+from datetime import datetime
+
+import h2o
+import pandas as pd
+from h2o.automl import H2OAutoML
 
 data_path = "./data/mfeat/mfeat"
 
@@ -19,14 +22,13 @@ fold10 = pd.read_csv(data_path + "-fold10.csv")
 
 folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
 
-from h2o.automl import H2OAutoML
-import h2o
 
 for x in range(0, 10):
     h2o.init()
 
     fold_folder = "./data/mfeat/h2o-no-DL/fold" + str(x+1)
-    folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
+    folds = [fold1, fold2, fold3, fold4, fold5,
+             fold6, fold7, fold8, fold9, fold10]
     test_df = folds[x]
     test = h2o.H2OFrame(test_df)
 
@@ -41,7 +43,8 @@ for x in range(0, 10):
     train[y] = train[y].asfactor()
     test[y] = test[y].asfactor()
 
-    aml = H2OAutoML(seed=42, sort_metric = "auto", nfolds=5, exclude_algos=["DeepLearning"], keep_cross_validation_predictions=True,  max_runtime_secs = 3600)
+    aml = H2OAutoML(seed=42, sort_metric="auto", nfolds=5, exclude_algos=[
+                    "DeepLearning"], keep_cross_validation_predictions=True,  max_runtime_secs=3600)
 
     from datetime import datetime
     start = datetime.now().strftime("%H:%M:%S")
@@ -57,12 +60,14 @@ for x in range(0, 10):
     from sklearn.metrics import f1_score
     for model in lb["model_id"]:
         if "StackedEnsemble" not in model:
-            score = f1_score(train.as_data_frame()[y], h2o.get_model(model).cross_validation_holdout_predictions().as_data_frame()["predict"], average='macro')
+            score = f1_score(train.as_data_frame()[y], h2o.get_model(
+                model).cross_validation_holdout_predictions().as_data_frame()["predict"], average='macro')
             if score > best_metric:
                 best_model = model
                 best_metric = score
 
-    score_test = f1_score(test.as_data_frame()[y], h2o.get_model(best_model).predict(test).as_data_frame()["predict"], average='macro')
+    score_test = f1_score(test.as_data_frame()[y], h2o.get_model(
+        best_model).predict(test).as_data_frame()["predict"], average='macro')
 
     perf = aml.training_info
     perf["start"] = start
@@ -72,11 +77,12 @@ for x in range(0, 10):
     perf["testing_metric"] = score_test
 
     perf = json.dumps(perf)
-    f = open(fold_folder + "/perf.json","w")
+    f = open(fold_folder + "/perf.json", "w")
     f.write(perf)
     f.close()
 
-    my_local_model = h2o.download_model(h2o.get_model(best_model), path=fold_folder)
+    my_local_model = h2o.download_model(
+        h2o.get_model(best_model), path=fold_folder)
 
     h2o.shutdown()
 

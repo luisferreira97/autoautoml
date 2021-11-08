@@ -41,7 +41,7 @@ for (x in 0:9) {
     validation_metric = round(M@mpar$LB$eval,4)[best_model_index]
 
     results = paste('{"time":',
-                    M@time, 
+                    M@time,
                     ',"best_model":"',
                     best_model,
                     '","validation_metric":',

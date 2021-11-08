@@ -1,6 +1,11 @@
-import pandas as pd
-from datetime import datetime
 import json
+from datetime import datetime
+
+import autosklearn.classification
+import autosklearn.regression
+import pandas as pd
+import sklearn.metrics
+import sklearn.model_selection
 
 data_path = "./data/diabetes/diabetes"
 
@@ -19,14 +24,11 @@ fold10 = pd.read_csv(data_path + "-fold10.csv")
 
 folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
 
-import sklearn.model_selection
-import autosklearn.regression
-import autosklearn.classification
-import sklearn.metrics
 
 for x in range(0, 10):
     fold_folder = "./data/diabetes/autosklearn/fold" + str(x+1)
-    folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
+    folds = [fold1, fold2, fold3, fold4, fold5,
+             fold6, fold7, fold8, fold9, fold10]
     test_df = folds[x]
     X_test = test_df.drop(columns=[target]).to_numpy()
     y_test = test_df[target].to_numpy()
@@ -42,7 +44,8 @@ for x in range(0, 10):
     )
 
     start = datetime.now().strftime("%H:%M:%S")
-    automl.fit(X_train.copy(), y_train.copy(), metric=autosklearn.metrics.roc_auc)
+    automl.fit(X_train.copy(), y_train.copy(),
+               metric=autosklearn.metrics.roc_auc)
     automl.refit(X_train.copy(), y_train.copy())
     end = datetime.now().strftime("%H:%M:%S")
 
@@ -55,7 +58,7 @@ for x in range(0, 10):
     perf["pred_score"] = sklearn.metrics.roc_auc_score(y_test, predictions)
 
     perf = json.dumps(perf)
-    f = open(fold_folder + "/perf.json","w")
+    f = open(fold_folder + "/perf.json", "w")
     f.write(perf)
     f.close()
 

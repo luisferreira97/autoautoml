@@ -1,6 +1,11 @@
-import pandas as pd
-from datetime import datetime
 import json
+from datetime import datetime
+
+import autosklearn.classification
+import autosklearn.regression
+import pandas as pd
+import sklearn.metrics
+import sklearn.model_selection
 
 data_path = "./data/plasma/plasma"
 
@@ -19,14 +24,11 @@ fold10 = pd.read_csv(data_path + "-fold10.csv")
 
 folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
 
-import sklearn.model_selection
-import autosklearn.regression
-import autosklearn.classification
-import sklearn.metrics
 
 for x in range(0, 10):
     fold_folder = "./data/plasma/autosklearn/fold" + str(x+1)
-    folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
+    folds = [fold1, fold2, fold3, fold4, fold5,
+             fold6, fold7, fold8, fold9, fold10]
     test_df = folds[x]
     X_test = test_df.drop(columns=[target]).to_numpy()
     y_test = test_df[target].to_numpy()
@@ -42,7 +44,8 @@ for x in range(0, 10):
     )
 
     start = datetime.now().strftime("%H:%M:%S")
-    automl.fit(X_train.copy(), y_train.copy(), metric=autosklearn.metrics.mean_absolute_error)
+    automl.fit(X_train.copy(), y_train.copy(),
+               metric=autosklearn.metrics.mean_absolute_error)
     automl.refit(X_train.copy(), y_train.copy())
     end = datetime.now().strftime("%H:%M:%S")
 
@@ -52,12 +55,13 @@ for x in range(0, 10):
     perf["start"] = start
     perf["end"] = end
     perf["statistics"] = automl.sprint_statistics()
-    perf["pred_score"] = sklearn.metrics.mean_absolute_error(y_test, predictions)
+    perf["pred_score"] = sklearn.metrics.mean_absolute_error(
+        y_test, predictions)
 
     perf = json.dumps(perf)
-    f = open(fold_folder + "/perf.json","w")
+    f = open(fold_folder + "/perf.json", "w")
     f.write(perf)
     f.close()
 
     from joblib import dump, load
-    dump(automl, fold_folder + '/model.joblib') 
+    dump(automl, fold_folder + '/model.joblib')

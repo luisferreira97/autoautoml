@@ -1,11 +1,12 @@
-import sklearn.metrics
-import kerastuner
-import autokeras as ak
-from shutil import rmtree
-import os
-import pandas as pd
-from datetime import datetime
 import json
+import os
+from datetime import datetime
+from shutil import rmtree
+
+import autokeras as ak
+import kerastuner
+import pandas as pd
+import sklearn.metrics
 
 data_path = "./data/cloud/cloud"
 

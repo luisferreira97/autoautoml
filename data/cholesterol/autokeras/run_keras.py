@@ -1,7 +1,13 @@
-import pandas as pd
-import numpy as np
-from datetime import datetime
 import json
+import os
+from datetime import datetime
+from shutil import rmtree
+
+import autokeras as ak
+import kerastuner
+import numpy as np
+import pandas as pd
+import sklearn.metrics
 
 data_path = "./data/cholesterol/cholesterol"
 
@@ -20,15 +26,11 @@ fold10 = pd.read_csv(data_path + "-fold10.csv")
 
 folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
 
-import os
-from shutil import rmtree
-import autokeras as ak
-import kerastuner
-import sklearn.metrics
 
 for x in range(0, 10):
     fold_folder = "./data/cholesterol/autokeras/fold" + str(x+1)
-    folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
+    folds = [fold1, fold2, fold3, fold4, fold5,
+             fold6, fold7, fold8, fold9, fold10]
     test_df = folds[x]
     X_test = test_df.drop(columns=[target]).to_numpy()
     y_test = test_df[target].to_numpy()
@@ -54,7 +56,7 @@ for x in range(0, 10):
     try:
         classifier.evaluate(x=X_test, y=y_test)
     except Exception as e:
-        error = str(e) 
+        error = str(e)
 
     best_trial = error[error.find("trial"):error.find("/checkpoints")]
 
@@ -62,7 +64,8 @@ for x in range(0, 10):
 
     for trial in trials:
         if trial == best_trial:
-            checkpoints = os.listdir(fold_folder + "/results/" + trial + "/checkpoints")
+            checkpoints = os.listdir(
+                fold_folder + "/results/" + trial + "/checkpoints")
             checkpoints = [int(checkpoint[6:]) for checkpoint in checkpoints]
             checkpoints.sort()
             if checkpoints[0] == 0:
@@ -71,7 +74,7 @@ for x in range(0, 10):
             os.rename(
                 fold_folder + "/results/" + trial + "/checkpoints/epoch_0",
                 fold_folder + "/results/" + trial + "/checkpoints/epoch_" + str(best-1))
-        elif "trial" in trial: 
+        elif "trial" in trial:
             rmtree(fold_folder + "/results/" + trial)
 
     preds = classifier.predict(x=X_test)
@@ -79,10 +82,11 @@ for x in range(0, 10):
     perf = {}
     perf["start"] = start
     perf["end"] = end
-    perf["test_score"] = sklearn.metrics.mean_absolute_error(y_test, preds.reshape((len(preds),)))
+    perf["test_score"] = sklearn.metrics.mean_absolute_error(
+        y_test, preds.reshape((len(preds),)))
 
     perf = json.dumps(perf)
-    f = open(fold_folder + "/perf.json","w")
+    f = open(fold_folder + "/perf.json", "w")
     f.write(perf)
     f.close()
 

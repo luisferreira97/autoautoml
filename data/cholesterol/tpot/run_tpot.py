@@ -1,8 +1,8 @@
-from tpot import TPOTClassifier
-from tpot import TPOTRegressor
-import pandas as pd
-from datetime import datetime
 import json
+from datetime import datetime
+
+import pandas as pd
+from tpot import TPOTClassifier, TPOTRegressor
 
 data_path = "./data/cholesterol/cholesterol"
 

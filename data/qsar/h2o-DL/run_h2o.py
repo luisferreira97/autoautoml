@@ -1,6 +1,9 @@
-import pandas as pd
-from datetime import datetime
 import json
+from datetime import datetime
+
+import h2o
+import pandas as pd
+from h2o.automl import H2OAutoML
 
 data_path = "./data/qsar/qsar"
 
@@ -19,10 +22,8 @@ fold10 = pd.read_csv(data_path + "-fold10.csv")
 
 folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
 
-from h2o.automl import H2OAutoML
-import h2o
 
-#for x in range(0, 10):
+# for x in range(0, 10):
 
 x = 9
 h2o.init()
@@ -43,9 +44,9 @@ x.remove(y)
 train[y] = train[y].asfactor()
 test[y] = test[y].asfactor()
 
-aml = H2OAutoML(seed=42, sort_metric = "auc", nfolds=5, include_algos=["DeepLearning"], max_runtime_secs = 3600)
+aml = H2OAutoML(seed=42, sort_metric="auc", nfolds=5, include_algos=[
+                "DeepLearning"], max_runtime_secs=3600)
 
-from datetime import datetime
 start = datetime.now().strftime("%H:%M:%S")
 aml.train(x=x, y=y, training_frame=train)
 end = datetime.now().strftime("%H:%M:%S")
@@ -61,13 +62,13 @@ perf["end"] = end
 perf["metric"] = aml.leader.model_performance(test).auc()
 
 perf = json.dumps(perf)
-f = open(fold_folder + "/perf.json","w")
+f = open(fold_folder + "/perf.json", "w")
 f.write(perf)
 f.close()
 
 my_local_model = h2o.download_model(aml.leader, path=fold_folder)
 
-#h2o.shutdown()
+# h2o.shutdown()
 
 #import time
-#time.sleep(5)
+# time.sleep(5)

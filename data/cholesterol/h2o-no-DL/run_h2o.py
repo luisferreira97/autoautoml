@@ -1,6 +1,9 @@
-import pandas as pd
-from datetime import datetime
 import json
+from datetime import datetime
+
+import h2o
+import pandas as pd
+from h2o.automl import H2OAutoML
 
 data_path = "./data/cholesterol/cholesterol"
 
@@ -19,14 +22,13 @@ fold10 = pd.read_csv(data_path + "-fold10.csv")
 
 folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
 
-from h2o.automl import H2OAutoML
-import h2o
 
 for x in range(0, 10):
     h2o.init()
 
     fold_folder = "./data/cholesterol/h2o-no-DL/fold" + str(x+1)
-    folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
+    folds = [fold1, fold2, fold3, fold4, fold5,
+             fold6, fold7, fold8, fold9, fold10]
     test_df = folds[x]
     test = h2o.H2OFrame(test_df)
 
@@ -38,7 +40,8 @@ for x in range(0, 10):
     y = target
     x.remove(y)
 
-    aml = H2OAutoML(seed=42, sort_metric = "mae", nfolds=5, exclude_algos=["DeepLearning"], max_runtime_secs = 3600)
+    aml = H2OAutoML(seed=42, sort_metric="mae", nfolds=5, exclude_algos=[
+                    "DeepLearning"], max_runtime_secs=3600)
 
     from datetime import datetime
     start = datetime.now().strftime("%H:%M:%S")
@@ -56,7 +59,7 @@ for x in range(0, 10):
     perf["metric"] = aml.leader.model_performance(test).mae()
 
     perf = json.dumps(perf)
-    f = open(fold_folder + "/perf.json","w")
+    f = open(fold_folder + "/perf.json", "w")
     f.write(perf)
     f.close()
 

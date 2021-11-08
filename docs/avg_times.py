@@ -1,5 +1,6 @@
-import pandas as pd
 from statistics import mean
+
+import pandas as pd
 
 df = pd.read_csv("tempos.csv", sep=";")
 

@@ -4,13 +4,15 @@ from sklearn.ensemble import AdaBoostRegressor
 from sklearn.model_selection import train_test_split
 
 # NOTE: Make sure that the outcome column is labeled 'target' in the data file
-tpot_data = pd.read_csv('PATH/TO/DATA/FILE', sep='COLUMN_SEPARATOR', dtype=np.float64)
+tpot_data = pd.read_csv('PATH/TO/DATA/FILE',
+                        sep='COLUMN_SEPARATOR', dtype=np.float64)
 features = tpot_data.drop('target', axis=1)
 training_features, testing_features, training_target, testing_target = \
-            train_test_split(features, tpot_data['target'], random_state=42)
+    train_test_split(features, tpot_data['target'], random_state=42)
 
 # Average CV score on the training set was: -2.3222683569275624
-exported_pipeline = AdaBoostRegressor(learning_rate=0.01, loss="square", n_estimators=100)
+exported_pipeline = AdaBoostRegressor(
+    learning_rate=0.01, loss="square", n_estimators=100)
 # Fix random state in exported estimator
 if hasattr(exported_pipeline, 'random_state'):
     setattr(exported_pipeline, 'random_state', 42)

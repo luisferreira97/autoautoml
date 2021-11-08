@@ -36,7 +36,7 @@ for (x in 0:9) {
     P=predict(M,test_df)
 
     results = paste('{"time":',
-                    M@time, 
+                    M@time,
                     ',"validation_metric":',
                     M@error,
                     ',"test_metric":',

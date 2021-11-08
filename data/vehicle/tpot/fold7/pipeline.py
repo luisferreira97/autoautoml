@@ -13,19 +13,22 @@ from tpot.builtins import StackingEstimator
 from tpot.export_utils import set_param_recursive
 
 # NOTE: Make sure that the outcome column is labeled 'target' in the data file
-tpot_data = pd.read_csv('PATH/TO/DATA/FILE', sep='COLUMN_SEPARATOR', dtype=np.float64)
+tpot_data = pd.read_csv('PATH/TO/DATA/FILE',
+                        sep='COLUMN_SEPARATOR', dtype=np.float64)
 features = tpot_data.drop('target', axis=1)
 training_features, testing_features, training_target, testing_target = \
-            train_test_split(features, tpot_data['target'], random_state=42)
+    train_test_split(features, tpot_data['target'], random_state=42)
 
 # Average CV score on the training set was: 0.8576549972302001
 exported_pipeline = make_pipeline(
     FastICA(tol=0.9),
-    StackingEstimator(estimator=MLPClassifier(alpha=0.001, learning_rate_init=0.1)),
+    StackingEstimator(estimator=MLPClassifier(
+        alpha=0.001, learning_rate_init=0.1)),
     PolynomialFeatures(degree=2, include_bias=False, interaction_only=False),
     StackingEstimator(estimator=GaussianNB()),
     MinMaxScaler(),
-    StackingEstimator(estimator=LinearSVC(C=15.0, dual=False, loss="squared_hinge", penalty="l2", tol=0.001)),
+    StackingEstimator(estimator=LinearSVC(C=15.0, dual=False,
+                      loss="squared_hinge", penalty="l2", tol=0.001)),
     SelectPercentile(score_func=f_classif, percentile=47),
     KNeighborsClassifier(n_neighbors=79, p=2, weights="distance")
 )

@@ -1,6 +1,11 @@
-import pandas as pd
-from datetime import datetime
 import json
+import sys
+from datetime import datetime
+
+import pandas as pd
+import sklearn.metrics
+import torch
+from autoPyTorch import AutoNetClassification, AutoNetRegression
 
 data_path = "./data/mfeat/mfeat"
 
@@ -19,12 +24,8 @@ fold10 = pd.read_csv(data_path + "-fold10.csv")
 
 folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
 
-from autoPyTorch import AutoNetClassification
-from autoPyTorch import AutoNetRegression
-import sklearn.metrics
 
-#for x in range(0, 10):
-import sys
+# for x in range(0, 10):
 x = int(sys.argv[1])
 
 fold_folder = "./data/mfeat/autopytorch/fold" + str(x+1)
@@ -40,11 +41,11 @@ y_train = train_df[target].to_numpy()
 
 
 autonet = AutoNetClassification("tiny_cs",  # config preset
-                                    log_level='info',
-                                    budget_type='time',
-                                    max_runtime=300,
-                                    min_budget=5,
-                                    max_budget=100)
+                                log_level='info',
+                                budget_type='time',
+                                max_runtime=300,
+                                min_budget=5,
+                                max_budget=100)
 
 start = datetime.now().strftime("%H:%M:%S")
 perf = autonet.fit(X_train=X_train, Y_train=y_train, validation_split=0.25)
@@ -59,9 +60,8 @@ perf["end"] = end
 perf["test_score"] = sklearn.metrics.f1_score(y_test, preds, average='macro')
 
 perf = json.dumps(perf)
-f = open(fold_folder + "/perf.json","w")
+f = open(fold_folder + "/perf.json", "w")
 f.write(perf)
 f.close()
 
-import torch
 torch.save(autonet.get_pytorch_model(), fold_folder + "/model")

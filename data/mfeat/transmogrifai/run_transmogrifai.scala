@@ -24,13 +24,13 @@ object AzureBlobAnalysisv2 {
     implicit val spark = SparkSession.builder.config(conf).getOrCreate()
     val confh=new org.apache.hadoop.conf.Configuration()
 
-    val targetColumn = "class" 
+    val targetColumn = "class"
 
     for(fold <- 1 to 10){
-      println("Fold: " + fold); 
+      println("Fold: " + fold);
 
       var fold_folder = "./data/mfeat/transmogrifai/fold" + fold.toString()
-      
+
       var train_df = spark.sqlContext.read.format("csv").option("header", "true").option("inferSchema", "true").load(fold_folder + "/train.csv")
 
       var toBechanged = train_df.schema.fields.filter(x => x.dataType == IntegerType || x.dataType == LongType)
@@ -44,9 +44,9 @@ object AzureBlobAnalysisv2 {
       val featureVector = features.toSeq.autoTransform()
       val checkedFeatures = saleprice.sanityCheck(featureVector, checkSample = 1.0, removeBadFeatures = true)
       val pred = MultiClassificationModelSelector.withCrossValidation(numFolds = 5, validationMetric = Evaluators.MultiClassification.f1).setInput(saleprice, checkedFeatures).getOutput()
-      
+
       val wf = new OpWorkflow()
-      
+
       var start = Calendar.getInstance.getTime
       var model = wf.setInputDataset(train_df).setResultFeatures(pred).train()
       var end = Calendar.getInstance.getTime
@@ -64,7 +64,7 @@ object AzureBlobAnalysisv2 {
           .drop(row.name)
           .withColumnRenamed(row.name.concat("tmp"), row.name)
       })
-      
+
       var preds = model.setInputDataset(testData).scoreAndEvaluate(evaluator).toString()
 
       var w = new BufferedWriter(new FileWriter(fold_folder + "/perf.txt"))
@@ -93,7 +93,7 @@ object AzureBlobAnalysisv2 {
 
     val passengersData = DataReaders.Simple.csvCase[Liver](Option("/home/lferreira/autoautoml/data/liver-disorders/liver-disorders-train.csv")).readDataset().toDF()
 
-    
+
     val targetColumn = spark.sparkContext.wholeTextFiles("drinks").take(1)(0)._2
     val targetColumn = "class"
     //Convert Int and Long to Double to avoid Feature Builder exception with Integer / Long Types
@@ -122,7 +122,7 @@ object AzureBlobAnalysisv2 {
       val start = Calendar.getInstance.getTime
       val model = wf.setInputDataset(passengersData).setResultFeatures(pred).train()
       val end = Calendar.getInstance.getTime
-      
+
       print(model.summaryPretty())
 
       val evaluator = Evaluators.BinaryClassification().setLabelCol(saleprice).setPredictionCol(pred)
@@ -142,9 +142,9 @@ object AzureBlobAnalysisv2 {
       val featureVector = features.toSeq.autoTransform()
       val checkedFeatures = saleprice.sanityCheck(featureVector, checkSample = 1.0, removeBadFeatures = true)
       val pred = MultiClassificationModelSelector.withCrossValidation(numFolds = 5, validationMetric = Evaluators.MultiClassification.f1).setInput(saleprice, checkedFeatures).getOutput()
-      
+
       val wf = new OpWorkflow()
-      
+
 
       val start = Calendar.getInstance.getTime
       val model = wf.setInputDataset(passengersData).setResultFeatures(pred).train()
@@ -153,7 +153,7 @@ object AzureBlobAnalysisv2 {
       print(model.summaryPretty())
 
       val evaluator = Evaluators.MultiClassification().setLabelCol(saleprice).setPredictionCol(pred)
-      
+
       val results = "Model summary:\n" + model.summaryPretty()
       model.save("wasbs://REPLACETHIS@REPLACETHIS.blob.core.windows.net/models/" + uniqueId + "/multicmodel")
       val dfWrite = spark.sparkContext.parallelize(Seq(results))
@@ -175,7 +175,7 @@ object AzureBlobAnalysisv2 {
 
       val evaluator = Evaluators.Regression().setLabelCol(saleprice).setPredictionCol(pred)
 
-      
+
       model.setInputDataset(testData).scoreAndEvaluate(evaluator)
 
       val results = "Model summary:\n" + model.summaryPretty()
@@ -192,7 +192,7 @@ object AzureBlobAnalysisv2 {
         .withColumnRenamed(row.name.concat("tmp"), row.name)
     })
     model.setInputDataset(testData).scoreAndEvaluate(evaluator)
-    
+
     spark.close()
   }
 }

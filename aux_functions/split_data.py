@@ -1,3 +1,5 @@
+import pandas as pd
+
 paths = [
     "./data/cholesterol/cholesterol.csv",
     "./data/churn/churn.csv",
@@ -13,7 +15,6 @@ paths = [
     "./data/vehicle/vehicle.csv"
 ]
 
-import pandas as pd 
 
 for path in paths:
     df = pd.read_csv(path)
@@ -40,7 +41,7 @@ for path in paths:
         "10": None,
     }
 
-    for x in range(1,11):
+    for x in range(1, 11):
         folds[str(x)] = df[df.index.isin(indexes[x-1])]
 
     folds["1"].to_csv(path[0:len(path)-4] + "-fold1.csv", index=False)
