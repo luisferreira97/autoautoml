@@ -6,14 +6,14 @@ repos:
     -   id: check-json
     -   id: end-of-file-fixer
     -   id: trailing-whitespace
--   repo: https://github.com/PyCQA/flake8
-    rev: "4.0.1"
-    hooks:
-    -   id: flake8
-#-   repo: https://github.com/pre-commit/mirrors-autopep8
-#    rev: 'v1.5.7'  # Use the sha / tag you want to point at
+#-   repo: https://github.com/PyCQA/flake8
+#    rev: "4.0.1"
 #    hooks:
-#    -   id: autopep8
+#    -   id: flake8
+-   repo: https://github.com/pre-commit/mirrors-autopep8
+    rev: 'v1.5.7'  # Use the sha / tag you want to point at
+    hooks:
+    -   id: autopep8
 #-   repo: https://github.com/psf/black
 #    rev: 21.9b0
 #    hooks:
