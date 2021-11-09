@@ -10,7 +10,19 @@ repos:
     rev: 'v1.5.7'  # Use the sha / tag you want to point at
     hooks:
     -   id: autopep8
+#-   repo: https://github.com/PyCQA/flake8
+#    rev: "4.0.1"
+#    hooks:
+#    -   id: flake8
+#-   repo: https://github.com/myint/autoflake
+#    rev: "v1.4"
+#    hooks:
+#    -   id: autoflake
+#-   repo: https://github.com/psf/black
+#    rev: 21.9b0
+#    hooks:
+#    -   id: black
 -   repo: https://github.com/PyCQA/isort
-    rev: "5.9.3"
+    rev: "5.10.1"
     hooks:
     -   id: isort

@@ -1,13 +1,12 @@
 import json
 from datetime import datetime
 
-import autogluon as ag
 import pandas as pd
 from autogluon import TabularPrediction as task
 
 data_path = "./data/cloud/cloud"
 
-label_column = 'TE'
+label_column = "TE"
 
 fold1 = pd.read_csv(data_path + "-fold1.csv")
 fold2 = pd.read_csv(data_path + "-fold2.csv")
@@ -27,7 +26,7 @@ leaderboards = []
 metrics = []
 
 for x in range(0, 10):
-    fold_folder = "./data/cloud/autogluon/fold" + str(x+1)
+    fold_folder = "./data/cloud/autogluon/fold" + str(x + 1)
     folds = [fold1, fold2, fold3, fold4, fold5,
              fold6, fold7, fold8, fold9, fold10]
     test_df = folds[x]
@@ -35,15 +34,21 @@ for x in range(0, 10):
     train_df = pd.concat(folds)
     train_data = task.Dataset(train_df)
     start = datetime.now().strftime("%H:%M:%S")
-    predictor = task.fit(train_data=train_data, label=label_column,
-                         eval_metric="mean_absolute_error", num_bagging_folds=5, output_directory=fold_folder)
+    predictor = task.fit(
+        train_data=train_data,
+        label=label_column,
+        eval_metric="mean_absolute_error",
+        num_bagging_folds=5,
+        output_directory=fold_folder,
+    )
     end = datetime.now().strftime("%H:%M:%S")
     predictor.leaderboard().to_csv(fold_folder + "/leaderboard.csv")
     test_data = task.Dataset(test_df)
     y_test = test_data[label_column]
     y_pred = predictor.predict(test_data)
     perf = predictor.evaluate_predictions(
-        y_true=y_test.to_numpy(), y_pred=y_pred, auxiliary_metrics=True)
+        y_true=y_test.to_numpy(), y_pred=y_pred, auxiliary_metrics=True
+    )
     perf = dict(perf)
     perf["start"] = start
     perf["end"] = end

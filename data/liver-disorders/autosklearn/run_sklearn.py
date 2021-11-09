@@ -9,7 +9,7 @@ import sklearn.model_selection
 
 data_path = "./data/liver-disorders/liver-disorders"
 
-target = 'drinks'
+target = "drinks"
 
 fold1 = pd.read_csv(data_path + "-fold1.csv")
 fold2 = pd.read_csv(data_path + "-fold2.csv")
@@ -26,7 +26,7 @@ folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
 
 
 for x in range(0, 10):
-    fold_folder = "./data/liver-disorders/autosklearn/fold" + str(x+1)
+    fold_folder = "./data/liver-disorders/autosklearn/fold" + str(x + 1)
     folds = [fold1, fold2, fold3, fold4, fold5,
              fold6, fold7, fold8, fold9, fold10]
     test_df = folds[x]
@@ -39,13 +39,13 @@ for x in range(0, 10):
     y_train = train_df[target].to_numpy()
 
     automl = autosklearn.regression.AutoSklearnRegressor(
-        resampling_strategy='cv',
-        resampling_strategy_arguments={'folds': 5}
+        resampling_strategy="cv", resampling_strategy_arguments={"folds": 5}
     )
 
     start = datetime.now().strftime("%H:%M:%S")
-    automl.fit(X_train.copy(), y_train.copy(),
-               metric=autosklearn.metrics.mean_absolute_error)
+    automl.fit(
+        X_train.copy(), y_train.copy(), metric=autosklearn.metrics.mean_absolute_error
+    )
     automl.refit(X_train.copy(), y_train.copy())
     end = datetime.now().strftime("%H:%M:%S")
 
@@ -63,5 +63,6 @@ for x in range(0, 10):
     f.write(perf)
     f.close()
 
-    from joblib import dump, load
-    dump(automl, fold_folder + '/model.joblib')
+    from joblib import dump
+
+    dump(automl, fold_folder + "/model.joblib")

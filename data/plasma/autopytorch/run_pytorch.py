@@ -9,7 +9,7 @@ from autoPyTorch import AutoNetClassification, AutoNetRegression
 
 data_path = "./data/plasma/plasma"
 
-target = 'RETPLASMA'
+target = "RETPLASMA"
 
 fold1 = pd.read_csv(data_path + "-fold1.csv")
 fold2 = pd.read_csv(data_path + "-fold2.csv")
@@ -28,7 +28,7 @@ folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
 # for x in range(0, 10):
 x = int(sys.argv[1])
 
-fold_folder = "./data/plasma/autopytorch/fold" + str(x+1)
+fold_folder = "./data/plasma/autopytorch/fold" + str(x + 1)
 folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
 test_df = folds[x]
 X_test = test_df.drop(columns=[target]).to_numpy()
@@ -41,17 +41,14 @@ y_train = train_df[target].to_numpy()
 
 
 autonet = AutoNetRegression(  # "tiny_cs",  # config preset
-    log_level='info',
-    budget_type='time',
-    max_runtime=300,
-    min_budget=5,
-    max_budget=100)
+    log_level="info", budget_type="time", max_runtime=300, min_budget=5, max_budget=100
+)
 
 start = datetime.now().strftime("%H:%M:%S")
 perf = autonet.fit(X_train=X_train, Y_train=y_train, validation_split=0.25)
 end = datetime.now().strftime("%H:%M:%S")
 
-#score = autonet.score(X_test=X_test, Y_test=y_test)
+# score = autonet.score(X_test=X_test, Y_test=y_test)
 
 preds = autonet.predict(X=X_test)
 

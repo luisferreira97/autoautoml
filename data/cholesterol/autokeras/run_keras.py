@@ -4,14 +4,13 @@ from datetime import datetime
 from shutil import rmtree
 
 import autokeras as ak
-import kerastuner
 import numpy as np
 import pandas as pd
 import sklearn.metrics
 
 data_path = "./data/cholesterol/cholesterol"
 
-target = 'chol'
+target = "chol"
 
 fold1 = pd.read_csv(data_path + "-fold1.csv")
 fold2 = pd.read_csv(data_path + "-fold2.csv")
@@ -28,7 +27,7 @@ folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
 
 
 for x in range(0, 10):
-    fold_folder = "./data/cholesterol/autokeras/fold" + str(x+1)
+    fold_folder = "./data/cholesterol/autokeras/fold" + str(x + 1)
     folds = [fold1, fold2, fold3, fold4, fold5,
              fold6, fold7, fold8, fold9, fold10]
     test_df = folds[x]
@@ -44,13 +43,11 @@ for x in range(0, 10):
         loss="mean_absolute_error",
         objective="val_loss",
         directory=fold_folder,
-        project_name="results")
+        project_name="results",
+    )
 
     start = datetime.now().strftime("%H:%M:%S")
-    classifier.fit(
-        x=X_train,
-        y=y_train,
-        validation_split=0.25)
+    classifier.fit(x=X_train, y=y_train, validation_split=0.25)
     end = datetime.now().strftime("%H:%M:%S")
 
     try:
@@ -58,7 +55,7 @@ for x in range(0, 10):
     except Exception as e:
         error = str(e)
 
-    best_trial = error[error.find("trial"):error.find("/checkpoints")]
+    best_trial = error[error.find("trial"): error.find("/checkpoints")]
 
     trials = os.listdir(fold_folder + "/results")
 
@@ -73,7 +70,12 @@ for x in range(0, 10):
             best = min(checkpoints)
             os.rename(
                 fold_folder + "/results/" + trial + "/checkpoints/epoch_0",
-                fold_folder + "/results/" + trial + "/checkpoints/epoch_" + str(best-1))
+                fold_folder
+                + "/results/"
+                + trial
+                + "/checkpoints/epoch_"
+                + str(best - 1),
+            )
         elif "trial" in trial:
             rmtree(fold_folder + "/results/" + trial)
 
@@ -83,7 +85,8 @@ for x in range(0, 10):
     perf["start"] = start
     perf["end"] = end
     perf["test_score"] = sklearn.metrics.mean_absolute_error(
-        y_test, preds.reshape((len(preds),)))
+        y_test, preds.reshape((len(preds),))
+    )
 
     perf = json.dumps(perf)
     f = open(fold_folder + "/perf.json", "w")

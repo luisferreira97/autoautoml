@@ -2,11 +2,11 @@ import json
 from datetime import datetime
 
 import pandas as pd
-from tpot import TPOTClassifier, TPOTRegressor
+from tpot import TPOTClassifier
 
 data_path = "./data/cmc/cmc"
 
-target = 'Contraceptive_method_used'
+target = "Contraceptive_method_used"
 
 fold1 = pd.read_csv(data_path + "-fold1.csv")
 fold2 = pd.read_csv(data_path + "-fold2.csv")
@@ -23,7 +23,7 @@ folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
 
 
 for x in range(0, 10):
-    fold_folder = "./data/cmc/tpot/fold" + str(x+1)
+    fold_folder = "./data/cmc/tpot/fold" + str(x + 1)
     folds = [fold1, fold2, fold3, fold4, fold5,
              fold6, fold7, fold8, fold9, fold10]
     test_df = folds[x]
@@ -35,20 +35,22 @@ for x in range(0, 10):
     X_train = train_df.drop(columns=[target]).to_numpy()
     y_train = train_df[target].to_numpy()
 
-    tpot = TPOTClassifier(max_time_mins=60, verbosity=3, random_state=42,
-                          scoring='f1_macro', cv=5, n_jobs=-1, early_stop=3)
+    tpot = TPOTClassifier(
+        max_time_mins=60,
+        verbosity=3,
+        random_state=42,
+        scoring="f1_macro",
+        cv=5,
+        n_jobs=-1,
+        early_stop=3,
+    )
 
-    from datetime import datetime
     start = datetime.now().strftime("%H:%M:%S")
     tpot.fit(X_train, y_train)
     end = datetime.now().strftime("%H:%M:%S")
 
     tpot.export(fold_folder + "/pipeline.py")
-    perf = {
-        "score": tpot.score(X_test, y_test),
-        "start": start,
-        "end": end
-    }
+    perf = {"score": tpot.score(X_test, y_test), "start": start, "end": end}
     perf = json.dumps(perf)
     f = open(fold_folder + "/perf.json", "w")
     f.write(perf)

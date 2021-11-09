@@ -5,11 +5,11 @@ from datetime import datetime
 import pandas as pd
 import sklearn.metrics
 import torch
-from autoPyTorch import AutoNetClassification, AutoNetRegression
+from autoPyTorch import AutoNetClassification
 
 data_path = "./data/churn/churn"
 
-target = 'class'
+target = "class"
 
 fold1 = pd.read_csv(data_path + "-fold1.csv")
 fold2 = pd.read_csv(data_path + "-fold2.csv")
@@ -28,7 +28,7 @@ folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
 # for x in range(0, 10):
 x = int(sys.argv[1])
 
-fold_folder = "./data/churn/autopytorch/fold" + str(x+1)
+fold_folder = "./data/churn/autopytorch/fold" + str(x + 1)
 folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
 test_df = folds[x]
 X_test = test_df.drop(columns=[target]).to_numpy()
@@ -40,19 +40,25 @@ X_train = train_df.drop(columns=[target]).to_numpy()
 y_train = train_df[target].to_numpy()
 
 
-autonet = AutoNetClassification("tiny_cs",  # config preset
-                                log_level='info',
-                                budget_type='time',
-                                max_runtime=300,
-                                min_budget=5,
-                                max_budget=100)
+autonet = AutoNetClassification(
+    "tiny_cs",  # config preset
+    log_level="info",
+    budget_type="time",
+    max_runtime=300,
+    min_budget=5,
+    max_budget=100,
+)
 
 start = datetime.now().strftime("%H:%M:%S")
-perf = autonet.fit(X_train=X_train, Y_train=y_train,
-                   validation_split=0.25, optimize_metric="auc_metric")
+perf = autonet.fit(
+    X_train=X_train,
+    Y_train=y_train,
+    validation_split=0.25,
+    optimize_metric="auc_metric",
+)
 end = datetime.now().strftime("%H:%M:%S")
 
-#score = autonet.score(X_test=X_test, Y_test=y_test)
+# score = autonet.score(X_test=X_test, Y_test=y_test)
 
 preds = autonet.predict(X=X_test)
 

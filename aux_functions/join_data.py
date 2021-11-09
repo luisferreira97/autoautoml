@@ -12,7 +12,7 @@ paths = [
     "./data/mfeat/mfeat",
     "./data/plasma/plasma",
     "./data/qsar/qsar",
-    "./data/vehicle/vehicle"
+    "./data/vehicle/vehicle",
 ]
 
 folds_paths = [
@@ -27,7 +27,7 @@ folds_paths = [
     "./data/mfeat/transmogrifai/fold",
     "./data/plasma/transmogrifai/fold",
     "./data/qsar/transmogrifai/fold",
-    "./data/vehicle/transmogrifai/fold"
+    "./data/vehicle/transmogrifai/fold",
 ]
 
 

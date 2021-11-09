@@ -7,7 +7,7 @@ from h2o.automl import H2OAutoML
 
 data_path = "./data/churn/churn"
 
-target = 'class'
+target = "class"
 
 fold1 = pd.read_csv(data_path + "-fold1.csv")
 fold2 = pd.read_csv(data_path + "-fold2.csv")
@@ -26,7 +26,7 @@ folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
 for x in range(0, 10):
     h2o.init()
 
-    fold_folder = "./data/churn/h2o-no-DL/fold" + str(x+1)
+    fold_folder = "./data/churn/h2o-no-DL/fold" + str(x + 1)
     folds = [fold1, fold2, fold3, fold4, fold5,
              fold6, fold7, fold8, fold9, fold10]
     test_df = folds[x]
@@ -43,10 +43,14 @@ for x in range(0, 10):
     train[y] = train[y].asfactor()
     test[y] = test[y].asfactor()
 
-    aml = H2OAutoML(seed=42, sort_metric="auc", nfolds=5, exclude_algos=[
-                    "DeepLearning"], max_runtime_secs=3600)
+    aml = H2OAutoML(
+        seed=42,
+        sort_metric="auc",
+        nfolds=5,
+        exclude_algos=["DeepLearning"],
+        max_runtime_secs=3600,
+    )
 
-    from datetime import datetime
     start = datetime.now().strftime("%H:%M:%S")
     aml.train(x=x, y=y, training_frame=train)
     end = datetime.now().strftime("%H:%M:%S")
@@ -71,4 +75,5 @@ for x in range(0, 10):
     h2o.shutdown()
 
     import time
+
     time.sleep(5)

@@ -8,7 +8,7 @@ from sklearn.metrics import f1_score
 
 data_path = "./data/vehicle/vehicle"
 
-target = 'Class'
+target = "Class"
 
 fold1 = pd.read_csv(data_path + "-fold1.csv")
 fold2 = pd.read_csv(data_path + "-fold2.csv")
@@ -29,7 +29,7 @@ folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
 x = 9
 h2o.init()
 
-fold_folder = "./data/vehicle/h2o-DL/fold" + str(x+1)
+fold_folder = "./data/vehicle/h2o-DL/fold" + str(x + 1)
 folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
 test_df = folds[x]
 test = h2o.H2OFrame(test_df)
@@ -45,8 +45,14 @@ x.remove(y)
 train[y] = train[y].asfactor()
 test[y] = test[y].asfactor()
 
-aml = H2OAutoML(seed=42, sort_metric="auto", nfolds=5, include_algos=[
-                "DeepLearning"], keep_cross_validation_predictions=True,  max_runtime_secs=3600)
+aml = H2OAutoML(
+    seed=42,
+    sort_metric="auto",
+    nfolds=5,
+    include_algos=["DeepLearning"],
+    keep_cross_validation_predictions=True,
+    max_runtime_secs=3600,
+)
 
 start = datetime.now().strftime("%H:%M:%S")
 aml.train(x=x, y=y, training_frame=train)
@@ -60,14 +66,22 @@ best_metric = 0
 
 for model in lb["model_id"]:
     if "StackedEnsemble" not in model:
-        score = f1_score(train.as_data_frame()[y], h2o.get_model(
-            model).cross_validation_holdout_predictions().as_data_frame()["predict"], average='macro')
+        score = f1_score(
+            train.as_data_frame()[y],
+            h2o.get_model(model)
+            .cross_validation_holdout_predictions()
+            .as_data_frame()["predict"],
+            average="macro",
+        )
         if score > best_metric:
             best_model = model
             best_metric = score
 
-score_test = f1_score(test.as_data_frame()[y], h2o.get_model(
-    best_model).predict(test).as_data_frame()["predict"], average='macro')
+score_test = f1_score(
+    test.as_data_frame()[y],
+    h2o.get_model(best_model).predict(test).as_data_frame()["predict"],
+    average="macro",
+)
 
 perf = aml.training_info
 perf["start"] = start
@@ -86,5 +100,5 @@ my_local_model = h2o.download_model(
 
 # h2o.shutdown()
 
-#import time
+# import time
 # time.sleep(5)

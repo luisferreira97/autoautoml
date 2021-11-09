@@ -7,7 +7,7 @@ from h2o.automl import H2OAutoML
 
 data_path = "./data/plasma/plasma"
 
-target = 'RETPLASMA'
+target = "RETPLASMA"
 
 fold1 = pd.read_csv(data_path + "-fold1.csv")
 fold2 = pd.read_csv(data_path + "-fold2.csv")
@@ -28,7 +28,7 @@ x = 9
 
 h2o.init()
 
-fold_folder = "./data/plasma/h2o-DL/fold" + str(x+1)
+fold_folder = "./data/plasma/h2o-DL/fold" + str(x + 1)
 folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
 test_df = folds[x]
 test = h2o.H2OFrame(test_df)
@@ -41,8 +41,13 @@ x = train.columns
 y = target
 x.remove(y)
 
-aml = H2OAutoML(seed=42, sort_metric="mae", nfolds=5, include_algos=[
-                "DeepLearning"], max_runtime_secs=3600)
+aml = H2OAutoML(
+    seed=42,
+    sort_metric="mae",
+    nfolds=5,
+    include_algos=["DeepLearning"],
+    max_runtime_secs=3600,
+)
 
 start = datetime.now().strftime("%H:%M:%S")
 aml.train(x=x, y=y, training_frame=train)
@@ -67,5 +72,5 @@ my_local_model = h2o.download_model(aml.leader, path=fold_folder)
 
 # h2o.shutdown()
 
-#import time
+# import time
 # time.sleep(5)

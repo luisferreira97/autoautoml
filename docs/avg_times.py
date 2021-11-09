@@ -8,7 +8,7 @@ df["tempo"] = df["tempo"].astype(str)
 
 
 final_df = pd.DataFrame(
-    columns=['dataset', 'categoria', 'ferramenta', 'tempo_medio'])
+    columns=["dataset", "categoria", "ferramenta", "tempo_medio"])
 
 for x in range(0, 132):
     start_index = x * 10
@@ -19,7 +19,7 @@ for x in range(0, 132):
         "dataset": df["dataset"].iloc[start_index],
         "categoria": df["categoria"].iloc[start_index],
         "ferramenta": df["ferramenta"].iloc[start_index],
-        "tempo_medio": ""
+        "tempo_medio": "",
     }
     for y in range(start_index, end_index):
         valor_tempo = df["tempo"].iloc[y]
