@@ -23,57 +23,56 @@ fold10 = pd.read_csv(data_path + "-fold10.csv")
 folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
 
 
-# for x in range(0, 10):
+for x in range(0, 10):
+    h2o.init()
 
-x = 9
-h2o.init()
+    fold_folder = "./data/qsar/h2o-DL/fold" + str(x + 1)
+    folds = [fold1, fold2, fold3, fold4, fold5,
+             fold6, fold7, fold8, fold9, fold10]
+    test_df = folds[x]
+    test = h2o.H2OFrame(test_df)
 
-fold_folder = "./data/qsar/h2o-DL/fold" + str(x + 1)
-folds = [fold1, fold2, fold3, fold4, fold5, fold6, fold7, fold8, fold9, fold10]
-test_df = folds[x]
-test = h2o.H2OFrame(test_df)
+    del folds[x]
+    train_df = pd.concat(folds)
+    train = h2o.H2OFrame(train_df)
 
-del folds[x]
-train_df = pd.concat(folds)
-train = h2o.H2OFrame(train_df)
+    x = train.columns
+    y = target
+    x.remove(y)
 
-x = train.columns
-y = target
-x.remove(y)
+    train[y] = train[y].asfactor()
+    test[y] = test[y].asfactor()
 
-train[y] = train[y].asfactor()
-test[y] = test[y].asfactor()
+    aml = H2OAutoML(
+        seed=42,
+        sort_metric="auc",
+        nfolds=5,
+        include_algos=["DeepLearning"],
+        max_runtime_secs=3600,
+    )
 
-aml = H2OAutoML(
-    seed=42,
-    sort_metric="auc",
-    nfolds=5,
-    include_algos=["DeepLearning"],
-    max_runtime_secs=3600,
-)
+    start = datetime.now().strftime("%H:%M:%S")
+    aml.train(x=x, y=y, training_frame=train)
+    end = datetime.now().strftime("%H:%M:%S")
 
-start = datetime.now().strftime("%H:%M:%S")
-aml.train(x=x, y=y, training_frame=train)
-end = datetime.now().strftime("%H:%M:%S")
+    lb = aml.leaderboard.as_data_frame()
+    lb.to_csv(fold_folder + "/leaderboard.csv", index=False)
 
-lb = aml.leaderboard.as_data_frame()
-lb.to_csv(fold_folder + "/leaderboard.csv", index=False)
+    perf = aml.leader.model_performance(test)
 
-perf = aml.leader.model_performance(test)
+    perf = aml.training_info
+    perf["start"] = start
+    perf["end"] = end
+    perf["metric"] = aml.leader.model_performance(test).auc()
 
-perf = aml.training_info
-perf["start"] = start
-perf["end"] = end
-perf["metric"] = aml.leader.model_performance(test).auc()
+    perf = json.dumps(perf)
+    f = open(fold_folder + "/perf.json", "w")
+    f.write(perf)
+    f.close()
 
-perf = json.dumps(perf)
-f = open(fold_folder + "/perf.json", "w")
-f.write(perf)
-f.close()
+    my_local_model = h2o.download_model(aml.leader, path=fold_folder)
 
-my_local_model = h2o.download_model(aml.leader, path=fold_folder)
+    h2o.shutdown()
 
-# h2o.shutdown()
-
-# import time
-# time.sleep(5)
+    import time
+    time.sleep(5)
