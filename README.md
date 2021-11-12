@@ -22,22 +22,22 @@ project
     │   split_data.py
 └───docs: PDF of the IJCNN paper and other documentation (e.g., list of OpenML datasets, AutoML tools descriptions)
 └───data:
-    │   dataset A
-    └───AutoML Tool A
-        │   run.py: script to run the experiment
-        └─── fold 1
-             |   model leaderboard
-             |   performance metrics
-             |   other metadata files
-        └─── fold 2
-        └─── fold 3
-        └─── ....
-    └───AutoML Tool B
-    └───AutoML Tool C
-    └───......
-    │   dataset B
-    │   dataset C
-    │   .....
+    └───dataset A
+        └───AutoML Tool A
+            │   run.py: script to run the experiment
+            └─── fold 1
+                 |   model leaderboard
+                 |   performance metrics
+                 |   other metadata files
+            └─── fold 2
+            └─── fold 3
+            └─── ....
+        └───AutoML Tool B
+        └───AutoML Tool C
+        └───......
+    └───dataset B
+    └───dataset C
+    └───.....
 │   README.md
 │   requirements.txt
 ```
