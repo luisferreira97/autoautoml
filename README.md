@@ -8,10 +8,10 @@
 
 ## Folder Description
 
-### The code that was used to generate all the benchmark models is inside the **data** folder and its subfolders.
-### Inside the **data** folder, there is a subfolder for each of the datasets used for the benchmark.
-### Inside the **datasets** subfolders, there is one subfolder for each AutoML tool used for that dataset.
-### Inside the **tools** subfolders, there is the script used to generate the ML models and the resulting metadata (e.g., model leaderboards, performance metrics)
+1. The code that was used to generate all the benchmark models is inside the **data** folder and its subfolders.
+2. Inside the **data** folder, there is a subfolder for each of the datasets used for the benchmark.
+3. Inside the **datasets** subfolders, there is one subfolder for each AutoML tool used for that dataset.
+4. Inside the **tools** subfolders, there is the script used to generate the ML models and the resulting metadata (e.g., model leaderboards, performance metrics)
 
 ## Folder Structure
 
