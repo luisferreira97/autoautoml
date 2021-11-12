@@ -2,7 +2,7 @@
 
 ## Computational experiments for the paper "A Comparison of AutoML Tools for Machine Learning, Deep Learning and XGBoost" (IJCNN 2021)
 
-### [Research Gate](https://bit.ly/30gxcfs)
+### [ResearchGate](https://bit.ly/30gxcfs)
 ### [DOI](https://bit.ly/3F8mM0t)
 
 
