@@ -5,6 +5,28 @@
 ### [ResearchGate](https://bit.ly/30gxcfs)
 ### [DOI](https://bit.ly/3F8mM0t)
 
+To cite this work please use:
+
+```
+@inproceedings{DBLP:conf/ijcnn/FerreiraPMPC21,
+  author    = {Lu{\'{\i}}s Ferreira and
+               Andr{\'{e}} Luiz Pilastri and
+               Carlos Manuel Martins and
+               Pedro Miguel Pires and
+               Paulo Cortez},
+  title     = {A Comparison of AutoML Tools for Machine Learning, Deep Learning and
+               XGBoost},
+  booktitle = {International Joint Conference on Neural Networks, {IJCNN} 2021, Shenzhen,
+               China, July 18-22, 2021},
+  pages     = {1--8},
+  publisher = {{IEEE}},
+  year      = {2021},
+  url       = {https://doi.org/10.1109/IJCNN52387.2021.9534091},
+  doi       = {10.1109/IJCNN52387.2021.9534091},
+}
+
+```
+
 
 ## Folder Description
 
